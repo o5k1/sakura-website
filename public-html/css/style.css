@@ -1,0 +1,279 @@
+/*
+- cercato di usare meno colori possibili e tali che siano "antagonisti"
+in modo da evitare problemi con color blindness ed ottenere maggiore contrasto-->aumento accessibilità
+*/
+
+@font-face {
+    font-family: sakuraFont;
+    src: url(GlacialIndifference-Regular.otf);
+}
+
+* {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	font-size: 100%;
+	font-family: sakuraFont, Arial, Helvetica, sans-serif;
+}
+
+body {
+	background-image: url(tileable_wood_texture_@2X.png);
+	background-size: 10%;
+	background-position: center;
+	background-repeat: repeat;
+}
+
+a {
+	color: #ff9999;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/*a:visited {
+	color: #C0967D;
+}*/
+
+#fixed-info {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-size: 0.9em;
+	color: white;
+	background-color: #333333;
+	margin-bottom: 1em;
+}
+
+#fixed-info p {
+	text-align: center;
+}
+
+#fixed-info #city {
+	padding-right: 0.5em;
+}
+
+#fixed-info #tel {
+	padding-left: 0.5em;
+}
+
+#logo {
+	float: left;
+	background-image: url(sakura.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 20em;
+	width: 80%;
+	text-indent: -999em;
+	background-size: 95%;
+}
+
+#nav-button {
+	width: 20%;
+	height: 9.5em;
+	margin-left: 80%;
+	padding-top: 12.5em;
+}
+
+#nav-button a{
+	color: #333333;
+	font-size: 6em;
+	padding-left: 0.5em;
+	font-weight: 200;
+
+}
+
+#nav-button a:active{
+	color: #ff9999;
+}
+
+.hidden {
+	display: none;
+}
+
+#nav-menu li {
+	font-size: 3em;
+	text-align: center;
+	margin-bottom: 0.5em;
+	font-style: italic;
+}
+
+#nav-menu li a {
+		color: #333333;
+		font-weight: bolder;
+		font-style: normal;
+	}
+
+#content {
+	font-size: 1.3em;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	padding-left: 2em;
+	padding-right: 2em;
+	color: #333333;
+	font-weight: 400;
+	background: #FFF6F6;
+
+}
+
+div #path {
+	background: #333333;
+	color: white;
+	font-size: 4em;
+	padding-top: 0.1em;
+	padding-bottom: 0.1em; 
+	padding-left: 0.5em;
+}
+
+.panel {
+	padding: 1em 1.2em 0em 1.2em;
+	border-width: 10px;
+	border-color: #333333;
+	margin-bottom: 3em;
+	color: #333333;
+}
+
+img {
+	width: 100%;
+	margin: 1em 0em 3em 0em;
+}
+
+.panel h3 {
+	text-align: center;
+	margin-bottom: 0.3em;
+	font-size: 4em;
+	/*color: white;*/
+	padding-bottom: 0.1em;
+	border-bottom: solid;
+	border-width: 10px;
+}
+
+.panel p.h {
+	margin-bottom: 0.2em;
+}
+
+.panel p {
+	margin-bottom: 2em;
+	text-align: center;
+	font-size: 1.1em;
+	/*color: white;*/
+}
+
+/*marrore ramo = #754c33*/
+
+#footer {
+	background: #333333;
+	font-size: 0.8em;
+	color: white;
+	padding: 2em;
+	text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+    /* For desktop: */
+	* {
+		max-width: 1000px;
+		margin: auto;
+	}
+	#fixed-info {
+		padding-top: 0.3em;
+		padding-bottom: 0.3em;
+		font-size: 1.3em;
+		color: white;
+		background-color: #333333;
+		margin-bottom: 1em;
+	}
+
+    #logo {
+		float: left;
+		margin-left: 1em;
+		background-position: center;
+		height: 140px;
+		width: 30%;
+		text-indent: -999em;
+		background-size: 100%;
+		/*background-color: red;*/
+	}
+
+	#nav-button {
+		display: none;
+	}
+
+	#path {
+		margin-top: 0.2em;
+	}
+
+	div #path {
+		font-size: 2.2em;
+		padding-top: 0.1em;
+		padding-bottom: 0.1em; 
+		padding-left: 0.7em;
+	}
+
+	#nav-menu {
+		/*background: navy;*/
+		padding-top: 7em;
+
+	}
+
+	#nav-menu li {
+		display: inline;
+		font-size: 2em;
+		margin-left: 0.5em;
+		text-align: left;
+		color: #333333;
+		/*background-color: red;*/
+	}
+
+
+	#nav-menu li a:hover {
+		text-decoration: underline;
+	}
+
+	.panel {
+		padding: 0em 1.2em 0em 1.2em;
+		border-width: 10px;
+		border-color: #333333;
+		margin-bottom: 1em;
+		color: #333333;
+	}
+
+	#orari {
+		width: 35%;
+		margin: auto;
+	}
+
+	#orari h3 {
+		text-align: center;
+	}
+
+	#orari p {
+		text-align: center;
+	}
+
+	img {
+		width: 45%;
+		padding-left: 25%;
+	}
+
+	.panel h3 {
+		text-align: left;
+		margin-bottom: 0.3em;
+		font-size: 2em;
+		padding-bottom: 0.1em;
+		border-bottom: solid;
+		border-width: 7px;
+	}
+
+	.panel p {
+		margin-bottom: 0.5em;
+		text-align: justify;
+		font-size: 0.9em;
+		/*color: white;*/
+	}
+
+	#footer {
+		padding: 1em;
+	}
+
+	#footer p{
+		display: inline;
+	}
+}

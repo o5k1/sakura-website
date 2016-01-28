@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="it" lang="it">
+<head>
+	<title>Sushi e Giapponese | Sakura</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="title" content="Sakura - Ristorante Giapponese - Bassano del Grappa" />
+	<meta name="description" content="Ristorante Giapponese a Bassano del Grappa. Specialità Sushi con servizio d'asporto." />
+    <meta name="keywords" content="Sakura, ristorante, giapponese, giappone, sushi, asporto, bassano, bassano del grappa, vicenza" />
+    <meta name="author" content="Andrea Tombolato, Eduard Bicego, Davide Castello" />
+    <meta name="language" content="italian it" />
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<!--Nav inizialmente visibile, così se non c'è JS ho degradazione elegante. Se JS funziona, allora viene nascosto e rimane accessibile dall'apposito bottone-->
+<body onload="manageNav()">
+	<div id="header">
+		<div id="fixed-info">
+			<p><a id="city" href="dove-siamo.html">Bassano del Grappa</a> | <a id="tel" href="tel:0424 382286">0424 382286</a></p>
+		</div> 
+		<!--Logo come background tramite IMAGE REPLACEMENT cosicchè possa costituire informazione per il motore di ricerca (Best practice) [Orietta docet]-->
+		
+			<div id="top-bar">
+				<div id="logo">
+					<h1>Sakura - Ristorante Giapponese</h1>
+				</div> 
+				<div id="nav-button">
+					<a onclick="manageNav()" title="Menu"> ☰ </a>
+				</div>
+			</div>
+		
+		<!--Sostituita immagine del bottone di navigazione con il carattere come su w3school.com-->
+		<!--il valore di onClick dovrà essere la funzione JS che apre il menu a scomparsa nel layout mobile.-->
+		
+		<div id="nav-menu">
+			<ul>
+				<li xml:lang="en">Home</li>
+				<li><a href="menu.html">Menù</a></li>
+				<li><a href="chi-siamo.html">Chi siamo</a></li>
+				<li><a href="dove-siamo.html">Dove siamo</a></li>
+				<li><a href="curiosita.html">Curiosità</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="main">
+		<!--il path svolge sia funzione di breadcrumb che di titolo della pagina, per siti che hanno un solo livello profondità non serve breadcrumb [Orietta docet] -->
+		<div id="path">
+			<h2 xml:lang="en">Home</h2>
+		</div>
+		<div id="content">
+			<div class="panel" id="orari">
+				<h3>Gli Orari</h3>
+				<p class="h">11:00 - 15:00</p> 
+				<p class="h">18:00 - 00:00</p>
+				<p>Chiuso il lunedì e il martedì mattina.</p>
+			</div>
+			<div class="panel" >
+				<h3>Il Ristorante</h3>
+				<p>Siamo lieti di accogliervi in un ambiente intimo e rilassante, arredato secondo l'autentico stile nipponico.</p>
+				<p>Il locale ha un aspetto tipicamente tradizionale, con i colori, le lampade e il parquet che ricordano l’oriente.</p>
+				<p>Un posto ideale dove trascorrere piacevoli serate assaporando il meglio della cucina tipica giapponese.</p>
+				<p>Ottimo per pranzi e cene di lavoro, feste e cerimonie.</p>
+			</div>
+			<div class="panel">
+				<h3>La Cucina</h3>
+				<p>Vi proponiamo un <a href="menu.html">menù</a> molto ampio che include tutte le specialità dell’arte culinaria giapponese.
+			</div>
+			<div class="panel" >
+				<h3>Take Away</h3>
+				<p>Sentitevi liberi di gustare le nostre prelibatezze orientali a casa vostra o in ufficio.</p>
+				<p>Vi proponiamo le pietanze in comode vaschette, complete di <strong>wasabi</strong>, <strong>zenzero</strong> ed <strong>ohashi</strong>: le tradizionali bacchette giapponesi.</p>
+				<p>La consegna a domicilio è gratuita entro 15 km e per un ordine minimo di 30 €.</p>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<p>Ristorante Giapponese Sakura - Specialità Sushi</p>
+		<p>Bassano del Grappa (VI)</p> 
+		<p>PI 02013730367 - Tel: 0424 382286</p>
+	</div>
+</body>
+</html>
