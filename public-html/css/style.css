@@ -156,6 +156,38 @@ img {
 	/*color: white;*/
 }
 
+.thumb {
+		background-color: red;
+		height: 20em;
+		width: 20em;
+		margin: auto;
+		margin-bottom: 2em;
+
+
+	}
+
+#ebicego {
+	background: url(eduard_who_rounded.png);
+	background-size: 20em;
+	background-repeat: no-repeat;
+}
+
+#dcastello {
+	background: url(davide_who_rounded.png);
+	background-size: 20em;
+	background-repeat: no-repeat;
+}
+
+#atombola {
+	background: url(andrea_who_rounded.png);
+	background-size: 20em;
+	background-repeat: no-repeat;
+}
+
+.bio p {
+
+	}
+
 /*marrore ramo = #754c33*/
 
 #footer {
@@ -267,6 +299,27 @@ img {
 		text-align: justify;
 		font-size: 0.9em;
 		/*color: white;*/
+	}
+
+	.thumb {
+		height: 9em;
+		width: 9em;
+		margin: auto;
+		margin-bottom: 1em;
+
+
+	}
+
+	#ebicego {
+		background-size: 9em;
+	}
+
+	#dcastello {
+		background-size: 9em;
+	}
+
+	#atombola {
+		background-size: 9em;
 	}
 
 	#footer {
