@@ -1,0 +1,18 @@
+<menuFissi>
+		<descrizione>Menù fisso a mezzogiorno, bibite escluse</descrizione>
+		<menuFisso id="menu1">
+			<nome>Menù 1</nome>
+            <prezzo>9.90</prezzo>
+			<piatto>Zuppa misoshiru</piatto>
+			<piatto>Riso con frutti di mare</piatto>
+			<piatto>Pezzi di pollo con salsa teriyaki</piatto>
+		</menuFisso>
+	
+		<menuFisso id="menu2">
+			<nome>Menù 2</nome>
+            <prezzo>9.90</prezzo>
+			<piatto>Zuppa misoshiru</piatto>
+			<piatto>5 pezzi di sushi</piatto>
+			<piatto>6 pezzi di hossomaki</piatto>
+		</menuFisso>	
+</menuFissi>
