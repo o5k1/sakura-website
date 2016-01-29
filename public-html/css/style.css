@@ -198,6 +198,14 @@ img {
 	text-align: center;
 }
 
+#access-denied {
+	background: url(denied.png);
+	background-size: 25%;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 10em;
+}
+
 @media screen and (min-width: 1024px) {
     /* For desktop: */
 	* {

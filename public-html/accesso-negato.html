@@ -1,43 +1,53 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="it" lang="it">
 <head>
-	<title>Home | Sakura</title>
-	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<title>Accesso negato | Sakura</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta name="title" content="Sakura - Ristorante Giapponese - Bassano del Grappa" />
-	<meta name="description" content="Ristorante Giapponese a Bassano del Grappa. Specialità Sushi con servizio d'asporto." />
-    <meta name="keywords" content="Sakura, ristorante, giapponese, giappone, sushi, asporto, bassano, bassano del grappa, vicenza" />
     <meta name="author" content="Andrea Tombolato, Eduard Bicego, Davide Castello" />
     <meta name="language" content="italian it" />
+    <script type="text/javascript" src="js/scripts.js"></script>
 </head>
-<body>
+<body onload="manageNav()">
 	<div id="header">
-		<h1 id="logo">Sakura</h1>
-		<div id="nav">
+		<div id="fixed-info">
+			<p><a id="city" href="dove-siamo.html">Bassano del Grappa</a> | <a id="tel" href="tel:0424 382286">0424 382286</a></p>
+		</div> 
+		
+			<div id="top-bar">
+				<div id="logo">
+					<h1>Sakura - Ristorante Giapponese</h1>
+				</div> 
+				<div id="nav-button">
+					<a onclick="manageNav()" title="Menu"> &#9776 </a>
+				</div>
+			</div>
+
+		<div id="nav-menu">
 			<ul>
-				<li xml:lang="en">Home</li>
-				<li><a href="cgi-bin/menu.cgi">Menù</a></li>
+				<li xml:lang="en"><a href="index.html">Home</a></li>
+				<li><a href="menu.html">Menù</a></li>
 				<li><a href="chi-siamo.html">Chi siamo</a></li>
 				<li><a href="dove-siamo.html">Dove siamo</a></li>
 				<li><a href="curiosita.html">Curiosità</a></li>
 			</ul>
 		</div>
-		<div id="contact">tel. 0424 382286</div>
 	</div>
 	<div id="main">
 		<div id="path">
-			<h2 xml:lang="en">Home</h2>
+			<h2 >Accesso negato!</h2>
 		</div>
 		<div id="content">
-            <div class="panel">
-               <h1>ATTENZIONE</h1>
-               <p>L'accesso a questa pagina è riservato solo ai possessori di pass e username.</p>
-               <p>Per accederci effettua il log-in nella pagina relativa <a href="login.html">Login</a></p>
-            </div>
+			<div class="panel" >
+				<p>La sezione a cui stai cercando di accedere è privata, esegui il <a href="login.html">login</a> per procedere.</p> 
+				<div id="access-denied"></div>
+			</div>
 		</div>
 	</div>
 	<div id="footer">
-		<p>Footer</p>
+		<p>Ristorante Giapponese Sakura - Specialità Sushi</p>
+		<p>Bassano del Grappa (VI)</p> 
+		<p>PI 02013730367 - Tel: 0424 382286</p>
 	</div>
 </body>
 </html>
