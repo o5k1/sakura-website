@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="it" lang="it">
 <head>
-	<title>Accesso negato | Sakura</title>
+	<title>Accedi | Sakura</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -36,12 +36,22 @@
 	</div>
 	<div id="main">
 		<div id="path">
-			<h2 >Accesso negato!</h2>
+			<h2 >Accedi</h2>
 		</div>
 		<div id="content">
 			<div class="panel" >
-				<p>La sezione a cui stai cercando di accedere è privata oppure la sessione è scaduta (dura 60 minuti), effettua il <a href="../cgi-bin/login.cgi">login</a> per procedere.</p> 
-				<div id="access-denied"></div>
+				<form action="../cgi-bin/check-login.cgi" method="post">
+                  	<fieldset>
+                  		<div id="legend">
+                     		<legend>Login</legend>
+                     	</div>
+                     	<label>Username</label>
+                     	<input type="text" name="username" size="25"/>
+                     	<label>Password</label>
+                     	<input type="password" name="password" size="25"/>
+                        <input id="submit" type="submit" name="accedi" value="Accedi" />
+                  	</fieldset>
+  				</form>
 			</div>
 		</div>
 	</div>

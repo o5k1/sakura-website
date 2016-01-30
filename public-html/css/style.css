@@ -184,12 +184,6 @@ img {
 	background-repeat: no-repeat;
 }
 
-.bio p {
-
-	}
-
-/*marrore ramo = #754c33*/
-
 #footer {
 	background: #333333;
 	font-size: 0.8em;
@@ -197,6 +191,11 @@ img {
 	padding: 2em;
 	text-align: center;
 }
+
+#footer #admin {
+	display: none;
+}
+
 
 #access-denied {
 	background: url(denied.png);
@@ -337,4 +336,63 @@ img {
 	#footer p{
 		display: inline;
 	}
+
+	#footer #admin {
+		display: block;
+		margin-top: 0.5em;
+	}
+
+	fieldset {
+		width: 40%;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		/*background: white;*/
+		padding-bottom: 0.1em;
+		border-bottom: solid;
+		border-width: 7px;
+	}
+
+	#legend {
+		/*background: #333333;*/
+		text-align: center;
+		margin-bottom: 0.3em;
+			font-size: 2em;
+			padding-bottom: 0.1em;
+			border-bottom: solid;
+			border-width: 7px;
+	}
+
+	label, input {
+		display: block;
+	}
+
+	input {
+		margin-top: 0.2em;
+		margin-bottom: 1em;
+		/*border-style: solid;*/
+		border-bottom: solid;
+		border-width: 2px;
+		border-color: #333333;
+		background: #FFF6F6;
+		font-size: 0.9em;
+		padding: 0.2em;
+	}
+
+	#submit {
+		color: #FFF6F6;
+		background: #333333;
+		padding: 0.2em 0.9em;
+		border-color: #333333;
+		border-style: solid;
+		border-width: 2px;
+		margin-top: 1.5em;
+	}
+
+	#submit:hover {
+		color: #ff9999;
+		border-color: #ff9999;
+	}
+
+
 }
