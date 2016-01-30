@@ -15,9 +15,6 @@ checkSession($session);
 
 my $q = new CGI; # Sarà il parametro $_[0] di ogni funzione
 
-printStartHtml('Aggiungi Piatto - Area Riservata');
-
-
 my $nomePortata = $q->param('nomeLista');
 
 my %textForm = (htitle => 'Aggiungi ',
@@ -27,12 +24,16 @@ my %textForm = (htitle => 'Aggiungi ',
                 svalue => 'Aggiungi',
                 sname => 'add-piatto'
                );
+my $path = "Aggiungi Piatto";
 
+my $breadcrump = "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; <a href='private-menu-cibi.cgi'>Menù cibi</a> &gt;&gt; Aggiungi piatto";
+
+printStartHtml('Aggiungi Piatto - Area Riservata', $path, $breadcrump);
 
 # Verifica parametri
 if ($q->param('add-piatto')) {
 
-   print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
+   #print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
    
    my $error = '';
    
@@ -91,7 +92,11 @@ elsif($q->param('idLista')) {
     printFormCibo($q, '', '', \%textForm);
     
 } else {
-   print $session->header(-location=>"../public-html/accesso-negato.html");
+   print "<div class='panel'>
+            <h3>Ops!</h3>
+            <p>Per accedere a questa pagina è necessario passare per la pagina <a href='private-menu-cibi.cgi'>Menù cibi</a></p>
+         <div>
+         ";
 }
 
 printEndHtml();

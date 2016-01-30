@@ -13,7 +13,7 @@ my $session = CGI::Session->load() or die $!;
 
 checkSession($session);
 
-printStartHtml('Categorie - Menù - Area Riservata', "Categorie menù");
+printStartHtml('Categorie - Menù - Area Riservata', "Menù categorie");
 
    print "<div class='panel'>";
    

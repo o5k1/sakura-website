@@ -17,7 +17,7 @@ our @EXPORT = qw(printStartHtml printEndHtml printStartForm printEndForm checkSe
 #
 sub printStartHtml {
 
-   my ($title, $path) = @_;
+   my ($title, $path, $breadcrump) = @_;
    
    print "Content-type: text/html\n\n"; # Dico a Perl che sto stampando html  
    print "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
@@ -71,10 +71,16 @@ print<<EOF;
 EOF
 
 	print "<div id=\"path\">
-			<h2><a href='../public-html/index.html' xml:lang='en'>Home</a> &gt;&gt; $path</h2>
+			<h2>$path</h2>
 		</div>
 		<div id=\"content\">";
 
+   if($breadcrump) {
+      print "<div id='breadcrumb'>
+            <p><a href='../public-html/index.html' xml:lang='en'>Home</a> &gt;&gt; $breadcrump</p>
+            </div>
+            ";
+   }
 
 }
 
