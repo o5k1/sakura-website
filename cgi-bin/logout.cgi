@@ -5,9 +5,9 @@ use warnings;
 use CGI;
 use CGI::Session;
 
-my $session = CGI::Session->load() or print "Location: ../login.html\n\n";
+my $session = CGI::Session->load() or print "Location: login.cgi\n\n";
    $session->delete();
 
-print "Location: ../public-html/login.html\n\n";
+print "Location: ../public-html/index.html\n\n";
    
 exit 0;

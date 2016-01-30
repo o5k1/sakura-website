@@ -21,13 +21,15 @@ my %path = (   add_bevanda => 'add-bevanda.cgi',
                del_bevanda => 'private-menu-bevande.cgi',
 );
 
-printStartHtml('Bevande - Men&ugrave; - Area Riservata');
+printStartHtml('Bevande - Menù - Area Riservata', "<a href='private-menu.cgi'>Categorie menù</a> &gt; &gt; Menù bevande");
 
 my $message = checkDelete($q, "bevande/listaBevande/bevanda");
 
-print $q->a({-href => 'private-menu.cgi'}, 'Torna alle categorie menù');
+#print $q->a({-href => 'private-menu.cgi'}, 'Torna alle categorie menù');
 
-print "<p>$message</p>";
+if ($message ne '') {
+   print "<p>$message</p>";
+}
 
 printMenuBevande(1, \%path);
 

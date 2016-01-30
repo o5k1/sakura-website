@@ -17,7 +17,7 @@ our @EXPORT = qw(printStartHtml printEndHtml printStartForm printEndForm checkSe
 #
 sub printStartHtml {
 
-   my $title = $_[0];
+   my ($title, $path) = @_;
    
    print "Content-type: text/html\n\n"; # Dico a Perl che sto stampando html  
    print "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
@@ -33,15 +33,67 @@ sub printStartHtml {
     <meta name=\"language\" content=\"italian it\" />
     <script type=\"text/javascript\" src=\"../public-html/js/scripts.js\"></script>
 </head>
-   <body>
-      <div><a href='logout.cgi'>Esci</a></div>";
+      ";
+      
+print<<EOF;
+   <body onload="manageNav()">
+	<div id="header">
+		<div id="fixed-info">
+			<!--<p><a id="city" href="dove-siamo.html">Bassano del Grappa</a> | <a id="tel" href="tel:0424 382286">0424 382286</a></p>-->
+            <p><a id="exit" href='logout.cgi'>Esci</a></p>
+		</div> 
+		<!--Logo come background tramite IMAGE REPLACEMENT cosicchè possa costituire informazione per il motore di ricerca (Best practice) [Orietta docet]-->
+		
+			<div id="top-bar">
+				<div id="logo">
+					<h1>Sakura - Ristorante Giapponese</h1>
+				</div> 
+				<div id="nav-button">
+					<a onclick="manageNav()" title="Menu"> &#9776; </a>
+				</div>
+			</div>
+		
+		<!--Sostituita immagine del bottone di navigazione con il carattere come su w3school.com-->
+		<!--il valore di onClick dovrà essere la funzione JS che apre il menu a scomparsa nel layout mobile.-->
+		
+		<div id="nav-menu">
+			   <ul>
+				<li xml:lang="en"><a href="#">Home</a></li>
+				<li><a href="#">Menù</a></li>
+				<li><a href="#">Chi siamo</a></li>
+				<li><a href="#">Dove siamo</a></li>
+				<li><a href="#">Curiosità</a></li>
+			   </ul>
+		    </div>
+	</div>
+	<div id="main">
+		<!--il path svolge sia funzione di breadcrumb che di titolo della pagina, per siti che hanno un solo livello profondità non serve breadcrumb [Orietta docet] -->
+EOF
+
+	print "<div id=\"path\">
+			<h2><a href='../public-html/index.html' xml:lang='en'>Home</a> &gt;&gt; $path</h2>
+		</div>
+		<div id=\"content\">";
+
+
 }
 
 
 #
 sub printEndHtml {
 
-   print "</body></html>";
+   print<<EOF
+      </div>
+	</div>
+	<div id="footer">
+		<p>Ristorante Giapponese Sakura - Specialità Sushi</p>
+		<p>Bassano del Grappa (VI)</p> 
+		<p>PI 02013730367 - Tel: 0424 382286</p>
+	</div>
+</body>
+</html>
+EOF
+
 }
 
 
@@ -76,13 +128,16 @@ sub checkSession {
    my $session = $_[0];
    
    if ($session->is_expired) {
-      my $avviso="La sessione &egrave; scaduta (dura 20 min). ";
-      die($avviso);
+      #my $avviso="La sessione è scaduta (dura 1 ora). ";
+      $session->delete();
+      print $session->header(-location=>"../public-html/accesso-negato.html");
       exit;
    }
    
    elsif($session->is_empty) {
 		#my $avviso="Non hai ancora effettuato l'accesso all'area riservata.";
+        #$session->delete();
+        #print "Content-type: text/html\n\n Session empty";
         print $session->header(-location=>"../public-html/accesso-negato.html");
         exit;
 	}   

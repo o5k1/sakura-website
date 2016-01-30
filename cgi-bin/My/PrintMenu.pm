@@ -32,7 +32,8 @@ sub printMenuBevande {
          my $nomeLista = enc($listaBevande->findnodes('./nome'));
             ($nomeLista) = ( $nomeLista =~ /<nome>(.*)<\/nome>/);
          
-         print "<dl class='listaBevande' id='$idLista'>";
+         print "<div class='panel'>
+                  <dl class='listaBevande' id='$idLista'>";
          print "<h3>$nomeLista</h3>";
       
          if($admin) {
@@ -88,7 +89,9 @@ sub printMenuBevande {
                   print "<dd>$descrizione</dd>";
                }
          }
-      print "</dl>";
+      print "</dl>
+         <p><a href='#header'>Torna all'inizio</a></p>
+      </div>";
    }
 }
 
@@ -114,7 +117,8 @@ sub printMenuCibi {
       my $nomePortata = enc($portata->findnodes('./nome'));
          ($nomePortata) = ( $nomePortata =~ /<nome>(.*)<\/nome>/);
    
-      print "<dl class='portata' id='$idPortata'>";
+      print "<div class='panel'>
+               <dl class='portata' id='$idPortata'>";
       print "<h3>$nomePortata</h3>";
       
       if($admin) {
@@ -170,7 +174,9 @@ sub printMenuCibi {
                }      
       }
       
-      print "</dl>";
+      print "</dl>
+         <p class='end-list'><a href='#header'>Torna all'inizio</a></p>
+      </div>";
    } 
 }
    
@@ -184,7 +190,11 @@ sub printLinkListe {
 
    my ($doc, $query) = @_;
    
-   print "<ul id='fast-search'>";
+   
+   
+   print "<div class='panel'>
+            <h3>Ricerca Veloce</h3>
+            <ul id='fast-search'>";
    foreach my $lista ($doc->findnodes($query)) {
       my $idLista = $lista->findnodes('@id');
          $idLista = enc($idLista);
@@ -192,7 +202,8 @@ sub printLinkListe {
          ($nomeLista) = ( $nomeLista =~ /<nome>(.*)<\/nome>/);
       print "<li><a href='#$idLista'>$nomeLista</a></li>";
    }
-   print "</ul>";
+   print "</ul>
+         </div>";
 }
    
 1;

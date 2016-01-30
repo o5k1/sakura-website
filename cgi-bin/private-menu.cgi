@@ -1,7 +1,6 @@
 #!\Perl64\bin\perl
 
 # N.B. Alcuni documenti per questioni di sicurezza mettevano nel preambolo dopo \perl: '-Tw', ciò però non linka più BaseFunctions.
-use utf8;
 use strict;
 use warnings;
 use CGI;
@@ -14,7 +13,7 @@ my $session = CGI::Session->load() or die $!;
 
 checkSession($session);
 
-printStartHtml('Categorie - Men&ugrave; - Area Riservata');
+printStartHtml('Categorie - Menù - Area Riservata', "Categorie menù");
 
    print "<div class='panel'>";
    
