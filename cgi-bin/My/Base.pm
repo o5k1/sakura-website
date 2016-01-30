@@ -40,7 +40,7 @@ print<<EOF;
 	<div id="header">
 		<div id="fixed-info">
 			<!--<p><a id="city" href="dove-siamo.html">Bassano del Grappa</a> | <a id="tel" href="tel:0424 382286">0424 382286</a></p>-->
-            <p><a id="exit" href='logout.cgi'>Esci</a></p>
+            <p>Area Riservata - <a id="exit" href='logout.cgi'>Esci</a></p>
 		</div> 
 		<!--Logo come background tramite IMAGE REPLACEMENT cosicchè possa costituire informazione per il motore di ricerca (Best practice) [Orietta docet]-->
 		
@@ -58,11 +58,11 @@ print<<EOF;
 		
 		<div id="nav-menu">
 			   <ul>
-				<li xml:lang="en"><a href="#">Home</a></li>
-				<li><a href="#">Menù</a></li>
-				<li><a href="#">Chi siamo</a></li>
-				<li><a href="#">Dove siamo</a></li>
-				<li><a href="#">Curiosità</a></li>
+				<li xml:lang="en"><a href="../public-html/index.html">Home</a></li>
+				<li><a href="menu.cgi">Menù</a></li>
+				<li><a href="../public-html/chi-siamo.html">Chi siamo</a></li>
+				<li><a href="../public-html/dove-siamo.html">Dove siamo</a></li>
+				<li><a href="../public-html/curiosita.html">Curiosità</a></li>
 			   </ul>
 		    </div>
 	</div>

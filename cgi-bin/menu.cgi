@@ -11,11 +11,11 @@ use My::Base;
 #Inizializzazione variabili base
 my $q = new CGI;
 
-printStartHtml('Men&ugrave; - Sakura');
+printStartHtml('Menù - Sakura', "Menù categorie");
 
    print "<div class='panel'>";
    
-   print $q->h3('Categorie men&ugrave;');
+   print $q->h3('Menù categorie');
    print $q->p('Scegli la categoria');
    
    print "<ul>
