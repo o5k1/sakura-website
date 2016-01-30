@@ -20,13 +20,7 @@ my %path = (   add_piatto => 'add-piatto.cgi',
                del_piatto => 'private-menu-cibi.cgi',
 );
 
-printStartHtml('Bevande - Men&ugrave; - Sakura');
-
-#my $message = checkDelete($q, "cibo/portata/piatto");
-
-print $q->a({-href => 'menu.cgi'}, 'Torna alle categorie menù');
-
-#print "<p>$message</p>";
+printStartHtml('Bevande - Menù - Sakura', "Menù bevande", "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; Menù bevande");
 
 printMenuBevande(0, \%path);
 

@@ -13,12 +13,12 @@ my $session = CGI::Session->load() or die $!;
 
 checkSession($session);
 
-printStartHtml('Categorie - Menù - Area Riservata', "Categorie menù");
+printStartHtml('Categorie - Menù - Area Riservata', "Menù categorie");
 
    print "<div class='panel'>";
    
-   print $q->h3('Categorie men&ugrave;');
-   print $q->p('Scegli la categoria');
+   print $q->h3('Menù categorie');
+   print $q->p('Scegli la categoria che ti interessa:');
    
    print "<ul>
             <li><a href='private-menu-cibi.cgi'>Cibi</a></li>

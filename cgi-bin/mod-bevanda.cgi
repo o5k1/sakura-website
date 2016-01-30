@@ -9,17 +9,20 @@ use Encode qw(decode encode);
 use My::Base;
 use My::Operation;
 
-my $q = new CGI;
 my $session = CGI::Session->load() or die $!;
 
 checkSession($session);
 
-printStartHtml('Modifica bevanda - Area Riservata');
+my $q = new CGI;
+my $path = "Modifica bevanda";
+my $breadcrump = "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; <a href='private-menu-cibi.cgi'>Menù cibi</a> &gt;&gt; Modifica bevanda";
+
+printStartHtml('Modifica bevanda - Area Riservata', $path, $breadcrump);
 
 # Verifica parametri
 if ($q->param('mod-bevanda')) {
 
-   print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
+   #print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
 
    my $error = '';
    
@@ -155,7 +158,11 @@ elsif ($q->param('mod')) {
 
 else { 
    # Se si ha la sessione aperta e si ha il link diretto alla pagina
-   print $session->header(-location=>"../public-html/accesso-negato.html");
+   print "<div class='panel'>
+            <h3>Ops!</h3>
+            <p>Per accedere a questa pagina è necessario passare per la pagina <a href='private-menu-cibi.cgi'>Menù cibi</a></p>
+         <div>
+         ";
 }
 
 printEndHtml();

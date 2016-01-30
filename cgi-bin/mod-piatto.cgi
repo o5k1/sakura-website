@@ -14,14 +14,16 @@ my $session = CGI::Session->load() or die $!;
 checkSession($session);
 
 #Inizializzazione variabili base
-my $q = new CGI; 
+my $q = new CGI;
+my $path = "Modifica piatto";
+my $breadcrump = "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; <a href='private-menu-cibi.cgi'>Menù cibi</a> &gt;&gt; Modifica piatto";
 
-printStartHtml('Modifica piatto - Area Riservata');
+printStartHtml('Modifica piatto - Area Riservata', $path, $breadcrump);
 
 # Verifica parametri
 if ($q->param('mod-piatto')) {
 
-   print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
+   #print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
 
    my $error = '';
    
@@ -160,7 +162,11 @@ elsif ($q->param('mod')) {
 }
 
 else {
-   print $session->header(-location=>"../public-html/accesso-negato.html");
+   print "<div class='panel'>
+            <h3>Ops!</h3>
+            <p>Per accedere a questa pagina è necessario passare per la pagina <a href='private-menu-cibi.cgi'>Menù cibi</a></p>
+         <div>
+         ";
 }
 
 printEndHtml($q);

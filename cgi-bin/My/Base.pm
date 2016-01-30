@@ -17,7 +17,7 @@ our @EXPORT = qw(printStartHtml printEndHtml printStartForm printEndForm checkSe
 #
 sub printStartHtml {
 
-   my ($title, $path) = @_;
+   my ($title, $path, $breadcrump) = @_;
    
    print "Content-type: text/html\n\n"; # Dico a Perl che sto stampando html  
    print "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
@@ -40,7 +40,7 @@ print<<EOF;
 	<div id="header">
 		<div id="fixed-info">
 			<!--<p><a id="city" href="dove-siamo.html">Bassano del Grappa</a> | <a id="tel" href="tel:0424 382286">0424 382286</a></p>-->
-            <p><a id="exit" href='logout.cgi'>Esci</a></p>
+            <p>Area Riservata - <a id="exit" href='logout.cgi'>Esci</a></p>
 		</div> 
 		<!--Logo come background tramite IMAGE REPLACEMENT cosicchè possa costituire informazione per il motore di ricerca (Best practice) [Orietta docet]-->
 		
@@ -58,11 +58,11 @@ print<<EOF;
 		
 		<div id="nav-menu">
 			   <ul>
-				<li xml:lang="en"><a href="#">Home</a></li>
-				<li><a href="#">Menù</a></li>
-				<li><a href="#">Chi siamo</a></li>
-				<li><a href="#">Dove siamo</a></li>
-				<li><a href="#">Curiosità</a></li>
+				<li xml:lang="en"><a href="../public-html/index.html">Home</a></li>
+				<li><a href="menu.cgi">Menù</a></li>
+				<li><a href="../public-html/chi-siamo.html">Chi siamo</a></li>
+				<li><a href="../public-html/dove-siamo.html">Dove siamo</a></li>
+				<li><a href="../public-html/curiosita.html">Curiosità</a></li>
 			   </ul>
 		    </div>
 	</div>
@@ -71,10 +71,16 @@ print<<EOF;
 EOF
 
 	print "<div id=\"path\">
-			<h2><a href='../public-html/index.html' xml:lang='en'>Home</a> &gt;&gt; $path</h2>
+			<h2>$path</h2>
 		</div>
 		<div id=\"content\">";
 
+   if($breadcrump) {
+      print "<div id='breadcrumb'>
+            <p><a href='../public-html/index.html' xml:lang='en'>Home</a> &gt;&gt; $breadcrump</p>
+            </div>
+            ";
+   }
 
 }
 

@@ -14,8 +14,6 @@ my $session = CGI::Session->load() or die $!;
 
 checkSession($session);
 
-printStartHtml('Aggiungi bevanda - Area Riservata');
-
 # Che listaBevande ha chiamato AGGIUNGI?
 my $toggetto = "bevanda";
       if($q->param('nomeLista') eq 'Vini') {
@@ -31,12 +29,16 @@ my %textForm = (htitle => 'Aggiungi ',
                 svalue => 'Aggiungi',
                 sname => 'add-bevanda'
                );
+my $path = "Aggiungi Bevanda";
 
+my $breadcrump = "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; <a href='private-menu-bevanda.cgi'>Menù bevande</a> &gt;&gt; Aggiungi bevanda";
+
+printStartHtml('Aggiungi bevanda - Area Riservata', $path, $breacrump);
 
 # Verifica parametri
 if ($q->param('add-bevanda')) {
 
-    print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
+    #print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
 
    my $error = '';
    
@@ -92,7 +94,11 @@ elsif($q->param('idLista')) {
    printFormBevanda($q, '', '', \%textForm);
    
 } else {
-   print $session->header(-location=>"../public-html/accesso-negato.html");
+   print "<div class='panel'>
+            <h3>Ops!</h3>
+            <p>Per accedere a questa pagina è necessario passare per la pagina <a href='private-menu-bevande.cgi'>Menù bevande</a></p>
+         <div>
+         ";
 }
 
 printEndHtml();

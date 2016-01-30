@@ -27,16 +27,19 @@ sub printFormCibo { # stampo la form
    my $htitle = $textForm->{htitle}.$toggetto; # Cambia in base a quale lista ha premuto il pulsante ADD
    my $hlegend = $textForm->{hlegend}; # Cambia in base a quale lista ha premuto il pulsante ADD
 
-   print $q->a({-href => $href},'Torna al menù');
+   #print $q->a({-href => $href},'Torna al menù');
 
-   print $q->h2($htitle);
+   print "<div class='panel'>";
+   print $q->h3($htitle);
       
    if ($info ne '') {
       print $q->p($info);
    }
    
    if ($error ne '') {
-      print $q->ul($error);
+      print "<ul class='error'>
+               $error
+             </ul>";
    }
    
    My::Base::printStartForm('add', $hfile, 'post');
@@ -74,6 +77,8 @@ sub printFormCibo { # stampo la form
          -name => $textForm->{sname},
          -value => $textForm->{svalue}
          );
+
+   print "</div>";
       
    My::Base::printEndForm();
    
@@ -106,16 +111,19 @@ sub printFormBevanda {
    my $htitle = $textForm->{htitle}.$toggetto; # Cambia in base a quale lista ha premuto il pulsante ADD
    my $hlegend = $textForm->{hlegend}; # Cambia in base a quale lista ha premuto il pulsante ADD
 
-   print $q->a({-href => $href},'Torna al menù');
+   #print $q->a({-href => $href},'Torna al menù');
 
-   print $q->h2($htitle);
+   print "<div class='panel'>";
+   print $q->h3($htitle);
    
    if ($info ne '') {
       print $q->p($info);
    }
    
    if ($error ne '') {
-      print $q->ul($error);
+      print "<ul class='error'>
+               $error
+             </ul>";
    }
    
    My::Base::printStartForm('add', $hfile, 'post');
@@ -148,6 +156,8 @@ sub printFormBevanda {
          -name => $textForm->{sname},
          -value => $textForm->{svalue}
          );
+
+   print "</div>";
       
    My::Base::printEndForm();
 }

@@ -61,13 +61,13 @@ sub showForm {
 
    my $error = $_[0];
 
-   printStartHtml("Login | Sakura", "Login");
+   printStartHtml("Login | Sakura", "Login", "Login");
 
    print "<div class=\"panel\">
                <h3>Effettua il login</h3>";
                
    if ($error ne '') {
-      print "<p>$error</p>";
+      print "<p class='error'>$error</p>";
    }
                
    print "<form action=\"login.cgi\" method=\"post\">

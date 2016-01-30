@@ -21,7 +21,7 @@ my %path = (   add_piatto => 'add-piatto.cgi',
                del_piatto => 'private-menu-cibi.cgi',
 );
 
-printStartHtml('Cibi - Menù - Area Riservata', "<a href='private-menu.cgi'>Categorie menù</a> &gt; &gt; Menù cibi");
+printStartHtml('Cibi - Menù - Area Riservata', "Menù cibi", "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; Menù cibi");
 
 my $message = checkDelete($q, "cibo/portata/piatto");
 
