@@ -3,8 +3,6 @@
 	<cibo>
 		<portata id="antipasto">
 			<nome>Antipasto</nome>
-			
-			
 			<piatto id="daikon">
 				<nome>Daikon</nome>
 				<numero>1b</numero>

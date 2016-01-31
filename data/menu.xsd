@@ -11,7 +11,6 @@
 	<xsd:sequence>
 		<xsd:element name="cibo" type="Tcibo" />
 		<xsd:element name="bevande" type="Tbevande" />
-		<xsd:element name="menuFissi" type="TmenuFissi" />
 	</xsd:sequence>
 </xsd:complexType>
 
@@ -49,28 +48,16 @@
 
 <xsd:complexType name="Tbevande">
 	<xsd:sequence>
-		<xsd:element name="listaVini" type="TlistaVini" />
-		<xsd:element name="listaBirre" type="TlistaBirre" />
-		<xsd:element name="listaAltreBevande" type="TlistaAltreBevande" />
+		<xsd:element name="listaBevande" type="TlistaBevande" maxOccurs="unbounded" />
 	</xsd:sequence>
 </xsd:complexType>
 
-<xsd:complexType name="TlistaVini">
+<xsd:complexType name="TlistaBevande">
 	<xsd:sequence>
-		<xsd:element name="vino" type="TbevandaGenerica" maxOccurs="unbounded" />
-	</xsd:sequence>
-</xsd:complexType>
-
-<xsd:complexType name="TlistaBirre">
-	<xsd:sequence>
-		<xsd:element name="birra" type="TbevandaGenerica" maxOccurs="unbounded" />
-	</xsd:sequence>
-</xsd:complexType>
-
-<xsd:complexType name="TlistaAltreBevande">
-	<xsd:sequence>
+		<xsd:element name="nome" type="xsd:string" />
 		<xsd:element name="bevanda" type="TbevandaGenerica" maxOccurs="unbounded" />
 	</xsd:sequence>
+	<xsd:attribute name="id" type="xsd:string" use="required" />
 </xsd:complexType>
 
 <xsd:complexType name="TbevandaGenerica">
@@ -78,22 +65,6 @@
 		<xsd:element name="nome" type="xsd:string" />
 		<xsd:element name="descrizione" type="xsd:string" minOccurs="0" />
 		<xsd:element name="prezzo" type="Tprezzo" />
-	</xsd:sequence>
-	<xsd:attribute name="id" type="xsd:string" use="required" />
-</xsd:complexType>
-
-<xsd:complexType name="TmenuFissi">
-	<xsd:sequence>
-		<xsd:element name="descrizione" type="xsd:string" />
-		<xsd:element name="menuFisso" type="TmenuFisso" maxOccurs="unbounded" />
-	</xsd:sequence>
-</xsd:complexType>
-
-<xsd:complexType name="TmenuFisso">
-	<xsd:sequence>
-		<xsd:element name="nome" type="xsd:string" />
-		<xsd:element name="prezzo" type="Tprezzo" />
-		<xsd:element name="piatto" type="xsd:string" maxOccurs="unbounded" />
 	</xsd:sequence>
 	<xsd:attribute name="id" type="xsd:string" use="required" />
 </xsd:complexType>
