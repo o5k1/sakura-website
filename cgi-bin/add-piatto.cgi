@@ -26,7 +26,7 @@ my %textForm = (htitle => 'Aggiungi ',
                );
 my $path = "Aggiungi Piatto";
 
-my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt;&gt; Aggiungi piatto";
+my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt; Aggiungi piatto";
 
 printStartHtml('Aggiungi Piatto - Area Amministratore', $breadcrump);
 

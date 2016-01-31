@@ -16,7 +16,7 @@ checkSession($session);
 #Inizializzazione variabili base
 my $q = new CGI;
 my $path = "Modifica piatto";
-my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt;&gt; Modifica piatto";
+my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt; Modifica piatto";
 
 printStartHtml('Modifica piatto - Area Amministratore', $breadcrump);
 

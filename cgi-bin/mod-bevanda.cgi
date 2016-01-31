@@ -15,7 +15,7 @@ checkSession($session);
 
 my $q = new CGI;
 my $path = "Modifica bevanda";
-my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt;&gt; Modifica bevanda";
+my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt; Modifica bevanda";
 
 printStartHtml('Modifica bevanda - Area Amministratore', $breadcrump);
 
