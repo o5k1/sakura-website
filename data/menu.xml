@@ -541,34 +541,20 @@
 	<bevande>
 		<listaBevande id="vini">
             <nome>Vini</nome>
-			
-            
-            
-            
-		
-      
-      
-      
-      
-      
-      
-      
-      
-      <bevanda id="Monéà">
-                     <nome>Monéà</nome>
-                     <prezzo>45</prezzo>
-                     
-      <descrizione>asd</descrizione></bevanda>
-      </listaBevande>
+            <bevanda id="Monéà">
+                <nome>Monéà</nome>
+                <descrizione>asd</descrizione>
+                <prezzo>45</prezzo>
+            </bevanda>
+      	</listaBevande>
 
 		<listaBevande id="birre">
             <nome>Birre</nome>
-			
-            
-            
-            
-            
-            
+            <bevanda id="asahi">
+                <nome>Asahi</nome>
+                <descrizione>500ml</descrizione>
+                <prezzo>4</prezzo>
+            </bevanda>  
 		</listaBevande>
 	
 		<listaBevande id="bevande">
