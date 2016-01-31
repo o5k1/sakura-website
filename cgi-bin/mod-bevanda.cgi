@@ -15,9 +15,9 @@ checkSession($session);
 
 my $q = new CGI;
 my $path = "Modifica bevanda";
-my $breadcrump = "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; <a href='private-menu-cibi.cgi'>Menù cibi</a> &gt;&gt; Modifica bevanda";
+my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt;&gt; Modifica bevanda";
 
-printStartHtml('Modifica bevanda - Area Riservata', $breadcrump);
+printStartHtml('Modifica bevanda - Area Amministratore', $breadcrump);
 
 # Verifica parametri
 if ($q->param('mod-bevanda')) {

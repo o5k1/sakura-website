@@ -21,7 +21,7 @@ my %path = (   add_bevanda => 'add-bevanda.cgi',
                del_bevanda => 'private-menu-bevande.cgi',
 );
 
-printStartHtml('Bevande - Menù - Area Riservata', "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; Menù bevande");
+printStartHtml('Menù bevande - Area Amministratore', "Menù bevande", "bevande");
 
 my $message = checkDelete($q, "bevande/listaBevande/bevanda");
 

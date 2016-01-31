@@ -31,9 +31,9 @@ my %textForm = (htitle => 'Aggiungi ',
                );
 my $path = "Aggiungi Bevanda";
 
-my $breadcrump = "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; <a href='private-menu-bevanda.cgi'>Menù bevande</a> &gt;&gt; Aggiungi bevanda";
+my $breadcrump = "<a href='private-menu-bevande.cgi'>Menù bevande</a> &gt;&gt; Aggiungi bevanda";
 
-printStartHtml('Aggiungi bevanda - Area Riservata', $breacrump);
+printStartHtml('Aggiungi bevanda - Area Amministratore', $breadcrump);
 
 # Verifica parametri
 if ($q->param('add-bevanda')) {

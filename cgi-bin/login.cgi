@@ -20,7 +20,7 @@ my $q = new CGI;
 my $session = CGI::Session->load();
 
 if(!($session->is_empty())) { # Sessione già aperta
-   print "Location: private-menu.cgi\n\n";
+   print "Location: private-menu-cibi.cgi\n\n";
 }
 
 else { # Nessuna sessione
@@ -41,7 +41,7 @@ else { # Nessuna sessione
          #my $session = new CGI::Session();
          $session->expire('60m');
          $session->param('username', $username);
-         print $session->header(-location=>"private-menu.cgi");
+         print $session->header(-location=>"private-menu-cibi.cgi");
       }
       else { # Dati non corretti
       

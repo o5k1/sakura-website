@@ -220,7 +220,7 @@ sub printLinkListe {
    my ($doc, $query) = @_;
 
    print "<div class='panel'>
-            <h3>Ricerca Veloce</h3>
+            <h4>Ricerca Veloce</h4>
             <ul id='fast-search'>";
    foreach my $lista ($doc->findnodes($query)) {
       my $idLista = $lista->findnodes('@id');
