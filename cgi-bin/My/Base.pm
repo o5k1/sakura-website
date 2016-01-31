@@ -97,6 +97,7 @@ EOF
 
 }
 
+
 # Stampa l'html iniziale per le pagine cgi pubbliche
 sub printStartHtmlPublic {
 
@@ -130,7 +131,6 @@ print "
 EOF
 ;
    printPathHtml($path);
-
 }
 
 
@@ -243,6 +243,7 @@ sub existElement {
       return 0;
    }
 }
+
 
 # 
 sub evalNode {

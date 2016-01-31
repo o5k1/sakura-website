@@ -7,25 +7,14 @@ use CGI::Carp qw(fatalsToBrowser);
 use XML::LibXML;
 
 use My::Base;
+use My::PrintMenu;
 
 #Inizializzazione variabili base
 my $q = new CGI;
 
-printStartHtmlPublic('Menù', "Menù categorie");
+printStartHtmlPublic('Menù', "Menù");
 
-   print "<div class='panel'>";
-   
-   print $q->h3('Menù categorie');
-   print $q->p('Scegli la categoria');
-   
-   print "<ul>
-            <li><a href='menu-cibi.cgi'>Cibi</a></li>
-            <li><a href='menu-bevande.cgi'>Bevande</a></li>
-         </ul>";
-         
-   # Spazio pubblicitario dei menu fissi
-   
-   print "</div>";
+   printMenuPublic();
 
 printEndHtmlPublic();
 
