@@ -61,7 +61,7 @@ sub showForm {
 
    my $error = $_[0];
 
-   printStartHtml("Accedi | Sakura", "Accedi");
+   printStartHtmlPublic("Area amministratore", "Area amministratore");
                
    if ($error ne '') {
       print "<p class='error'>$error</p>";
@@ -81,7 +81,7 @@ sub showForm {
                </form>
             ";
             
-   printEndHtml();
+   printEndHtmlPublic();
             
 }
 
