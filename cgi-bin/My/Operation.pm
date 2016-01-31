@@ -74,6 +74,7 @@ sub printFormCibo { # stampo la form
                         -value => $idLista);
                
       print $q->submit(
+         -id => 'submit',
          -name => $textForm->{sname},
          -value => $textForm->{svalue}
          );
@@ -153,6 +154,7 @@ sub printFormBevanda {
                         -value => $idLista);
                
       print $q->submit(
+         -id => 'submit',
          -name => $textForm->{sname},
          -value => $textForm->{svalue}
          );

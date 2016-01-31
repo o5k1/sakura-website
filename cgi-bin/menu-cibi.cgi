@@ -17,7 +17,7 @@ my %path = (   add_piatto => 'add-piatto.cgi',
                del_piatto => 'private-menu-cibi.cgi',
 );
 
-printStartHtml('Cibi - Menù - Sakura', "Menù cibi", "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; Menù cibi");
+printStartHtml('Cibi - Menù - Sakura', "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; Menù cibi");
 
 printMenuCibi(0, \%path);
 

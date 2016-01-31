@@ -18,7 +18,7 @@ my $q = new CGI;
 my $path = "Modifica piatto";
 my $breadcrump = "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; <a href='private-menu-cibi.cgi'>Menù cibi</a> &gt;&gt; Modifica piatto";
 
-printStartHtml('Modifica piatto - Area Riservata', $path, $breadcrump);
+printStartHtml('Modifica piatto - Area Riservata', $breadcrump);
 
 # Verifica parametri
 if ($q->param('mod-piatto')) {

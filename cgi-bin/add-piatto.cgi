@@ -28,7 +28,7 @@ my $path = "Aggiungi Piatto";
 
 my $breadcrump = "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; <a href='private-menu-cibi.cgi'>Menù cibi</a> &gt;&gt; Aggiungi piatto";
 
-printStartHtml('Aggiungi Piatto - Area Riservata', $path, $breadcrump);
+printStartHtml('Aggiungi Piatto - Area Riservata', $breadcrump);
 
 # Verifica parametri
 if ($q->param('add-piatto')) {
