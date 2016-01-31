@@ -11,7 +11,7 @@ use My::Base;
 #Inizializzazione variabili base
 my $q = new CGI;
 
-printStartHtmlPublic('Menù - Sakura', "Menù categorie");
+printStartHtmlPublic('Menù', "Menù categorie");
 
    print "<div class='panel'>";
    
