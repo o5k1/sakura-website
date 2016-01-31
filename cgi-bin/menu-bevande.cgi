@@ -11,20 +11,17 @@ use My::Operation;
 
 #Inizializzazione variabili base
 my $q = new CGI;
-#my $session = CGI::Session->load() or die $!;
-
-#checkSession($session);
 
 my %path = (   add_piatto => 'add-piatto.cgi',
                mod_piatto => 'mod-piatto.cgi',
                del_piatto => 'private-menu-cibi.cgi',
 );
 
-printStartHtml('Bevande - Menù - Sakura', "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; Menù bevande");
+printStartHtmlPublic('Bevande - Menù - Sakura', "<a href='private-menu.cgi'>Menù categorie</a> &gt;&gt; Menù bevande");
 
 printMenuBevande(0, \%path);
 
-printEndHtml();
+printEndHtmlPublic();
 
 
 exit 0;
