@@ -6,5 +6,12 @@ function manageNav(){
 	    else
 	    	nav.className = "";
 	}
+}
 
+function manageMenu(portata){
+	var section = document.getElementById(portata);
+	if(section.className == "")
+	    section.className = "hidden";
+	else
+	    section.className = "";
 }

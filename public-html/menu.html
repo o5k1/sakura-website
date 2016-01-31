@@ -41,14 +41,57 @@
 	</div>
 	<div id="main">
 		<div id="path">
-			<h2 >Menù</h2>
+			<h2>Menù</h2>
 		</div>
 		<div id="content">
 			<div class="panel" >
-				<h3>Il Ristorante</h3>
-				<p>Siamo lieti di accogliervi in un ambiente intimo e rilassante, arredato secondo l'autentico stile nipponico.</p>
-				<p> Il locale ha un aspetto tipicamente tradizionale, con i colori, le lampade e il parquet che ricordano l’oriente.</p>
-				<p> Un posto ideale dove trascorrere piacevoli serate assaporando il meglio della cucina tipica giapponese.</p>
+				<h3>Cibi</h3>
+				<ul>
+					<li>
+						<div class="panel">
+							<h4><a href="#" onclick="manageMenu('antipasto')">Antipasto</a></h4>
+							<dl class="hidden" id='antipasto'>
+							<dt>1b - <strong>Daikon</strong> <span class='prezzo'>€ 3</span></dt>
+								<dd>Rapa gialla marinata</dd>
+							<dt>2 - <strong>Sunonomo</strong> <span class='prezzo'>€ 5</span></dt>
+								<dd>Pesce marinato con aceto di riso, servito con alghe e cetrioli</dd>
+							<dt>3 - <strong>Kaiser</strong> <span class='prezzo'>€ 8</span></dt>
+								<dd>Insalata con alghe kombu e sashimi</dd>
+							<dt>4 - <strong>Insalata di alghe</strong> <span class='prezzo'>€ 6</span></dt>
+							<dt>5 - <strong>Agedashi Toufu</strong> <span class='prezzo'>€ 4</span></dt>
+								<dd>Formaggio di soia fritto</dd>
+						</dl>
+						</div>
+					</li>
+					<li>
+						<div class="panel">
+							<h4><a href="#" onclick="manageMenu('carpaccio')">Carpaccio</a></h4>
+						</div>
+					</li>
+					<li>
+						<div class="panel">
+							<h4><a href="#" onclick="manageMenu('primo')">Primo</a></h4>
+						</div>
+					</li>
+				</ul>
+				<h3>Bevande</h3>
+				<ul>
+					<li>
+						<div class="panel">
+							<h4><a href="#" onclick="manageMenu('Vini')">Vini</a></h4>
+						</div>
+					</li>
+					<li>
+						<div class="panel">
+							<h4><a href="#" onclick="manageMenu('Birre')">Birre</a></h4>
+						</div>
+					</li>
+					<li>
+						<div class="panel">
+							<h4><a href="#" onclick="manageMenu('Bevande')">Bevande</a></h4>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
