@@ -17,7 +17,7 @@ our @EXPORT = qw(printStartHtml printEndHtml printStartForm printEndForm checkSe
 #
 sub printStartHtml {
 
-   my ($title, $path, $breadcrump) = @_;
+   my ($title, $path) = @_;
    
    print "Content-type: text/html\n\n"; # Dico a Perl che sto stampando html  
    print "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
@@ -31,6 +31,7 @@ sub printStartHtml {
     <meta name=\"keywords\" content=\"Sakura, ristorante, giapponese, giappone, sushi, asporto, bassano, bassano del grappa, vicenza\" />
     <meta name=\"author\" content=\"Andrea Tombolato, Eduard Bicego, Davide Castello\" />
     <meta name=\"language\" content=\"italian it\" />
+    <link rel=\"shortcut icon\" type=\"image/png\" href=\"../public-html/images/favicon.png\"/>
     <script type=\"text/javascript\" src=\"../public-html/js/scripts.js\"></script>
 </head>
       ";
@@ -75,12 +76,12 @@ EOF
 		</div>
 		<div id=\"content\">";
 
-   if($breadcrump) {
-      print "<div id='breadcrumb'>
-            <p><a href='../public-html/index.html' xml:lang='en'>Home</a> &gt;&gt; $breadcrump</p>
-            </div>
-            ";
-   }
+   #if($breadcrump) {
+      #print "<div id='breadcrumb'>
+            #<p><a href='../public-html/index.html' xml:lang='en'>Home</a> &gt;&gt; $breadcrump</p>
+            #</div>
+            #";
+   #}
 
 }
 
