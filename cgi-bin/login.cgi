@@ -61,10 +61,7 @@ sub showForm {
 
    my $error = $_[0];
 
-   printStartHtml("Login | Sakura", "Login");
-
-   print "<div class=\"panel\">
-               <h3 id='legend'>Login</h3>";
+   printStartHtml("Accedi | Sakura", "Accedi");
                
    if ($error ne '') {
       print "<p class='error'>$error</p>";
@@ -72,13 +69,16 @@ sub showForm {
                
    print "<form action=\"login.cgi\" method=\"post\">
                   <fieldset>
-                        <legend>Inserirsci i dati per effettuare il login</legend>
-                     <label>Nome Utente</label><input type=\"text\" name=\"username\" />
-                     <label>Password</label><input type=\"password\" name=\"password\" />
-                        <input id='submit' type=\"submit\" name=\"accedi\" value=\"Accedi\" />
+                     <div id='legend'>
+                        <legend>Login</legend>
+                     </div>
+                     <label>Username</label>
+                     <input type=\"text\" name=\"username\" size=\"25\"/>
+                     <label>Password</label>
+                     <input type=\"password\" name=\"password\" size=\"25\"/>
+                     <input id='submit' type=\"submit\" name=\"accedi\" value=\"Accedi\" />
                   </fieldset>
                </form>
-            </div>
             ";
             
    printEndHtml();
