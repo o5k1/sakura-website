@@ -33,7 +33,10 @@ sub printFormCibo { # stampo la form
    print $q->h3($htitle);
       
    if ($info ne '') {
-      print $q->p($info);
+      print "<p class='allright'>$info</p>";
+            if($info eq 'Inserimento effettuato con successo!') {
+         print "<a href='private-menu-cibi.cgi'>Torna indietro</a>";
+      }
    }
    
    if ($error ne '') {
@@ -118,7 +121,10 @@ sub printFormBevanda {
    print $q->h3($htitle);
    
    if ($info ne '') {
-      print $q->p($info);
+      print "<p class='allright'>$info</p>";
+      if($info eq 'Inserimento effettuato con successo!') {
+         print "<a href='private-menu-bevande.cgi'>Torna indietro</a>";
+      }
    }
    
    if ($error ne '') {
