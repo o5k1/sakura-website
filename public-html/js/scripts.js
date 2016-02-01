@@ -1,17 +1,50 @@
-function manageNav(){
+function manageNav() {
 	if (screen.width < 1024) {
-	    var nav = document.getElementById("nav-menu");
-	    if(nav.className == "")
+	   var nav = document.getElementById("nav-menu");
+	    if (nav.className == "") {
 	    	nav.className = "hidden";
-	    else
-	    	nav.className = "";
+        }
+	    else {
+           nav.className = "";
+        }
 	}
 }
 
-function manageMenu(portata){
+function manageMenu(portata) {
 	var section = document.getElementById(portata);
-	if(section.className == "")
+	if (section.className == "") {
 	    section.className = "hidden";
-	else
+    }
+	else {
 	    section.className = "";
+    }
 }
+
+
+function hideElement() {
+   var fastSearch = document.getElementById('fast-search');
+   var endList = document.getElementsByClassName('end-list');
+
+   fastSearch.className = "hidden";
+
+   var i;
+
+   for (i = 0; i < endList.length; i++) {
+      endList[i].className += " hidden";
+   }
+
+   var portate = document.getElementsByClassName('portata');
+
+   for (i = 0; i < portate.length; i++) {
+      portate[i].className += " hidden";
+   }
+
+   var listeBevande = document.getElementsByClassName('listaBevande');
+
+   for (i = 0; i < listeBevande.length; i++) {
+      listeBevande[i].className += " hidden";
+   }
+
+}
+
+setTimeout(hideElement(), 30000);

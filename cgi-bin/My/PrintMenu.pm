@@ -112,7 +112,7 @@ sub printMenuBevande {
                }
          }
       print "</dl>
-         <p><a href='#header'>Torna all'inizio</a></p>
+         <p class='end-list'><a href='#header'>Torna all'inizio</a></p>
       </div>";
    }
    print "</div>";
@@ -223,9 +223,9 @@ sub printLinkListe {
 
    my ($doc, $query) = @_;
 
-   print "<div class='panel'>
+   print "<div id='fast-search' class='panel'>
             <h4>Ricerca Veloce</h4>
-            <ul id='fast-search'>";
+            <ul>";
    foreach my $lista ($doc->findnodes($query)) {
       my $idLista = $lista->findnodes('@id');
          $idLista = enc($idLista);
@@ -241,9 +241,9 @@ sub printLinkListeUnit {
 
    my ($doc, $query1, $query2) = @_;
 
-   print "<div class='panel'>
+   print "<div id='fast-search' class='panel'>
             <h4>Ricerca Veloce</h4>
-            <ul id='fast-search'>";
+            <ul>";
 
    foreach my $lista ($doc->findnodes($query1)) {
       my $idLista = $lista->findnodes('@id');
