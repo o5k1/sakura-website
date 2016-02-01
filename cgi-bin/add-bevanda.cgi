@@ -25,7 +25,7 @@ my $toggetto = "bevanda";
 my %textForm = (htitle => 'Aggiungi ',
                 toggetto => $toggetto,
                 hfile => 'add-bevanda.cgi',
-                hlegend => 'Inserisci nuovi dati per aggiungere una bevanda',
+                hlegend => 'Nuova bevanda',
                 svalue => 'Aggiungi',
                 sname => 'add-bevanda'
                );

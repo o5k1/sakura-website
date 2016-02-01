@@ -20,7 +20,7 @@ my $nomePortata = $q->param('nomeLista');
 my %textForm = (htitle => 'Aggiungi ',
                 toggetto => $nomePortata,
                 hfile => 'add-piatto.cgi',
-                hlegend => 'Inserisci nuovi dati per aggiungere un piatto',
+                hlegend => 'Nuovo piatto',
                 svalue => 'Aggiungi',
                 sname => 'add-piatto'
                );

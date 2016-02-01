@@ -51,7 +51,7 @@ if ($q->param('mod-bevanda')) {
       my %textForm = (htitle => 'Modifica bevanda: ',
                       toggetto => $newNome,
                       hfile => 'mod-bevanda.cgi',
-                      hlegend => 'Inserisci nuovi dati per modificare la bevanda selezionata',
+                      hlegend => 'Modifica bevanda',
                       svalue => 'Modifica',
                       sname => 'mod-bevanda'
                      );
@@ -119,7 +119,7 @@ if ($q->param('mod-bevanda')) {
       my %textForm = (htitle => 'Modifica bevanda: ',
                       toggetto => $newNome,
                       hfile => 'mod-bevanda.cgi',
-                      hlegend => 'Inserisci nuovi dati per modificare la bevanda selezionata',
+                      hlegend => 'Modifica bevanda',
                       svalue => 'Modifica',
                       sname => 'mod-bevanda'
                      );
@@ -143,7 +143,7 @@ elsif ($q->param('mod')) {
       my %textForm = (htitle => 'Modifica bevanda: ',
                       toggetto => $oldNome,
                       hfile => 'mod-bevanda.cgi',
-                      hlegend => 'Inserisci nuovi dati per modificare la bevanda selezionata',
+                      hlegend => 'Modifica bevanda',
                       svalue => 'Modifica',
                       sname => 'mod-bevanda'
                      );

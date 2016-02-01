@@ -53,7 +53,7 @@ if ($q->param('mod-piatto')) {
       my %textForm = (htitle => 'Modifica piatto: ',
                       toggetto => $newNome,
                       hfile => 'mod-piatto.cgi',
-                      hlegend => 'Inserisci nuovi dati per modificare il piatto selezionato',
+                      hlegend => 'Modifica piatto',
                       svalue => 'Modifica',
                       sname => 'mod-piatto'
                      );
@@ -121,7 +121,7 @@ if ($q->param('mod-piatto')) {
       my %textForm = (htitle => 'Modifica piatto: ',
                       toggetto => $newNome,
                       hfile => 'mod-piatto.cgi',
-                      hlegend => 'Inserisci nuovi dati per modificare il piatto selezionato',
+                      hlegend => 'Modifica piatto',
                       svalue => 'Modifica',
                       sname => 'mod-piatto'
                      );
@@ -147,7 +147,7 @@ elsif ($q->param('mod')) {
       my %textForm = (htitle => 'Modifica piatto: ',
                       toggetto => $oldNome,
                       hfile => 'mod-piatto.cgi',
-                      hlegend => 'Inserisci nuovi dati per modificare il piatto selezionato',
+                      hlegend => 'Modifica piatto',
                       svalue => 'Modifica',
                       sname => 'mod-piatto'
                      );

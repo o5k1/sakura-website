@@ -206,10 +206,10 @@ sub checkDelete{
 sub checkNome{
     my $ret="";
     if(!$_[0]){
-        $ret=$ret."<li>Il campo nome non deve essere vuoto</li>";
+        $ret=$ret."<li>Il campo nome non deve essere vuoto.</li>";
     }
     if(length $_[0]>20) {
-      $ret=$ret."<li>Il campo nome non deve superare i 20 caratteri</li>";
+      $ret=$ret."<li>Il campo nome non deve superare i 20 caratteri.</li>";
     }
     return $ret;
 }
@@ -217,17 +217,17 @@ sub checkNome{
 sub checkNumero {
    my $ret="";
    if(!$_[0]){
-      $ret=$ret."<li>Il campo numero piatto non deve essere vuoto</li>";
+      $ret=$ret."<li>Il campo numero piatto non deve essere vuoto.</li>";
    }
    if(!($_[0] =~ m/[0-9]{1,99}[a-z]*/)){
-      $ret=$ret."<li>Il campo numero piatto deve essere costituito da un numero (obbligatorio) e una lettera (opzionale)</li>";
+      $ret=$ret."<li>Il campo numero piatto deve essere costituito da un numero (obbligatorio) e una lettera (opzionale).</li>";
    }
 }
 
 sub checkPrezzo{
     my $ret="";
     if(!$_[0] || !($_[0] =~ m/[0-9]{1,99}/)){ # Non funziona
-         $ret=$ret."<li>Il campo prezzo deve contenere un numero</li>";
+         $ret=$ret."<li>Il campo prezzo deve contenere un numero.</li>";
     }
     return $ret;
 }
@@ -235,7 +235,7 @@ sub checkPrezzo{
 sub checkDesc{
     my $ret="";
     if(length $_[0]>500){
-        $ret=$ret."<li>La descrizione deve avere al massimo 50 caratteri</li>";
+        $ret=$ret."<li>La descrizione deve avere al massimo 50 caratteri.</li>";
     }
     return $ret;
 }
@@ -248,7 +248,7 @@ sub checkIdBevanda{
          My::Base::existElement("//birra[\@id = '$id']") ||
             My::Base::existElement("//bevanda[\@id = '$id']") ) {
          
-         $ret=$ret."<li>Il nome inserito esiste già</li>";
+         $ret=$ret."<li>Il nome inserito esiste già.</li>";
    }
    return $ret;
 }
@@ -259,7 +259,7 @@ sub checkIdPiatto{
    my $id = $_[0];
    if(My::Base::existElement("//piatto[\@id = '$id']")) {
          
-         $ret=$ret."<li>Il nome inserito esiste già</li>";
+         $ret=$ret."<li>Il nome inserito esiste già.</li>";
    }
    return $ret;    
 }
