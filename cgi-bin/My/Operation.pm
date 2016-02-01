@@ -187,11 +187,11 @@ sub checkDelete{
             
          My::Base::writeFile($doc);
       
-         return "Rimozione di '$nome' effettuata con successo.";
+         return "<p class='allright'>Rimozione di '$nome' effettuata con successo.</p>";
       }
       else {
       
-         return "Nessuna corrispondenza di '$nome' nel database, nessuna rimozione effettuata. ($query)" # Debug
+         return "<p class='error'>Nessuna corrispondenza di '$nome' nel database, nessuna rimozione effettuata. ($query)</p>" # Debug
       }
    }
 }

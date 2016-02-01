@@ -28,7 +28,7 @@ my $message = checkDelete($q, "cibo/portata/piatto");
 #print $q->a({-href => 'private-menu.cgi'}, 'Torna alle categorie menù');
 
 if ($message ne '') {
-   print "<p>$message</p>";
+   print $message;
 }
 
 printMenuCibi(1, \%path);

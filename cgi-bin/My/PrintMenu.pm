@@ -94,7 +94,7 @@ sub printMenuBevande {
                          </span>";
                   My::Base::printEndForm();
                 
-                  My::Base::printStartForm('del-bevanda', $pathR->{private_menu}, 'GET');
+                  My::Base::printStartForm('del-bevanda', $pathR->{del_bevanda}, 'GET');
                      print "<span class='pulsanti'> 
                            <input class='pulsante' type='submit' name='del' value='Rimuovi' />
                            <input type='hidden' name='nome' value='$nome' />
@@ -186,7 +186,7 @@ sub printMenuCibi {
                            </span>";
                   My::Base::printEndForm();
                   
-                  My::Base::printStartForm('del-piatto', $pathR->{private_menu}, 'GET');
+                  My::Base::printStartForm('del-piatto', $pathR->{del_piatto}, 'GET');
                   print "<span class='pulsanti'>  
                            <input class='pulsante' type='submit' name='del' value='Rimuovi' />
                            <input type='hidden' name='idElemento' value='$idPiatto' />
