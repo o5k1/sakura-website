@@ -135,7 +135,7 @@ print "
    <body onload=\"manageNav()\">
 	<div id=\"header\">
 		<div id=\"fixed-info\">
-			<p><a id=\"city\" href=\"dove-siamo.html\">Bassano del Grappa</a> | <a id=\"tel\" href=\"tel:0424 382286\">0424 382286</a></p>
+			<p><a id=\"city\" href=\"../public-html/dove-siamo.html\">Bassano del Grappa</a> | <a id=\"tel\" href=\"tel:0424 382286\">0424 382286</a></p>
 		</div>";
 
    printTopBarHtml();
