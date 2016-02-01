@@ -3,7 +3,7 @@
 #
 use strict;
 use warnings;
-use Base;
+use My::Base;
 
    package My::Operation;
 

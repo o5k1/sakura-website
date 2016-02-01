@@ -52,8 +52,8 @@ sub printMenuBevande {
             ($nomeLista) = ( $nomeLista =~ /<nome>(.*)<\/nome>/);
          
          print "<div class='panel'>
-                  <h4><a href='javascript:void(0)' onclick=\"manageMenu('$idLista')\">$nomeLista</a></h4>
-                  <dl class='listaBevande' id='$idLista'>";
+                  <h4><a href='javascript:void(0)' onclick=\"manageMenu('$idLista')\">$nomeLista</a>
+                  ";
 
       
          if($admin) {
@@ -67,7 +67,9 @@ sub printMenuBevande {
                               -value => $nomeLista);
             My::Base::printEndForm();
          }
-         #print "</h3>";
+         print "</h4>
+               <dl class='listaBevande' id='$idLista'>
+                  ";
 
    
          foreach my $bevanda ($listaBevande->findnodes($query2)){
@@ -145,8 +147,8 @@ sub printMenuCibi {
          ($nomePortata) = ( $nomePortata =~ /<nome>(.*)<\/nome>/);
    
       print "<div class='panel'>
-               <h4><a href='javascript:void(0)' onclick=\"manageMenu('$idPortata')\">$nomePortata</a></h4>
-               <dl class='portata' id='$idPortata'>";
+               <h4><a href='javascript:void(0)' onclick=\"manageMenu('$idPortata')\">$nomePortata</a>
+               ";
 
       
       if($admin) {
@@ -157,7 +159,9 @@ sub printMenuCibi {
          My::Base::printEndForm();
       }
       
-      #print "</h3>";
+      print "</h3>
+               <dl class='portata' id='$idPortata'>
+               ";
       
       foreach my $piatto ($portata->findnodes($query2)){
                
