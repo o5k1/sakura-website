@@ -70,7 +70,7 @@ sub printStartHtml {
    printHeadHtml($title);
 
 print "
-   <body onload=\"manageNav()\">
+   <body onload=\"manageNav(); hideElement()\">
 	<div id=\"header\">
 		<div id=\"fixed-info\">
 			<!--<p><a id=\"city\" href=\"dove-siamo.html\">Bassano del Grappa</a> | <a id=\"tel\" href=\"tel:0424 382286\">0424 382286</a></p>-->
@@ -132,7 +132,7 @@ sub printStartHtmlPublic {
    printHeadHtml($title);
 
 print "
-   <body onload=\"manageNav()\">
+   <body onload=\"manageNav(); hideElement()\">
 	<div id=\"header\">
 		<div id=\"fixed-info\">
 			<p><a id=\"city\" href=\"../public-html/dove-siamo.html\">Bassano del Grappa</a> | <a id=\"tel\" href=\"tel:0424 382286\">0424 382286</a></p>
@@ -200,6 +200,7 @@ sub printStartForm {
    print $q->start_form(-name => $name,
                         -action => $action,
                         -method => $method,
+                        -onSubmit => 'return checkForm()',
                         enctype => &CGI::URL_ENCODED
                         );  
 }

@@ -25,7 +25,7 @@ function hideElement() {
    var fastSearch = document.getElementById('fast-search');
    var endList = document.getElementsByClassName('end-list');
 
-   fastSearch.className = "hidden";
+   fastSearch.className += " hidden";
 
    var i;
 
@@ -44,7 +44,23 @@ function hideElement() {
    for (i = 0; i < listeBevande.length; i++) {
       listeBevande[i].className += " hidden";
    }
-
 }
 
-setTimeout(hideElement(), 30000);
+
+/*function checkForm() {
+   if (document.getElementById('nome') == "") {
+      return false;
+   }
+   else if (document.getElementById('prezzo').innerHTML == "") {
+      return false;
+   }
+   else if (document.getElementById('numero').innerHTML == "") {
+      return false;
+   }
+   else if (document.getElementById('descrizione').innerHTML == "") {
+      return false;
+   }
+   else {
+      return true;
+   }
+}*/
