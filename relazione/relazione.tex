@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{leaf}
+
+\titlepage{}
+
+\author{Bicego Eduard, Castello Davide, Tombolato Andrea}
+\date{01/02/2016}
+\fancypagestyle{myfrontrel}{
+		\hypersetup{
+				colorlinks=true,
+				linkcolor=black,
+		}
+		\pagenumbering{Roman}
+		\fancyhf{}
+		\lhead{fsociety}
+		\rhead{Relazione}
+		\cfoot{\thepage~di \pageref{LastFrontPage}}
+		\renewcommand{\headrulewidth}{0.4pt}
+		\renewcommand{\footrulewidth}{0.4pt}
+	}
+\fancypagestyle{myrel}{
+		\hypersetup{
+				colorlinks=true,
+				linkcolor=blue,
+				anchorcolor=black,
+				citecolor=black,
+				urlcolor=blue,
+		}
+		\pagenumbering{arabic}
+		\fancyhf{}
+		\lhead{fsociety}
+		\rhead{Relazione}
+		\cfoot{
+			\hypersetup{
+				colorlinks=true,
+				linkcolor=black,
+			}
+			\thepage~di \pageref{LastPage}
+		}
+		\renewcommand{\headrulewidth}{0.4pt}
+		\renewcommand{\footrulewidth}{0.4pt}
+	}
+\pagenumbering{gobble}
+\begin{document}
+	\begin{titlepage}
+		\centering
+	{\huge\bfseries Relazione del progetto didattico per l'insegnamento di \\Tecnologie Web \par}
+
+	\line(1,0){350} \\
+	{\scshape\LARGE Università di Padova \par}
+	\vspace{2cm}
+	\begin{tabular}{c|c}
+		{\hfill\textbf{Data Redazione}} 		& 2016-02-01  		\\ 
+		{\hfill\textbf{Gruppo}} 			&  fsociety  \\ 
+		{\hfill\textbf{Membri del gruppo}} 			&  Bicego Eduard \\ 
+										& Castello Davide       \\
+										& Tombolato Andrea \\
+		{\hfill\textbf{Email referente}} 		& \mail{davide.castello.1@studenti.unipd.it}  		\\ 
+		{\hfill\textbf{URL sito}} 			&  *da inserire* \\ 
+	\end{tabular}
+	\end{titlepage}
+\newpage
+	\pagestyle{myfrontrel}
+	\tableofcontents
+	\label{LastFrontPage}
+\newpage
+	\pagestyle{myrel}
+	\subfile{sections/informazioniGenerali}
+\newpage
+	\subfile{sections/abstract}
+\newpage
+	\subfile{sections/analisiDellUtenza}
+\newpage
+	\subfile{sections/suddivisioneDeiRuoli}
+\newpage
+	\subfile{sections/progettazione}
+\newpage
+	\subfile{sections/accessibilita}
+\label{LastPage}
+\end{document}
