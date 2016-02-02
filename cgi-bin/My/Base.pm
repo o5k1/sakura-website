@@ -174,6 +174,9 @@ EOF
 
 # Stampa il footer delle pagine cgi pubbliche
 sub printEndHtmlPublic {
+
+   my $login = $_[0];
+
    print<<EOF
       </div>
 	</div>
@@ -181,11 +184,15 @@ sub printEndHtmlPublic {
 		<p>Ristorante Giapponese Sakura - Specialità Sushi</p>
 		<p>Bassano del Grappa (VI)</p> 
 		<p>PI 02013730367 - Tel: 0424 382286</p>
-		<p id="admin"><a href="../cgi-bin/login.cgi">Area amministratore</a></p>
-	</div>
-</body>
-</html>
 EOF
+;
+      if (!($login)) {
+         print "<p id=\"admin\"><a href=\"../cgi-bin/login.cgi\">Area amministratore</a></p>";
+      }
+
+	print "</div>
+</body>
+</html>";
 }
 
 
