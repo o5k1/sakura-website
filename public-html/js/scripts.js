@@ -72,21 +72,43 @@ function checkLogin() {
 }
 
 
+function checkForm() {
 
-/*function checkForm() {
-   if (document.getElementById('nome') == "") {
-      return false;
+   if (document.getElementById('add-bevanda-in')) {
+      //alert('checkAddBevanda()');
+      return checkFormBevanda();
    }
-   else if (document.getElementById('prezzo').innerHTML == "") {
-      return false;
+   else if (document.getElementById('add-piatto-in')) {
+      //alert('checkAddPiatto()');
+      return checkFormPiatto();
    }
-   else if (document.getElementById('numero').innerHTML == "") {
-      return false;
+   else if (document.getElementById('mod-bevanda-in')) {
+      //alert('checkModBevanda()');
+      return checkFormBevanda();
    }
-   else if (document.getElementById('descrizione').innerHTML == "") {
-      return false;
+   else if (document.getElementById('mod-piatto-in')) {
+      //alert('checkModPiatto()');
+      return checkFormPiatto();
    }
    else {
-      return true;
+      //alert('NO');
+      return false;
    }
-}*/
+}
+
+function checkFormBevanda() {
+   /*var nome = document.getElementsByName('nome');
+   var prezzo = document.getElementsByName('prezzo');
+   var descrizione = document.getElementsByName('descrizione');
+
+   if (nome.innerHTML == "") {
+
+   }*/
+
+   return true;
+}
+
+function checkFormPiatto() {
+
+   return true;
+}
