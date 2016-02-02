@@ -29,13 +29,10 @@ else { # Nessuna sessione
       my $username = $q->param('username');
       my $password = $q->param('password');
 
-      # Parte da FARE ???
-      #my $xp = XML::XPath->new(filename => '../data/amministratori.xml');
-      #$xpath_exp='//admin[username/text()="'.$username.'" and password/text()="'.$password.'"]';
-      #my $nodeset = $xp->find($xpath_exp);
-      #if ($nodeset->size eq 1) {
+      my $doc = XML::LibXML->new()->parse_file('..\\data\\admins.xml');  # ATTENZIONE path Windows
       
-      if ($username eq 'admin' && $password eq 'admin') { # Dati corretti
+      if ($doc->findnodes("admins/admin[username/text()='$username' and password/text()='$password']")->size eq 1) {
+      #if ($username eq 'admin' && $password eq 'admin') { # Dati corretti
       
          my $session = new CGI::Session(undef, $q, {Directory=>File::Spec->tmpdir});
          #my $session = new CGI::Session();
@@ -45,8 +42,7 @@ else { # Nessuna sessione
       }
       else { # Dati non corretti
       
-         my $error = "Nome utente o password non corretti.";
-         showForm($error);
+         showForm("Nome utente o password non corretti.");
       }
    }
    else { # form

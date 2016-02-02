@@ -10,7 +10,7 @@ use XML::LibXML;
    package My::Base;
 
 use Exporter qw(import);
-our @EXPORT = qw(printStartHtml printStartHtmlPublic printEndHtml printEndHtmlPublic printStartForm printEndForm checkSession getFilename initLibXML evalNode writeFile enc);
+our @EXPORT = qw(printStartHtml printStartHtmlPublic printEndHtml printEndHtmlPublic printStartForm printEndForm checkSession getFilename initLibXML existElement evalNode writeFile enc);
                   # Indicare i metodi da esportare
 
 #---------------HTML--------------------------------------------------------------
