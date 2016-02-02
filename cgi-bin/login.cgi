@@ -58,26 +58,28 @@ sub showForm {
    my $error = $_[0];
 
    printStartHtmlPublic("Area amministratore", "Area amministratore");
+
+   print "<p id='error'>"; # Serve per Js
+      if ($error ne '') {
+         print "$error";
+      }
+   print "</p>";
                
-   if ($error ne '') {
-      print "<p class='error'>$error</p>";
-   }
-               
-   print "<form action=\"login.cgi\" method=\"post\">
+   print "<form onsubmit=\"return checkLogin()\" name=\"login\" action=\"login.cgi\" method=\"post\">
                   <fieldset>
                      <div id='legend'>
                         <legend>Login</legend>
                      </div>
-                     <label>Username</label>
+                     <label id=\"user\">Username</label>
                      <input type=\"text\" name=\"username\" size=\"25\"/>
-                     <label>Password</label>
+                     <label id=\"pass\">Password</label>
                      <input type=\"password\" name=\"password\" size=\"25\"/>
                      <input id='submit' type=\"submit\" name=\"accedi\" value=\"Accedi\" />
                   </fieldset>
                </form>
             ";
             
-   printEndHtmlPublic();
+   printEndHtmlPublic(1);
             
 }
 

@@ -16,6 +16,6 @@ printStartHtmlPublic('Menù', "Menù");
 
    printMenuPublic();
 
-printEndHtmlPublic();
+printEndHtmlPublic(0);
 
 exit 0;
