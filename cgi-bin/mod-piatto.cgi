@@ -21,7 +21,7 @@ my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt; Modifica p
 printStartHtml('Modifica piatto - Area Amministratore', $breadcrump);
 
 # Verifica parametri
-if ($q->param('mod-piatto')) {
+if ($q->param('mod-piatto-in')) {
 
    #print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
 

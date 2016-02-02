@@ -35,8 +35,11 @@ sub printFormCibo { # stampo la form
    if ($info ne '') {
       print "<p class='allright'>$info</p>";
             if($info eq 'Inserimento effettuato con successo!') {
-         print "<a href='private-menu-cibi.cgi'>Torna indietro</a>";
-      }
+               print "<a href='private-menu-cibi.cgi'>Torna indietro</a>";
+            }
+            elsif ($info eq 'Modifiche effettuate con successo!') {
+               print "<a href='private-menu-cibi.cgi'>Torna indietro</a>";
+            }
    }
    
    if ($error ne '') {
@@ -45,26 +48,26 @@ sub printFormCibo { # stampo la form
              </ul>";
    }
    
-   My::Base::printStartForm('add', $hfile, 'post');
+   My::Base::printStartFormJS($textForm->{sname}."-in", $hfile, 'post');
       print "<fieldset>
                <legend>$hlegend</legend>";
       print "<p>";
-         print $q->label('Nome '.$hoggetto);
+         print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
          print $q->textarea(-name => 'nome', -value => $oldData->{name});
       print "</p>";
       
       print "<p>";
-         print $q->label('Numero piatto');
+         print $q->label({-id => 'numero'}, 'Numero piatto');
          print $q->textarea(-name => 'numero', -value => $oldData->{numero});
       print "</p>";
       
       print "<p>";
-         print $q->label('Prezzo (&euro;)');
+         print $q->label({-id => 'prezzo'}, 'Prezzo (&euro;)');
          print $q->textarea(-name => 'prezzo', -value => $oldData->{prezzo});
       print "</p>";
       
       print "<p>";
-         print $q->label('Descrizione');
+         print $q->label({-id => 'descrizione'}, 'Descrizione');
          print $q->textarea(-name => 'descrizione', -value => $oldData->{descrizione});
       print "</p>";
       
@@ -78,7 +81,7 @@ sub printFormCibo { # stampo la form
                
       print $q->submit(
          -id => 'submit',
-         -name => $textForm->{sname},
+         -name => ($textForm->{sname})."-in",
          -value => $textForm->{svalue}
          );
 
@@ -125,6 +128,9 @@ sub printFormBevanda {
       if($info eq 'Inserimento effettuato con successo!') {
          print "<a href='private-menu-bevande.cgi'>Torna indietro</a>";
       }
+      elsif ($info eq 'Modifiche effettuate con successo!') {
+               print "<a href='private-menu-bevande.cgi'>Torna indietro</a>";
+            }
    }
    
    if ($error ne '') {
@@ -133,21 +139,21 @@ sub printFormBevanda {
              </ul>";
    }
    
-   My::Base::printStartForm('add', $hfile, 'post');
+   My::Base::printStartFormJS($textForm->{sname}."-in", $hfile, 'post');
       print "<fieldset>
                <legend>$hlegend</legend>";
       print "<p>";
-         print $q->label('Nome '.$hoggetto);
+         print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
          print $q->textarea(-name => 'nome', -value => $oldData->{name});
       print "</p>";
       
       print "<p>";
-         print $q->label('Prezzo (&euro;)');
+         print $q->label({-id => 'prezzo'}, 'Prezzo (&euro;)');
          print $q->textarea(-name => 'prezzo', -value => $oldData->{prezzo});
       print "</p>";
       
       print "<p>";
-         print $q->label('Descrizione');
+         print $q->label({-id => 'descrizione'}, 'Descrizione');
          print $q->textarea(-name => 'descrizione', -value => $oldData->{descrizione});
       print "</p>";
       
@@ -161,7 +167,7 @@ sub printFormBevanda {
                
       print $q->submit(
          -id => 'submit',
-         -name => $textForm->{sname},
+         -name => ($textForm->{sname})."-in",
          -value => $textForm->{svalue}
          );
 
@@ -226,8 +232,8 @@ sub checkNumero {
 
 sub checkPrezzo{
     my $ret="";
-    if(!$_[0] || !($_[0] =~ m/[0-9]{1,99}/)){ # Non funziona
-         $ret=$ret."<li>Il campo prezzo deve contenere un numero.</li>";
+    if(!$_[0] || !($_[0] =~ m/^[0-9]{1}[0-9]{0,3},[0-9]{2}/)){
+         $ret=$ret."<li>Il campo prezzo deve contenere un numero seguito dalla virgola e 2 cifre decimali.</li>";
     }
     return $ret;
 }

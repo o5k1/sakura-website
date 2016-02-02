@@ -20,7 +20,7 @@ my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt; Modifica b
 printStartHtml('Modifica bevanda - Area Amministratore', $breadcrump);
 
 # Verifica parametri
-if ($q->param('mod-bevanda')) {
+if ($q->param('mod-bevanda-in')) {
 
    #print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
 
@@ -160,7 +160,7 @@ else {
    # Se si ha la sessione aperta e si ha il link diretto alla pagina
    print "<div class='panel'>
             <h3>Ops!</h3>
-            <p>Per accedere a questa pagina è necessario passare per la pagina <a href='private-menu-cibi.cgi'>Menù cibi</a></p>
+            <p>Per accedere a questa pagina è necessario passare per la pagina <a href='private-menu-bevanda.cgi'>Menù bevanda</a></p>
          <div>
          ";
 }

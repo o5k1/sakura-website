@@ -36,7 +36,7 @@ my $breadcrump = "<a href='private-menu-bevande.cgi'>Menù bevande</a> &gt; Aggi
 printStartHtml('Aggiungi bevanda - Area Amministratore', $breadcrump);
 
 # Verifica parametri
-if ($q->param('add-bevanda')) {
+if ($q->param('add-bevanda-in')) {
 
     #print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
 
@@ -78,15 +78,21 @@ if ($q->param('add-bevanda')) {
          
          if (eval{$nodo=$parser->parse_balanced_chunk($element);}) {
             $padre->get_node(1)->appendChild($nodo) || die('Non riesco a trovare il padre');
+            My::Base::writeFile($doc)
          }
          else {
             $error.="<li>I campi dati devono contenere tag html corretti</li>";
          }
-         
-         My::Base::writeFile($doc)
       }
       
-      printFormBevanda($q, 'Inserimento effettuato con successo!', $error, \%textForm);
+      my $info = '';
+
+      if ($error eq '') {
+        $info = 'Inserimento effettuato con successo!';
+      }
+
+
+      printFormBevanda($q, $info, $error, \%textForm);
    } 
 }
 elsif($q->param('idLista')) {

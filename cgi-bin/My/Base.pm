@@ -10,7 +10,7 @@ use XML::LibXML;
    package My::Base;
 
 use Exporter qw(import);
-our @EXPORT = qw(printStartHtml printStartHtmlPublic printEndHtml printEndHtmlPublic printStartForm printEndForm checkSession getFilename initLibXML existElement evalNode writeFile enc);
+our @EXPORT = qw(printStartHtml printStartHtmlPublic printEndHtml printEndHtmlPublic printStartForm printStartFormJS printEndForm checkSession getFilename initLibXML existElement evalNode writeFile enc);
                   # Indicare i metodi da esportare
 
 #---------------HTML--------------------------------------------------------------
@@ -204,12 +204,28 @@ sub printStartForm {
    my $action = $_[1];
    my $method = $_[2];
 
-   print $q->start_form(-name => $name,
+   print $q->start_form(-id => $name,
+                        -name => $name,
                         -action => $action,
                         -method => $method,
-                        -onSubmit => 'return checkForm()',
                         enctype => &CGI::URL_ENCODED
                         );  
+}
+
+# Stampa l'inizio form con javascript
+sub printStartFormJS {
+
+   my $q = new CGI;
+   my ($name, $action, $method) = @_;
+
+   print $q->start_form(-id => $name,
+                        -name => $name,
+                        -action => $action,
+                        -method => $method,
+                        -onsubmit => 'return checkForm()',
+                        enctype => &CGI::URL_ENCODED
+                        );
+
 }
 
 
