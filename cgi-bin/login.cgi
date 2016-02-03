@@ -64,12 +64,13 @@ sub showForm {
          print "$error";
       }
    print "</p>";
+
+   print "<div class='form'>
+            <h3>Login</h3>
+            ";
                
-   print "<form onsubmit=\"return checkLogin()\" name=\"login\" action=\"login.cgi\" method=\"post\">
+   print "<form onsubmit=\"return checkLogin()\" id=\"login\" action=\"login.cgi\" method=\"post\">
                   <fieldset>
-                     <div id='legend'>
-                        <legend>Login</legend>
-                     </div>
                      <label id=\"user\">Username</label>
                      <input type=\"text\" name=\"username\" size=\"25\"/>
                      <label id=\"pass\">Password</label>
@@ -79,6 +80,8 @@ sub showForm {
                </form>
             ";
             
+   print "</div>";
+
    printEndHtmlPublic(1);
             
 }

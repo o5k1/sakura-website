@@ -22,10 +22,10 @@ sub printHeadHtml {
    print "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
    <html xmlns='http://www.w3.org/1999/xhtml'>
    <head>
-	<title>$title | Sakura</title>
-	<link rel=\"stylesheet\" type=\"text/css\" href=\"../public-html/css/style.css\">
+	<title>$title | Ristorante Sakura</title>
+	<link rel=\"stylesheet\" type=\"text/css\" href=\"../public-html/css/style.css\" />
 	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>
-	<meta name=\"title\" content=\"Sakura - Ristorante Giapponese - Bassano del Grappa\" />
+	<meta name=\"title\" content=\"$title | Ristorante Sakura - Ristorante Giapponese - Bassano del Grappa\" />
 	<meta name=\"description\" content=\"Ristorante Giapponese a Bassano del Grappa. Specialità Sushi con servizio d'asporto.\" />
     <meta name=\"keywords\" content=\"Sakura, ristorante, giapponese, giappone, sushi, asporto, bassano, bassano del grappa, vicenza\" />
     <meta name=\"author\" content=\"Andrea Tombolato, Eduard Bicego, Davide Castello\" />
@@ -40,7 +40,7 @@ sub printTopBarHtml {
 print<<EOF;
 			<div id="top-bar">
 				<div id="logo">
-					<h1>Sakura - Ristorante Giapponese</h1>
+					<h1><span xml:lang="ja">Sakura</span> - Ristorante Giapponese</h1>
 				</div> 
 				<div id="nav-button">
 					<a onclick="manageNav()" title="Menu"> &#9776; </a>
@@ -180,7 +180,7 @@ sub printEndHtmlPublic {
       </div>
 	</div>
 	<div id="footer">
-		<p>Ristorante Giapponese Sakura - Specialità Sushi</p>
+		<p>Ristorante Giapponese <span xml:lang="ja">Sakura</span> - Specialità <span xml:lang="ja">Sushi</span></p>
 		<p>Bassano del Grappa (VI)</p> 
 		<p>PI 02013730367 - Tel: 0424 382286</p>
 EOF
@@ -204,7 +204,6 @@ sub printStartForm {
    my $method = $_[2];
 
    print $q->start_form(-id => $name,
-                        -name => $name,
                         -action => $action,
                         -method => $method,
                         enctype => &CGI::URL_ENCODED
@@ -218,7 +217,6 @@ sub printStartFormJS {
    my ($name, $action, $method) = @_;
 
    print $q->start_form(-id => $name,
-                        -name => $name,
                         -action => $action,
                         -method => $method,
                         -onsubmit => 'return checkForm()',
