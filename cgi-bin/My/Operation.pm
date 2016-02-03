@@ -52,22 +52,26 @@ sub printFormCibo { # stampo la form
       print "<fieldset>
                <legend>$hlegend</legend>";
       print "<p>";
-         print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
+         #print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
+         print "<label id='nome'>Nome $hoggetto <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'nome', -value => $oldData->{name});
       print "</p>";
       
       print "<p>";
-         print $q->label({-id => 'numero'}, 'Numero piatto');
+         #print $q->label({-id => 'numero'}, 'Numero piatto');
+         print "<label id='numero'>Numero <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'numero', -value => $oldData->{numero});
       print "</p>";
       
       print "<p>";
-         print $q->label({-id => 'prezzo'}, 'Prezzo (&euro;)');
+         #print $q->label({-id => 'prezzo'}, 'Prezzo (&euro;)');
+         print "<label id='prezzo'>Prezzo (&euro;) <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'prezzo', -value => $oldData->{prezzo});
       print "</p>";
       
       print "<p>";
-         print $q->label({-id => 'descrizione'}, 'Descrizione');
+         #print $q->label({-id => 'descrizione'}, 'Descrizione');
+         print "<label id='descrizione'>Descrizione <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'descrizione', -value => $oldData->{descrizione});
       print "</p>";
       
@@ -143,17 +147,20 @@ sub printFormBevanda {
       print "<fieldset>
                <legend>$hlegend</legend>";
       print "<p>";
-         print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
+         #print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
+         print "<label id='nome'>Nome $hoggetto <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'nome', -value => $oldData->{name});
       print "</p>";
       
       print "<p>";
-         print $q->label({-id => 'prezzo'}, 'Prezzo (&euro;)');
+         #print $q->label({-id => 'prezzo'}, 'Prezzo (&euro;)');
+         print "<label id='prezzo'>Prezzo (&euro;) <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'prezzo', -value => $oldData->{prezzo});
       print "</p>";
       
       print "<p>";
-         print $q->label({-id => 'descrizione'}, 'Descrizione');
+         #print $q->label({-id => 'descrizione'}, 'Descrizione');
+         print "<label id='descrizione'>Descrizione <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'descrizione', -value => $oldData->{descrizione});
       print "</p>";
       
@@ -214,8 +221,8 @@ sub checkNome{
     if(!$_[0]){
         $ret=$ret."<li>Il campo nome non deve essere vuoto.</li>";
     }
-    if(length $_[0]>20) {
-      $ret=$ret."<li>Il campo nome non deve superare i 20 caratteri.</li>";
+    if(length $_[0]>50) {
+      $ret=$ret."<li>Il campo nome non deve superare i 50 caratteri.</li>";
     }
     return $ret;
 }
@@ -225,7 +232,7 @@ sub checkNumero {
    if(!$_[0]){
       $ret=$ret."<li>Il campo numero piatto non deve essere vuoto.</li>";
    }
-   if(!($_[0] =~ m/[0-9]{1,99}[a-z]*/)){
+   if(!($_[0] =~ m/^[0-9]{1}[0-9]{0,2}[a-z]{0,1}$/)){
       $ret=$ret."<li>Il campo numero piatto deve essere costituito da un numero (obbligatorio) e una lettera (opzionale).</li>";
    }
 }
