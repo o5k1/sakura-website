@@ -83,7 +83,7 @@ sub printMenuBevande {
                my $descrizione = enc($bevanda->findnodes('./descrizione')); 
                   ($descrizione) = ( $descrizione =~ /<descrizione>(.*)<\/descrizione>/);
                
-               print "<dt>- <strong>$nome</strong> <span class='prezzo'>$valuta $prezzo</span>";
+               print "<dt>- <strong>$nome</strong> <span class='prezzo'>$valuta $prezzo</span></dt>";
          
                if($admin) {
                   My::Base::printStartForm('mod-bevanda',$pathR->{mod_bevanda}, 'GET');
@@ -105,7 +105,7 @@ sub printMenuBevande {
                   My::Base::printEndForm();
                }
          
-               print "</dt>";
+               #print "</dt>";
          
                if($descrizione ne ''){
                   print "<dd>$descrizione</dd>";
@@ -176,7 +176,7 @@ sub printMenuCibi {
                my $descrizione = enc($piatto->findnodes('./descrizione')); 
                   ($descrizione) = ( $descrizione =~ /<descrizione>(.*)<\/descrizione>/);
                
-               print "<dt>$numero - <strong>$nome</strong> <span class='prezzo'>$valuta $prezzo</span>";
+               print "<dt>$numero - <strong>$nome</strong> <span class='prezzo'>$valuta $prezzo</span></dt>";
                
                if($admin) {
                   My::Base::printStartForm('mod-piatto', $pathR->{mod_piatto}, 'GET');
@@ -199,7 +199,7 @@ sub printMenuCibi {
                   My::Base::printEndForm();
                }
                
-               print "</dt>";
+               #print "</dt>";
                
                if($descrizione ne ""){
                   print "<dd>$descrizione</dd>";
