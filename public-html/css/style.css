@@ -364,13 +364,17 @@ img {
 	}
 
 	fieldset {
-		width: 40%;
+		width: 60%;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
 		/*background: white;*/
 		padding-bottom: 0.1em;
 	}
+
+   fieldset input {
+      width: 100%;
+   }
 
 	#legend {
 		/*background: #333333;*/
