@@ -549,11 +549,6 @@
 	<bevande>
 		<listaBevande id="Vini">
             <nome>Vini</nome>
-            <bevanda id="Monea">
-                <nome>Monea</nome>
-                <descrizione>asd</descrizione>
-                <prezzo>45,00</prezzo>
-            </bevanda>
             <bevanda id="MöetEtChandonRéserveImpériale">
 				<nome><span xml:lang="fr">Möet et Chandon Réserve Impériale</span></nome>
 				<descrizione><span xml:lang="fr">champagne</span></descrizione>
