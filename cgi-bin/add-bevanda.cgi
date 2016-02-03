@@ -81,7 +81,7 @@ if ($q->param('add-bevanda-in')) {
             My::Base::writeFile($doc)
          }
          else {
-            $error.="<li>I campi dati devono contenere tag html corretti</li>";
+            $error.="<li>I campi dati devono contenere tag html corretti.</li>";
          }
       }
       

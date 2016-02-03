@@ -79,7 +79,7 @@ if ($q->param('add-piatto-in')) {
             My::Base::writeFile($doc);
          }
          else {
-            $error.="<li>I campi dati devono contenere tag e entità html corretti</li>";
+            $error.="<li>I campi dati devono contenere tag e entità html corretti.</li>";
          }
       }
       
