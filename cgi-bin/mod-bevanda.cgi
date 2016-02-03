@@ -66,6 +66,7 @@ if ($q->param('mod-bevanda-in')) {
    
    else {
       my $doc = My::Base::initLibXML();
+      print "$newNome | menu/bevande/listaBevande/bevanda[\@id = '$oldId']/nome/text()";
       $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/nome/text()")->get_node(1)->setData($newNome);
       $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/prezzo/text()")->get_node(1)->setData($newPrezzo);
       

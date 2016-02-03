@@ -168,7 +168,6 @@ function checkFormPiatto() {
       numeroLabel.lastChild.innerHTML = "";
    }
 
-   return true;
    if (prezzo.value === undefined || prezzo.value.search(/^[0-9]{1}[0-9]{0,3},[0-9]{2}/) != 0) {
       error = 1;
       prezzoLabel.lastChild.innerHTML = "- <span class='red'>Prezzo non valido (numero seguito da virgola e 2 cifre decimali)</span>";
