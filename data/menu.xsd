@@ -22,7 +22,7 @@
 
 <xsd:complexType name="Tportata">
 	<xsd:sequence>
-		<xsd:element name="nome" type="xsd:string" />
+		<xsd:element name="nome" type="stringWithSpan" />
 		<xsd:element name="piatto" type="Tpiatto" minOccurs="0" maxOccurs="unbounded" />
 	</xsd:sequence>
 	<xsd:attribute name="id" type="xsd:string" use="required" />
@@ -30,10 +30,10 @@
 
 <xsd:complexType name="Tpiatto">
 	<xsd:sequence>
-		<xsd:element name="nome" type="xsd:string" />
+		<xsd:element name="nome" type="stringWithSpan" />
 		<xsd:element name="numero" type="xsd:string" minOccurs="0" />
 		<xsd:element name="prezzo" type="Tprezzo" />
-		<xsd:element name="descrizione" type="xsd:string" minOccurs="0" />
+		<xsd:element name="descrizione" type="stringWithSpan" minOccurs="0" />
 	</xsd:sequence>
 	<xsd:attribute name="id" type="xsd:string" use="required" />
 </xsd:complexType>
@@ -62,11 +62,35 @@
 
 <xsd:complexType name="TbevandaGenerica">
 	<xsd:sequence>
-		<xsd:element name="nome" type="xsd:string" />
+		<xsd:element name="nome" type="stringWithSpan" />
 		<xsd:element name="descrizione" type="xsd:string" minOccurs="0" />
 		<xsd:element name="prezzo" type="Tprezzo" />
 	</xsd:sequence>
 	<xsd:attribute name="id" type="xsd:string" use="required" />
+</xsd:complexType>
+
+<xsd:complexType name="stringWithSpan" mixed="true">
+	<xsd:choice minOccurs="0" maxOccurs="unbounded">
+		<xsd:element name="span" type="TSpan" />
+		<xsd:element name="abbr" type="TAbbr" />
+	</xsd:choice>
+</xsd:complexType>
+
+<xsd:complexType name="TSpan">
+	<xsd:simpleContent>
+		<xsd:extension base="xsd:string">
+			<xsd:attribute ref="xml:lang" />
+		</xsd:extension>
+	</xsd:simpleContent>
+</xsd:complexType>
+
+<xsd:complexType name="TAbbr">
+	<xsd:simpleContent>
+		<xsd:extension base="xsd:string">
+			<xsd:attribute name="title" type="xsd:string" />
+			<xsd:attribute ref="xml:lang" />
+		</xsd:extension>
+	</xsd:simpleContent>
 </xsd:complexType>
 
 </xsd:schema>
