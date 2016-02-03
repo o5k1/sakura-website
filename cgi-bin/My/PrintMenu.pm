@@ -60,7 +60,7 @@ sub printMenuBevande {
             My::Base::printStartForm('add-bevanda', $pathR->{add_bevanda}, 'GET');
             print $q->submit(-class => 'pulsante',
                               -name => 'add',
-                              -value => 'Aggiungi '.$nomeLista);
+                              -value => 'Aggiungi');
             print $q->hidden(-name => 'idLista',
                               -value => $idLista);
             print $q->hidden(-name => 'nomeLista',
