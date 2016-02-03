@@ -402,6 +402,10 @@ img {
 		border-color: #ff9999;
 	}
 
+	ul {
+		margin-left: 77%;
+	}
+
 	li {
 		list-style-type: none;
 	}
@@ -441,6 +445,11 @@ img {
 	form[name='del-piatto'] {
 		margin-left: 1em;
 	}
+
+	form[name='mod-piatto'], form[name='del-piatto']{
+		display: inline;
+	}
+
 
 	.pulsante:hover {
 		color: #ff9999;
