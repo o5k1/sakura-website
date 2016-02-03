@@ -83,30 +83,28 @@ sub printMenuBevande {
                my $descrizione = enc($bevanda->findnodes('./descrizione')); 
                   ($descrizione) = ( $descrizione =~ /<descrizione>(.*)<\/descrizione>/);
                
-               print "<dt>- <strong>$nome</strong> <span class='prezzo'>$valuta $prezzo</span>";
+               print "<dt>- <strong>$nome</strong> <span class='prezzo'>$valuta $prezzo</span></dt>";
          
                if($admin) {
                   My::Base::printStartForm('mod-bevanda',$pathR->{mod_bevanda}, 'GET');
-                     print "<span class='pulsanti'>
+                     print "
                            <input class='pulsante' type='submit' name='mod' value='Modifica' />
                            <input type='hidden' name='nome' value='$nome' />
                            <input type='hidden' name='idElemento' value='$idBevanda' />
                            <input type='hidden' name='prezzo' value='$prezzo' />
                            <input type='hidden' name='descrizione' value='$descrizione' />
-                         </span>";
+                         ";
                   My::Base::printEndForm();
                 
                   My::Base::printStartForm('del-bevanda', $pathR->{del_bevanda}, 'GET');
-                     print "<span class='pulsanti'> 
+                     print "
                            <input class='pulsante' type='submit' name='del' value='Rimuovi' />
                            <input type='hidden' name='nome' value='$nome' />
                            <input type='hidden' name='idElemento' value='$idBevanda' />
-                        </span>";
+                        ";
                   My::Base::printEndForm();
                }
-         
-               print "</dt>";
-         
+
                if($descrizione ne ''){
                   print "<dd>$descrizione</dd>";
                }
@@ -147,7 +145,7 @@ sub printMenuCibi {
          ($nomePortata) = ( $nomePortata =~ /<nome>(.*)<\/nome>/);
    
       print "<div class='panel'>
-               <h4><a href='javascript:void(0)' onclick=\"manageMenu('$idPortata')\">$nomePortata</a>
+               <h4><a href='javascript:void(0)' onclick=\"manageMenu('$idPortata')\">$nomePortata</a></h4>
                ";
 
       
@@ -159,9 +157,9 @@ sub printMenuCibi {
          My::Base::printEndForm();
       }
       
-      print "</h3>
-               <dl class='portata' id='$idPortata'>
-               ";
+      print "
+            <dl class='portata' id='$idPortata'>
+            ";
       
       foreach my $piatto ($portata->findnodes($query2)){
                
@@ -176,31 +174,29 @@ sub printMenuCibi {
                my $descrizione = enc($piatto->findnodes('./descrizione')); 
                   ($descrizione) = ( $descrizione =~ /<descrizione>(.*)<\/descrizione>/);
                
-               print "<dt>$numero - <strong>$nome</strong> <span class='prezzo'>$valuta $prezzo</span>";
+               print "<dt>$numero - <strong>$nome</strong> <span class='prezzo'>$valuta $prezzo</span></dt>";
                
                if($admin) {
                   My::Base::printStartForm('mod-piatto', $pathR->{mod_piatto}, 'GET');
-                  print "<span class='pulsanti'>
+                  print "
                            <input class='pulsante' type='submit' name='mod' value='Modifica' />
                            <input type='hidden' name='idElemento' value='$idPiatto' />
                            <input type='hidden' name='nome' value='$nome' />
                            <input type='hidden' name='numero' value='$numero' />
                            <input type='hidden' name='descrizione' value='$descrizione' />
                            <input type='hidden' name='prezzo' value='$prezzo' />
-                           </span>";
+                           ";
                   My::Base::printEndForm();
                   
                   My::Base::printStartForm('del-piatto', $pathR->{del_piatto}, 'GET');
-                  print "<span class='pulsanti'>  
+                  print "
                            <input class='pulsante' type='submit' name='del' value='Rimuovi' />
                            <input type='hidden' name='idElemento' value='$idPiatto' />
                            <input type='hidden' name='nome' value='$nome' />
-                        </span>";
+                        ";
                   My::Base::printEndForm();
                }
-               
-               print "</dt>";
-               
+
                if($descrizione ne ""){
                   print "<dd>$descrizione</dd>";
                }      
