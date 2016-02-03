@@ -1,5 +1,5 @@
 #
-#
+# Modulo che ragruppa tutte le funzioni per stampare form del tipo ADD e MOD e relativi check dei parametri via cgi
 #
 use strict;
 use warnings;
@@ -43,7 +43,7 @@ sub printFormCibo { # stampo la form
    }
    
    if ($error ne '') {
-      print "<ul class='error'>
+      print "<ul class='errorList'>
                $error
              </ul>";
    }
@@ -138,7 +138,7 @@ sub printFormBevanda {
    }
    
    if ($error ne '') {
-      print "<ul class='error'>
+      print "<ul id='errorList'>
                $error
              </ul>";
    }
