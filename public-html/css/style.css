@@ -370,8 +370,6 @@ img {
 		text-align: center;
 		/*background: white;*/
 		padding-bottom: 0.1em;
-		border-bottom: solid;
-		border-width: 7px;
 	}
 
 	#legend {
@@ -407,6 +405,7 @@ img {
 		border-style: solid;
 		border-width: 2px;
 		margin-top: 1.5em;
+        margin-bottom: 1em;
 	}
 
 	#submit:hover {
@@ -472,4 +471,19 @@ img {
 	input.pulsante {
     margin-right: 1em;
 }
+
+   div.form {
+      border-bottom: solid;
+      border-width: 7px;
+      width: 40%;
+   }
+
+   div.form h3{
+      text-align: center;
+      margin-bottom: 0.3em;
+      font-size: 2em;
+      padding-bottom: 0.1em;
+      border-bottom: solid;
+      border-width: 7px;
+   }
 }
