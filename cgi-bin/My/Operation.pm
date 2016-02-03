@@ -221,8 +221,8 @@ sub checkNome{
     if(!$_[0]){
         $ret=$ret."<li>Il campo nome non deve essere vuoto.</li>";
     }
-    if(length $_[0]>50) {
-      $ret=$ret."<li>Il campo nome non deve superare i 50 caratteri.</li>";
+    if(length $_[0]>200) {
+      $ret=$ret."<li>Il campo nome non deve superare i 200 caratteri.</li>";
     }
     return $ret;
 }
@@ -247,8 +247,8 @@ sub checkPrezzo{
 
 sub checkDesc{
     my $ret="";
-    if(length $_[0]>500){
-        $ret=$ret."<li>La descrizione deve avere al massimo 50 caratteri.</li>";
+    if(length $_[0]>800){
+        $ret=$ret."<li>La descrizione deve avere al massimo 800 caratteri.</li>";
     }
     return $ret;
 }

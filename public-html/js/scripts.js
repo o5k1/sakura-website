@@ -97,6 +97,12 @@ function checkForm() {
 }
 
 function checkFormBevanda() {
+   var error = 0;
+
+   // seleziono campo form
+   var nome = document.getElementsByName('nome')[0];
+   var prezzo = document.getElementsByName('prezzo')[0];
+   //var descrizione = document.getElementsByName('descrizione')[0];
 
    // recupero la label del campo form
    var nomeLabel = document.getElementById('nome');
@@ -128,6 +134,8 @@ function checkFormBevanda() {
    }
    return true;
 }
+
+
 
 function checkFormPiatto() {
     var error = 0;
