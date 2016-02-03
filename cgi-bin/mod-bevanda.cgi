@@ -102,7 +102,7 @@ if ($q->param('mod-bevanda-in')) {
                $padre->get_node(1)->appendChild($description) || die('Non riesco a trovare il padre');
                }
             } else {
-               $error.="<li>I campi dati devono contenere tag html validi</li>";
+               $error.="<li>I campi dati devono contenere tag html validi.</li>";
             }
          }
       }

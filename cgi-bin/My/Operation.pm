@@ -1,5 +1,5 @@
 #
-# Modulo che ragruppa tutte le funzioni per stampare form del tipo ADD e MOD e relativi check dei parametri via cgi
+# Modulo che raggruppa tutte le funzioni per stampare form del tipo ADD e MOD e relativi check dei parametri via cgi
 #
 use strict;
 use warnings;

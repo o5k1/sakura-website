@@ -81,7 +81,7 @@ print "
 
    if ($nav eq 'cibi') {
       print<<EOF
-		<div id="nav-menu">
+		<div id="private-navmenu">
 			   <ul>
 				<li>Cibi</li>
 				<li><a href="private-menu-bevande.cgi">Bevande</a></li>
@@ -93,7 +93,7 @@ EOF
 ;
 } elsif ($nav eq 'bevande') {
    print<<EOF
-		<div id="nav-menu">
+		<div id="private-navmenu">
 			   <ul>
 				<li><a href="private-menu-cibi.cgi">Cibi</a></li>
 				<li>Bevande</li>
@@ -105,7 +105,7 @@ EOF
 ;
 } else {
    print<<EOF
-		<div id="nav-menu">
+		<div id="private-navmenu">
 			   <ul>
 				<li><a href="private-menu-cibi.cgi">Cibi</a></li>
 				<li><a href="private-menu-bevande.cgi">Bevande</a></li>
