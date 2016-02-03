@@ -376,10 +376,9 @@ img {
 		display: block;
 	}
 
-	input {
+	input[name='username'], input[name='password'] {
 		margin-top: 0.2em;
 		margin-bottom: 1em;
-		/*border-style: solid;*/
 		border-bottom: solid;
 		border-width: 2px;
 		border-color: #333333;
@@ -415,4 +414,41 @@ img {
 		margin-left: 3em;
 		margin-bottom: 1em;
 	}
+	/*----------------------------------*/
+
+	h4 form {
+		float: right;
+		margin: 0em;
+	}
+
+	.pulsante {
+		color: #FFF6F6;
+		background: #333333;
+		padding: 0.2em 0.6em;
+		border-color: #333333;
+		border-style: solid;
+		border-width: 2px;
+		font-size: 0.6em;
+	}
+
+	input[name='mod'], input[name='del'] {
+		display: inline;
+		float: right;
+		font-size: 0.7em;
+		padding: 0.01em 0.3em;
+	}
+
+	form[name='del-piatto'] {
+		margin-left: 1em;
+	}
+
+	.pulsante:hover {
+		color: #ff9999;
+		border-color: #ff9999;
+		cursor: pointer;
+	}
+
+	input.pulsante {
+    margin-right: 1em;
+}
 }
