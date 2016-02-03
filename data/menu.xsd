@@ -42,6 +42,7 @@
 	<xsd:simpleContent>
 		<xsd:extension base="xsd:decimal">
 			<xsd:attribute name="valuta" type="xsd:string" default="€" />
+			<xsd:fractionDigits value="2" />
 		</xsd:extension>
 	</xsd:simpleContent>
 </xsd:complexType>
