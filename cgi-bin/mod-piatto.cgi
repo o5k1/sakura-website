@@ -15,7 +15,7 @@ checkSession($session);
 
 #Inizializzazione variabili base
 my $q = new CGI;
-my $path = "Modifica piatto";
+#my $path = "Modifica piatto";
 my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt; Modifica piatto";
 
 printStartHtml('Modifica piatto - Area Amministratore', $breadcrump);
@@ -23,7 +23,7 @@ printStartHtml('Modifica piatto - Area Amministratore', $breadcrump);
 # Verifica parametri
 if ($q->param('mod-piatto-in')) {
 
-   #print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
+   print "<p>Parametri da inserire: ".$q->param('identifier')."-".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
 
    my $error = '';
    
@@ -33,6 +33,10 @@ if ($q->param('mod-piatto-in')) {
    my $oldId = $q->param('idElemento'); # Campo hidden vecchio
    
    # Dati nuovi
+   my $newId = $q->param('identifier');
+      if ($newId ne $oldId) {
+         $error .= checkIdPiatto($newId);
+      }
    my $newNome = $q->param('nome');
       $error .= checkNome($newNome);
    my $newNumero = $q->param('numero');
@@ -41,15 +45,9 @@ if ($q->param('mod-piatto-in')) {
       $error .= checkPrezzo($newPrezzo);
    my $newDesc = $q->param('descrizione');
       $error .= checkDesc($newDesc);
-      
-   my $newId = toCamelCase($newNome);
-      if ($newId ne $oldId) { # Il controllo sull'id è fatto solo se questo risulta diverso dal vecchio
-         $error .= checkIdPiatto($newId);
-      }
    
    
-   if ($error ne '') { # Se ci sono degli errori
-      
+   if ($error ne '') { # Se ci sono degli errori nei check
       my %textForm = (htitle => 'Modifica piatto: ',
                       toggetto => $newNome,
                       hfile => 'mod-piatto.cgi',
@@ -58,7 +56,8 @@ if ($q->param('mod-piatto-in')) {
                       sname => 'mod-piatto'
                      );
                
-      my %oldData = (name => $newNome,
+      my %oldData = (identifier => $newId,
+                     name => $newNome,
                      numero => $newNumero,
                      prezzo => $newPrezzo,
                      descrizione => $newDesc
@@ -70,8 +69,22 @@ if ($q->param('mod-piatto-in')) {
    
    else {
       my $doc = initLibXML();
-      $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/nome/text()")->get_node(1)->setData($newNome);
-      $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/prezzo/text()")->get_node(1)->setData($newPrezzo);
+      my $parser = XML::LibXML->new();
+      #$doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/nome/text()")->get_node(1)->setData($newNome);
+
+      my ($nome) = $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/nome");
+         $nome->unbindNode;
+      my $nome = "<nome>$newNome</nome>
+            ";
+
+      if (eval{$nome=$parser->parse_balanced_chunk($nome);}) {
+               my $padre = $doc->findnodes("menu/cibo//piatto[\@id = '$oldId']");
+               if($padre){
+                  $padre->get_node(1)->appendChild($nome) || die('Non riesco a trovare il padre');
+               }
+      } else {
+         $error.="<li>Il campo nome deve contenere tag o entità html validi.</li>";
+      }
       
       if ($doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/descrizione") ne '') {
             # Distruggo nodo <descrizione>
@@ -80,8 +93,8 @@ if ($q->param('mod-piatto-in')) {
          
          if ($newDesc ne '') { # aggiorno nodo <descrizione> (ricostruendolo)
          
-            my $description = "<descrizione>$newDesc</descrizione>";
-            my $parser = XML::LibXML->new(); 
+            my $description = "<descrizione>$newDesc</descrizione>
+                  ";
             
             if (eval{$description=$parser->parse_balanced_chunk($description);}) {
                my $padre = $doc->findnodes("menu/cibo//piatto[\@id = '$oldId']");
@@ -89,7 +102,7 @@ if ($q->param('mod-piatto-in')) {
                   $padre->get_node(1)->appendChild($description) || die('Non riesco a trovare il padre');
                }
             } else {
-               $error.="<li>I campi dati devono contenere tag html validi.</li>";
+               $error.="<li>Il campo descrizione deve contenere tag o entità html validi.</li>";
             }
          }
       }
@@ -97,8 +110,8 @@ if ($q->param('mod-piatto-in')) {
          
          if ($newDesc ne '') { # costruisco nodo <descrizione>
 
-            my $description = "<descrizione>$newDesc</descrizione>";
-            my $parser = XML::LibXML->new(); 
+            my $description = "<descrizione>$newDesc</descrizione>
+                  ";
             
             if (eval{$description=$parser->parse_balanced_chunk($description);}) {
                my $padre = $doc->findnodes("menu/cibo//piatto[\@id = '$oldId']");
@@ -106,19 +119,22 @@ if ($q->param('mod-piatto-in')) {
                $padre->get_node(1)->appendChild($description) || die('Non riesco a trovare il padre');
                }
             } else {
-               $error.="<li>I campi dati devono contenere tag html validi.</li>";
+               $error.="<li>Il campo descrizione deve contenere tag o entità html validi.</li>";
             }
          }
       }
       
+      if ($error eq '') { # tag non ben formati
       
-      # Aggiorno per ultimo l'id
-      my ($node) = $doc->findnodes("menu/cibo//piatto/\@id[.='$oldId']");
-      $node->setValue($newId);
+         $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/numero/text()")->get_node(1)->setData($newNumero);
+         $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/prezzo/text()")->get_node(1)->setData($newPrezzo);
+         # Aggiorno per ultimo l'id
+         my ($node) = $doc->findnodes("menu/cibo//piatto/\@id[.='$oldId']");
+         $node->setValue($newId);
       
-      writeFile($doc);
+         writeFile($doc);
       
-      my %textForm = (htitle => 'Modifica piatto: ',
+         my %textForm = (htitle => 'Modifica piatto: ',
                       toggetto => $newNome,
                       hfile => 'mod-piatto.cgi',
                       hlegend => 'Modifica piatto',
@@ -126,21 +142,45 @@ if ($q->param('mod-piatto-in')) {
                       sname => 'mod-piatto'
                      );
                
-      my %oldData = (name => $newNome,
+         my %oldData = (identifier => $newId,
+                     name => $newNome,
                      numero => $newNumero,
                      prezzo => $newPrezzo,
                      descrizione => $newDesc
                      );
       
-      printFormCibo($q, 'Modifiche effettuate con successo!', $error, \%textForm, \%oldData);
+         my $bug = $q->param('identifier');
+         printFormCibo($q, 'Modifiche effettuate con successo!'.$bug, $error, \%textForm, \%oldData, $bug);
+      }
+
+      else {
+         my %textForm = (htitle => 'Modifica piatto: ',
+                      toggetto => $newNome,
+                      hfile => 'mod-piatto.cgi',
+                      hlegend => 'Modifica piatto',
+                      svalue => 'Modifica',
+                      sname => 'mod-piatto'
+                     );
+
+      my %oldData = (identifier => $newId,
+                     name => $newNome,
+                     numero => $newNumero,
+                     prezzo => $newPrezzo,
+                     descrizione => $newDesc
+                     );
+
+
+      printFormCibo($q, 'Ops! Ci sono degli errori nei dati inseriti: ', $error, \%textForm, \%oldData);
+      }
    } 
 }
 
 elsif ($q->param('mod')) {
 
       # Raccolgo parametri:
+      my $oldId = $q->param('idElemento');
       my $oldNome = $q->param('nome');
-      my $oldNumero = $q->param('mumero');
+      my $oldNumero = $q->param('numero');
       my $oldPrezzo = $q->param('prezzo');
       my $oldDesc = $q->param('descrizione');
 
@@ -152,7 +192,8 @@ elsif ($q->param('mod')) {
                       sname => 'mod-piatto'
                      );
                
-      my %oldData = (name => $oldNome,
+      my %oldData = (identifier => $oldId,
+                     name => $oldNome,
                      numero => $oldNumero,
                      prezzo => $oldPrezzo,
                      descrizione => $oldDesc

@@ -89,8 +89,8 @@ sub printMenuBevande {
                   My::Base::printStartForm('mod-bevanda',$pathR->{mod_bevanda}, 'GET');
                      print "
                            <input class='pulsante' type='submit' name='mod' value='Modifica' />
-                           <input type='hidden' name='nome' value='$nome' />
                            <input type='hidden' name='idElemento' value='$idBevanda' />
+                           <input type='hidden' name='nome' value='$nome' />
                            <input type='hidden' name='prezzo' value='$prezzo' />
                            <input type='hidden' name='descrizione' value='$descrizione' />
                          ";

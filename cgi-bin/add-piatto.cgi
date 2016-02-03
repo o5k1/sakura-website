@@ -33,7 +33,7 @@ printStartHtml('Aggiungi Piatto - Area Amministratore', $breadcrump);
 # Verifica parametri
 if ($q->param('add-piatto-in')) {
 
-   #print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
+   #print "<p>Parametri da inserire: ".$q->param('identifier')."-".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
    
    my $error = '';
    
@@ -45,7 +45,7 @@ if ($q->param('add-piatto-in')) {
       $error .= checkPrezzo($prezzo);
    my $descrizione = $q->param('descrizione');
       $error .= checkDesc($descrizione);
-   my $id = toCamelCase($nome);
+   my $id = $q->param('identifier');
       $error .= checkIdPiatto($id);
    my $idPortata = $q->param('idLista');
    my $nomePortata = $q->param('nomeLista');
