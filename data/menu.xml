@@ -25,7 +25,6 @@
 				<nome>Insalata di alghe</nome>
 				<numero>4</numero>
 				<prezzo>6</prezzo>
-				<descrizione/>
 			</piatto>
 			<piatto id="agedashiToufu">
 				<nome>Agedashi Toufu</nome>
@@ -539,8 +538,8 @@
 	<bevande>
 		<listaBevande id="vini">
             <nome>Vini</nome>
-            <bevanda id="Monéà">
-                <nome>Monéà</nome>
+            <bevanda id="Monea">
+                <nome>Monea</nome>
                 <descrizione>asd</descrizione>
                 <prezzo>45</prezzo>
             </bevanda>
