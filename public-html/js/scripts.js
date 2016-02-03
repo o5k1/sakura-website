@@ -97,18 +97,84 @@ function checkForm() {
 }
 
 function checkFormBevanda() {
-   /*var nome = document.getElementsByName('nome');
-   var prezzo = document.getElementsByName('prezzo');
-   var descrizione = document.getElementsByName('descrizione');
 
-   if (nome.innerHTML == "") {
+   // recupero la label del campo form
+   var nomeLabel = document.getElementById('nome');
+   var prezzoLabel = document.getElementById('prezzo');
+   //var descLabel = document.getElementById('descrizione');
 
-   }*/
+   if (nome.value === undefined) { // controllo dati inseriti
+      error = 1;
+      nomeLabel.lastChild.innerHTML = "- <span class='red'>Titolo vuoto</span>";
+   }
+   else {
+      nomeLabel.lastChild.innerHTML = "";
+   }
 
+   if (prezzo.value === undefined || prezzo.value.search(/^[0-9]{1}[0-9]{0,3},[0-9]{2}/) != 0) {
+      error = 1;
+      prezzoLabel.lastChild.innerHTML = "- <span class='red'>Prezzo non valido (numero seguito da virgola e 2 cifre decimali)</span>";
+   }
+   else {
+      prezzoLabel.lastChild.innerHTML = "";
+   }
+
+   if(error){
+      alert('Dati inseriti errati! Correggi i dati inseriti nell\'area indicate con il rosso.');
+      return false;
+   }
+   else {
+     return true;
+   }
    return true;
 }
 
 function checkFormPiatto() {
+    var error = 0;
+
+   // seleziono campo form
+   var nome = document.getElementsByName('nome')[0];
+   var numero = document.getElementsByName('numero')[0];
+   var prezzo = document.getElementsByName('prezzo')[0];
+   //var descrizione = document.getElementsByName('descrizione')[0];
+
+   // recupero la label del campo form
+   var nomeLabel = document.getElementById('nome');
+   var numeroLabel = document.getElementById('numero');
+   var prezzoLabel = document.getElementById('prezzo');
+   //var descLabel = document.getElementById('descrizione');
+
+   if (nome.value === undefined) { // controllo dati inseriti
+      error = 1;
+      nomeLabel.lastChild.innerHTML = "- <span class='red'>Titolo vuoto</span>";
+   }
+   else {
+      nomeLabel.lastChild.innerHTML = "";
+   }
+
+   if (numero.value === undefined || numero.value.search(/^[0-9]{1}[0-9]{0,2}[a-z]{0,1}$/) != 0) {
+      error = 1;
+      numeroLabel.lastChild.innerHTML = "- <span class='red'>Prezzo non valido (numero seguito da virgola e 2 cifre decimali)</span>";
+   }
+   else {
+      numeroLabel.lastChild.innerHTML = "";
+   }
 
    return true;
+   if (prezzo.value === undefined || prezzo.value.search(/^[0-9]{1}[0-9]{0,3},[0-9]{2}/) != 0) {
+      error = 1;
+      prezzoLabel.lastChild.innerHTML = "- <span class='red'>Prezzo non valido (numero seguito da virgola e 2 cifre decimali)</span>";
+   }
+   else {
+      prezzoLabel.lastChild.innerHTML = "";
+   }
+
+   if(error){
+      alert('Dati inseriti errati! Correggi i dati inseriti nell\'area indicate con il rosso.');
+      return false;
+   }
+   else {
+      return true;
+   }
+
 }
