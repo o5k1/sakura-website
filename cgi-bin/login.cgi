@@ -59,7 +59,7 @@ sub showForm {
 
    printStartHtmlPublic("Area amministratore", "Area amministratore");
 
-   print "<p id='error'>"; # Serve per Js
+   print "<p id='errorLogin'>"; # Serve per Js
       if ($error ne '') {
          print "$error";
       }
