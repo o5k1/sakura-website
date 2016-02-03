@@ -56,7 +56,8 @@ sub printPathHtml {
 	print "<div id=\"path\">
 			<h2>$path</h2>
 		</div>
-		<div id=\"content\">";
+		<div id=\"content\">
+        ";
 }
 
 

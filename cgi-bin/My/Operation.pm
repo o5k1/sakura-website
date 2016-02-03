@@ -29,7 +29,7 @@ sub printFormCibo { # stampo la form
 
    #print $q->a({-href => $href},'Torna al menù');
 
-   print "<div class='panel'>";
+   print "<div class='form'>";
    print $q->h3($htitle);
       
    if ($info ne '') {
@@ -49,8 +49,15 @@ sub printFormCibo { # stampo la form
    }
    
    My::Base::printStartFormJS($textForm->{sname}."-in", $hfile, 'post');
-      print "<fieldset>
-               <legend>$hlegend</legend>";
+      print "<fieldset>";
+               #<legend>$hlegend</legend>";
+
+      print "<p>";
+         #print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
+         print "<label id='identifier'>Id $hoggetto <span class='errorjs'></span></label>";
+         print "<input type='text' name='id' value='".$oldData->{identifier}."' />";
+      print "</p>";
+
       print "<p>";
          #print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
          print "<label id='nome'>Nome $hoggetto <span class='errorjs'></span></label>";
@@ -60,13 +67,13 @@ sub printFormCibo { # stampo la form
       print "<p>";
          #print $q->label({-id => 'numero'}, 'Numero piatto');
          print "<label id='numero'>Numero <span class='errorjs'></span></label>";
-         print $q->textarea(-name => 'numero', -value => $oldData->{numero});
+         print "<input type='text' name='numero' value='".$oldData->{numero}."' />";
       print "</p>";
       
       print "<p>";
          #print $q->label({-id => 'prezzo'}, 'Prezzo (&euro;)');
          print "<label id='prezzo'>Prezzo (&euro;) <span class='errorjs'></span></label>";
-         print $q->textarea(-name => 'prezzo', -value => $oldData->{prezzo});
+         print "<input type='text' name='prezzo' value='".$oldData->{prezzo}."' />";
       print "</p>";
       
       print "<p>";
@@ -124,7 +131,7 @@ sub printFormBevanda {
 
    #print $q->a({-href => $href},'Torna al menù');
 
-   print "<div class='panel'>";
+   print "<div class='form'>";
    print $q->h3($htitle);
    
    if ($info ne '') {
@@ -144,8 +151,15 @@ sub printFormBevanda {
    }
    
    My::Base::printStartFormJS($textForm->{sname}."-in", $hfile, 'post');
-      print "<fieldset>
-               <legend>$hlegend</legend>";
+      print "<fieldset>";
+               #<legend>$hlegend</legend>";
+
+      print "<p>";
+         #print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
+         print "<label id='identifier'>Id $hoggetto <span class='errorjs'></span></label>";
+         print "<input type='text' name='id' value='".$oldData->{identifier}."' />";
+      print "</p>";
+
       print "<p>";
          #print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
          print "<label id='nome'>Nome $hoggetto <span class='errorjs'></span></label>";
@@ -155,7 +169,7 @@ sub printFormBevanda {
       print "<p>";
          #print $q->label({-id => 'prezzo'}, 'Prezzo (&euro;)');
          print "<label id='prezzo'>Prezzo (&euro;) <span class='errorjs'></span></label>";
-         print $q->textarea(-name => 'prezzo', -value => $oldData->{prezzo});
+         print "<input type='text' name='prezzo' value='".$oldData->{prezzo}."' />";
       print "</p>";
       
       print "<p>";

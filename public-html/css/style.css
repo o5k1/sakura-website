@@ -363,7 +363,7 @@ img {
 		margin-top: 0.5em;
 	}
 
-	fieldset {
+	#login fieldset {
 		width: 60%;
 		margin-left: auto;
 		margin-right: auto;
@@ -402,6 +402,7 @@ img {
 	}
 
 	#submit {
+        width: 50%;
 		color: #FFF6F6;
 		background: #333333;
 		padding: 0.2em 0.9em;
@@ -479,7 +480,7 @@ img {
    div.form {
       border-bottom: solid;
       border-width: 7px;
-      width: 40%;
+      width: 60%;
    }
 
    div.form h3{
@@ -489,5 +490,25 @@ img {
       padding-bottom: 0.1em;
       border-bottom: solid;
       border-width: 7px;
+   }
+
+   fieldset{
+      width: 80%;
+      text-align: center;
+   }
+
+   fieldset textarea {
+      width: 100%;
+   }
+
+   ul.errorList li {
+      list-style-type: disc;
+      margin-left: 1.5em;
+      color: red;
+   }
+
+   .error {
+      font-size: 0.8em;
+      color: red;
    }
 }
