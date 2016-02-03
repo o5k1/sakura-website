@@ -57,12 +57,12 @@ function checkLogin() {
    var error = document.getElementById('error');
 
    if(user == "" && pass == "") {
-      error.innerHTML = "I campi segnati da <span class='red'>*</span> non possono essere vuoti.";
+      error.innerHTML = "I campi segnati da <span class='error'>*</span> non possono essere vuoti.";
       var userLabel = document.getElementById('user');
       var passLabel = document.getElementById('pass');
 
-      userLabel.innerHTML = "Username <span class='red'>*</span>";
-      passLabel.innerHTML = "Password <span class='red'>*</span>";
+      userLabel.innerHTML = "Username <span class='error'>*</span>";
+      passLabel.innerHTML = "Password <span class='error'>*</span>";
 
       return false;
    }
@@ -111,7 +111,7 @@ function checkFormBevanda() {
 
    if (nome.value === undefined) { // controllo dati inseriti
       error = 1;
-      nomeLabel.lastChild.innerHTML = "- <span class='red'>Titolo vuoto</span>";
+      nomeLabel.lastChild.innerHTML = "- <span class='error'>Titolo vuoto</span>";
    }
    else {
       nomeLabel.lastChild.innerHTML = "";
@@ -119,7 +119,7 @@ function checkFormBevanda() {
 
    if (prezzo.value === undefined || prezzo.value.search(/^[0-9]{1}[0-9]{0,3},[0-9]{2}/) != 0) {
       error = 1;
-      prezzoLabel.lastChild.innerHTML = "- <span class='red'>Prezzo non valido (numero seguito da virgola e 2 cifre decimali)</span>";
+      prezzoLabel.lastChild.innerHTML = "- <span class='error'>Prezzo non valido (numero seguito da virgola e 2 cifre decimali)</span>";
    }
    else {
       prezzoLabel.lastChild.innerHTML = "";
@@ -141,36 +141,39 @@ function checkFormPiatto() {
     var error = 0;
 
    // seleziono campo form
+   //var id =
    var nome = document.getElementsByName('nome')[0];
    var numero = document.getElementsByName('numero')[0];
    var prezzo = document.getElementsByName('prezzo')[0];
    //var descrizione = document.getElementsByName('descrizione')[0];
 
    // recupero la label del campo form
+   //var idLabel =
    var nomeLabel = document.getElementById('nome');
    var numeroLabel = document.getElementById('numero');
    var prezzoLabel = document.getElementById('prezzo');
    //var descLabel = document.getElementById('descrizione');
 
-   if (nome.value === undefined) { // controllo dati inseriti
+
+   if (nome.value == "") { // controllo dati inseriti
       error = 1;
-      nomeLabel.lastChild.innerHTML = "- <span class='red'>Titolo vuoto</span>";
+      nomeLabel.lastChild.innerHTML = "- <span class='error'>Titolo vuoto</span>";
    }
    else {
       nomeLabel.lastChild.innerHTML = "";
    }
 
-   if (numero.value === undefined || numero.value.search(/^[0-9]{1}[0-9]{0,2}[a-z]{0,1}$/) != 0) {
+   if (numero.value == "" || numero.value.search(/^[0-9]{1}[0-9]{0,2}[a-z]{0,1}$/) != 0) {
       error = 1;
-      numeroLabel.lastChild.innerHTML = "- <span class='red'>Prezzo non valido (numero seguito da virgola e 2 cifre decimali)</span>";
+      numeroLabel.lastChild.innerHTML = "- <span class='error'>Prezzo non valido (numero seguito da virgola e 2 cifre decimali)</span>";
    }
    else {
       numeroLabel.lastChild.innerHTML = "";
    }
 
-   if (prezzo.value === undefined || prezzo.value.search(/^[0-9]{1}[0-9]{0,3},[0-9]{2}/) != 0) {
+   if (prezzo.value == "" || prezzo.value.search(/^[0-9]{1}[0-9]{0,3},[0-9]{2}/) != 0) {
       error = 1;
-      prezzoLabel.lastChild.innerHTML = "- <span class='red'>Prezzo non valido (numero seguito da virgola e 2 cifre decimali)</span>";
+      prezzoLabel.lastChild.innerHTML = "- <span class='error'>Prezzo non valido (numero seguito da virgola e 2 cifre decimali)</span>";
    }
    else {
       prezzoLabel.lastChild.innerHTML = "";
