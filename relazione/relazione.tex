@@ -1,5 +1,7 @@
 \documentclass{article}
 \usepackage{leaf}
+\usepackage{float}
+\restylefloat{figure}
 \titlepage{}
 
 \author{Bicego Eduard, Castello Davide, Tombolato Andrea}
@@ -47,20 +49,38 @@
 
 	\line(1,0){350} \\
 	{\scshape\LARGE Università di Padova \par}
-	\vspace{2cm}
-	\begin{tabular}{c|c}
-		{\hfill\textbf{Data Redazione}} 		& 2016-02-01  		\\ 
+	\vspace{1cm}
+	\hypersetup{
+		colorlinks=true,
+		linkcolor=blue,
+		anchorcolor=black,
+		citecolor=black,
+		urlcolor=blue,
+	}
+	\begin{figure}[H]
+	\centering
+		\includegraphics[width=\textwidth]{images/logo}
+	\end{figure}
+	{\LARGE Informazioni sul gruppo:\par}
+	\vspace{0.3cm}
+	\begin{tabular}{c|c} 
 		{\hfill\textbf{Gruppo}} 			&  fsociety  \\ 
 		{\hfill\textbf{Membri del gruppo}} 			&  Bicego Eduard \\ 
 										& Castello Davide       \\
 										& Tombolato Andrea \\
-		{\hfill\textbf{Email referente}} 		& \mail{davide.castello.1@studenti.unipd.it}  		\\ 
-		{\hfill\textbf{URL sito}} 			&  *da inserire* \\ 
-	\end{tabular}
+		{\hfill\textbf{Email referente}} 		& davide.castello.1@studenti.unipd.it  	\\
+	\end{tabular}\\
+	\vspace{1.5cm}
+	{\scshape\LARGE URL sito \par}
+	\vspace{0.5cm}
+	\large \url{http://tecnologie-web.studenti.math.unipd.it/tecweb/~dcastell/} \par
+	\vspace{1cm}
 	\end{titlepage}
 \newpage
 	\pagestyle{myfrontrel}
 	\tableofcontents
+\newpage
+	\listoffigures
 	\label{LastFrontPage}
 \newpage
 	\pagestyle{myrel}
