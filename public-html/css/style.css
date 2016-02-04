@@ -80,14 +80,18 @@ li {
 }
 
 .hidden {
-	/*display: none;*/
-	/*visibility: hidden;*/
 	position:absolute; 
 	left:-10000px; 
 	top:auto; 
 	width:1px; 
 	height:1px; 
 	overflow:hidden;
+}
+
+.aiuti{ 
+	position:absolute; 
+	height:0; 
+	overflow:hidden; 
 }
 
 #fast-search ul {
@@ -215,10 +219,8 @@ input[name='mod'].pulsante, input[name='del'].pulsante {
 
 input[name='mod'].pulsante {
 	margin-left: 5em;
-=======
 	float: right;
 	clear: left;
->>>>>>> Stashed changes
 }
 
 dd {
@@ -294,6 +296,7 @@ div.form h3{
     text-align: center;
     font-size: 2em;
     padding-bottom: 0.1em;
+    margin-top: 0.5em;
 }
 
 label, input {
@@ -516,19 +519,19 @@ fieldset input, fieldset textarea {
 		font-size: 1.3em;
 	}
 
-#fast-search ul {
-	text-align: left;
-}
+	#fast-search ul {
+		text-align: left;
+	}
 
-#fast-search li {
-	margin-bottom: 0.5em;
-	margin-right: 0.5em;
-	margin-left: 1em;
-}
+	#fast-search li {
+		margin-bottom: 0.5em;
+		margin-right: 0.5em;
+		margin-left: 1em;
+	}
 
-.panel p.end-list {
-	text-align: center;
-}
+	.panel p.end-list {
+		text-align: center;
+	}
 
 
 	dl {
@@ -585,55 +588,22 @@ fieldset input, fieldset textarea {
 		margin-top: 0.5em;
 	}
 
-
-   /*fieldset input {
-      width: 100%;
-   }*/
-
-	/*input[name='username'], input[name='password'] {
-		margin-top: 0.2em;
-		margin-bottom: 1em;
-		border-bottom: solid;
-		border-width: 2px;
-		border-color: #333333;
-		background: #FFF6F6;
-		font-size: 0.9em;
-		padding: 0.2em;
-	}*/
-
 	#private-navmenu ul {
 		margin-left: 77%;
 	}
-	/*----------------------------------*/
 
-
-
-   /*div.form {
-      border-bottom: solid;
-      border-width: 7px;
-      width: 60%;
-   }*/
-
-   /*fieldset{
-      width: 80%;
-      text-align: center;
-   }
-
-   fieldset textarea {
-      width: 100%;
-   */
 	p.info {
 		margin-left: 2em;
 	}
 
-   ul.errorList li {
-      list-style-type: disc;
-      margin-left: 1.5em;
-      color: red;
-   }
+	ul.errorList li {
+	    list-style-type: disc;
+	    margin-left: 1.5em;
+	    color: red;
+	}
 
-   .error {
-      font-size: 0.8em;
-      color: red;
-   }
+	.error {
+	    font-size: 0.8em;
+	    color: red;
+		}
 }
