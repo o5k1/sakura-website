@@ -52,7 +52,8 @@ sub printMenuBevande {
             ($nomeLista) = ( $nomeLista =~ /<nome>(.*)<\/nome>/);
          
          print "<div class='panel'>
-                  <h4><a href='javascript:void(0)' onclick=\"manageMenu('$idLista')\">$nomeLista</a>
+                  <div class='list-title'>
+                  <h4><a href='javascript:void(0)' onclick=\"manageMenu('$idLista')\">$nomeLista</a></h4>
                   ";
 
       
@@ -67,7 +68,8 @@ sub printMenuBevande {
                               -value => $nomeLista);
             My::Base::printEndForm();
          }
-         print "</h4>
+         print "
+               </div>
                <dl class='listaBevande' id='$idLista'>
                   ";
 
@@ -145,6 +147,7 @@ sub printMenuCibi {
          ($nomePortata) = ( $nomePortata =~ /<nome>(.*)<\/nome>/);
    
       print "<div class='panel'>
+               <div class='list-title'>
                <h4><a href='javascript:void(0)' onclick=\"manageMenu('$idPortata')\">$nomePortata</a></h4>
                ";
 
@@ -158,6 +161,7 @@ sub printMenuCibi {
       }
       
       print "
+            </div>
             <dl class='portata' id='$idPortata'>
             ";
       
