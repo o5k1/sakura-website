@@ -4,12 +4,17 @@
 \section{Informazioni generali}
 	Per lo sviluppo del progetto abbiamo seguito le linee guida indicate sul sito del corso di Tecnologie Web:
 	\\\\\url{http://docenti.math.unipd.it/gaggi/tecweb/progetto.html}
-	\\\\Fin da subito si è cercata una forte suddivisione tra contenuto, comportamento e presentazione fin da subito per migliorare l'accessibilità del sito ed il posizionamento sui motori di ricerca.
+	\\\\Fin da subito si è deciso che durante lo sviluppo dell'intero progetto si sarebbe operata una forte suddivisione tra contenuto, comportamento e presentazione usando le tecniche apprese a lezione, al fine di migliorare l'accessibilità del sito ed il posizionamento sui motori di ricerca.\\\\
+	Lo standard adottato per il codice \texttt{HTML} è \texttt{XHTML 1.0 Strict}, mentre lo standard adottato per il \texttt{CSS} è \texttt{CSS2}.\\
+	Il comportamento del sito è stato definito interamente in \texttt{Perl/CGI}, con l'aggiunta di alcuni script \texttt{Javascript}.\\\\
+	Per quanto riguarda il database, esso è stato implementato in \texttt{XML} e si può trovare nella cartella \textit{data}. È suddiviso in \texttt{menu.xml} e \texttt{admins.xml}.\\
+	Il file \texttt{menu.xml} contiene il menù del ristorante: nella stessa cartella è fornito lo schema secondo cui il documento XML è valido: \texttt{menu.xsd}; lo schema è stato definito in \texttt{XMLSchema} seguendo il modello Tende alla Veneziana.\\
+	Il file \texttt{admins.xml} contiene l'username e password per accedere all'area amministratore, prevedendo la possibile aggiunta di ulteriori amministratori in futuro: nella stessa cartella è fornito lo schema secondo cui il documento XML è valido: \texttt{admins.xsd}; lo schema è stato definito anch'esso in \texttt{XMLSchema} seguendo il modello Tende alla Veneziana.\\\\
+	Lo \textit{scaffolding}, allo stato attuale del progetto, si presenta con la struttura seguente:
 	\begin{itemize}
-		\item 
-		\item 
-		\item standard seguiti: XHTML 1.0 Strict, CSS2
-		\item database in XML (con associato XMLSchema) e definizione del comportamento in Perl/CGI e Javascript
-		\item descrizione della suddivisione attuale in cartelle: public-html, cgi-bin, data, relazione
+		\item \texttt{cgi-bin}, in cui risiedono tutti gli script \texttt{Perl/CGI} e i file di template da popolare;
+		\item \texttt{data}, in cui risiedono tutti i file \texttt{XML} e i loro schemi associati;
+		\item \texttt{public-html}, in cui risiedono tutte le pagine statiche, i file \texttt{CSS}, gli script \texttt{Javascript} e le immagini;
+		\item \texttt{relazione}, in cui risiede il presente documento, \texttt{relazione.pdf}.
 	\end{itemize}
 \end{document}
