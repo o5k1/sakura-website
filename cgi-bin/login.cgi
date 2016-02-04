@@ -71,10 +71,10 @@ sub showForm {
                
    print "<form onsubmit=\"return checkLogin()\" id=\"login\" action=\"login.cgi\" method=\"post\">
                   <fieldset>
-                     <label id=\"user\">Username</label>
-                     <input type=\"text\" name=\"username\" size=\"25\"/>
-                     <label id=\"pass\">Password</label>
-                     <input type=\"password\" name=\"password\" size=\"25\"/>
+                     <label id=\"user\" for=\"username\">Username</label>
+                     <input id=\"username\" type=\"text\" name=\"username\" size=\"25\"/>
+                     <label id=\"pass\" for=\"password\">Password</label>
+                     <input id=\"password\" type=\"password\" name=\"password\" size=\"25\"/>
                      <input id='submit' type=\"submit\" name=\"accedi\" value=\"Accedi\" />
                   </fieldset>
                </form>

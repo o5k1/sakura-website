@@ -20,7 +20,7 @@ sub printHeadHtml {
    my $title = $_[0];
 
    print "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
-   <html xmlns='http://www.w3.org/1999/xhtml'>
+   <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='it' lang='it'>
    <head>
 	<title>$title | Ristorante Sakura</title>
 	<link rel=\"stylesheet\" type=\"text/css\" href=\"../public-html/css/style.css\" />
@@ -47,6 +47,7 @@ print<<EOF;
 					<a onclick="manageNav()" title="Menu"> &#9776; </a>
 				</div>
 			</div>
+            <a class="aiuti" href="#path">Salta la navigazione</a>
 EOF
 }
 
@@ -75,7 +76,7 @@ print "
    <body onload=\"manageNav(); hideElement()\">
 	<div id=\"header\">
 		<div id=\"fixed-info\">
-            <p>Area Amministratore - <a id=\"exit\" href='logout.cgi'>Esci</a></p>
+            <p>Area Amministratore - <a class=\"exit\" href='logout.cgi'>Esci</a></p>
 		</div>";
 		
    printTopBarHtml();
@@ -183,7 +184,7 @@ sub printEndHtml {
       </div>
 	</div>
 	<div id="footer">
-		<p>Area Amministratore - <a id="exit" href='logout.cgi'>Esci</a></p>
+		<p>Area Amministratore - <a class="exit" href='logout.cgi'>Esci</a></p>
 	</div>
 </body>
 </html>
@@ -223,7 +224,7 @@ sub printStartForm {
    my $action = $_[1];
    my $method = $_[2];
 
-   print $q->start_form(-id => $name,
+   print $q->start_form(-class => $name,
                         -action => $action,
                         -method => $method,
                         enctype => &CGI::URL_ENCODED
