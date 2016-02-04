@@ -57,7 +57,7 @@ sub showForm {
 
    my $error = $_[0];
 
-   printStartHtmlPublic("Area amministratore", "Area amministratore");
+   printStartHtmlPublic("Area amministratore", "Area amministratore", 1);
 
    print "<p id='errorLogin'>"; # Serve per Js
       if ($error ne '') {
