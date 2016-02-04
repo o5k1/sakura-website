@@ -47,6 +47,7 @@ print<<EOF;
 					<a onclick="manageNav()" title="Menu"> &#9776; </a>
 				</div>
 			</div>
+            <a class="aiuti" href="#path">Salta la navigazione</a>
 EOF
 }
 
