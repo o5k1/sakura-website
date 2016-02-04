@@ -20,7 +20,7 @@ sub printHeadHtml {
    my $title = $_[0];
 
    print "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
-   <html xmlns='http://www.w3.org/1999/xhtml'>
+   <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='it' lang='it'>
    <head>
 	<title>$title | Ristorante Sakura</title>
 	<link rel=\"stylesheet\" type=\"text/css\" href=\"../public-html/css/style.css\" />

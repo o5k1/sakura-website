@@ -228,7 +228,7 @@ sub printLinkListe {
    my ($doc, $query) = @_;
 
    print "<div id='fast-search' class='panel'>
-            <h4>Ricerca Veloce</h4>
+            <h3>Ricerca Veloce</h3>
             <ul>";
    foreach my $lista ($doc->findnodes($query)) {
       my $idLista = $lista->findnodes('@id');
@@ -246,7 +246,7 @@ sub printLinkListeUnit {
    my ($doc, $query1, $query2) = @_;
 
    print "<div id='fast-search' class='panel'>
-            <h4>Ricerca Veloce</h4>
+            <h3>Ricerca Veloce</h3>
             <ul>";
 
    foreach my $lista ($doc->findnodes($query1)) {
