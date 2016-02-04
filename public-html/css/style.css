@@ -217,16 +217,14 @@ input[name='mod'].pulsante, input[name='del'].pulsante {
 	display: inline;
 	font-size: 0.7em;
 	padding: 0.01em 0.3em;
-	/*float: right;
-	clear: left;*/
 	margin-right: 0.5em;
 }
 
-input[name='mod'].pulsante {
+/*input[name='mod'].pulsante {
 	margin-left: 5em;
 	float: right;
 	clear: left;
-}
+}*/
 
 dd {
 	text-align: left;
@@ -386,6 +384,10 @@ div.form #add-piatto-in, div.form #mod-piatto-in, div.form #add-bevanda-in, div.
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+}
+
+fieldset input[name='mod'], fieldset input[name='del']{
+	width: 10%;
 }
 
 #add-piatto-in label, #mod-piatto-in label, #add-bevanda-in label, #mod-bevanda-in label {
