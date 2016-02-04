@@ -5,6 +5,8 @@
 	xmlns="http://www.ristorantesakura.com" 
 	elementFormDefault="qualified">
 
+<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+
 <xsd:element name="menu" type="Tmenu" />
 
 <xsd:complexType name="Tmenu">
@@ -42,7 +44,6 @@
 	<xsd:simpleContent>
 		<xsd:extension base="xsd:decimal">
 			<xsd:attribute name="valuta" type="xsd:string" default="€" />
-			<xsd:fractionDigits value="2" />
 		</xsd:extension>
 	</xsd:simpleContent>
 </xsd:complexType>
