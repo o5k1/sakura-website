@@ -30,8 +30,8 @@ sub printFormCibo { # stampo la form
    #print $q->a({-href => $href},'Torna al menù');
 
    print "<div class='form'>";
-   print $q->h3($htitle);
-      
+
+
    if ($info ne '') {
       print "<p class='allright'>$info</p>";
             if($info eq 'Inserimento effettuato con successo!') {
@@ -50,6 +50,8 @@ sub printFormCibo { # stampo la form
              ";
    }
    
+   print $q->h3($htitle);
+
    My::Base::printStartFormJS($textForm->{sname}."-in", $hfile, 'post');
       print "<fieldset>";
                #<legend>$hlegend</legend>";
@@ -131,7 +133,6 @@ sub printFormBevanda {
    #print $q->a({-href => $href},'Torna al menù');
 
    print "<div class='form'>";
-   print $q->h3($htitle);
    
    if ($info ne '') {
       print "<p class='allright'>$info</p>";
@@ -151,6 +152,8 @@ sub printFormBevanda {
              ";
    }
    
+   print $q->h3($htitle);
+
    My::Base::printStartFormJS($textForm->{sname}."-in", $hfile, 'post');
       print "<fieldset>";
                #<legend>$hlegend</legend>";
@@ -253,7 +256,7 @@ sub checkNumero {
 #
 sub checkPrezzo{
     my $ret="";
-    if(!$_[0] || !($_[0] =~ m/^[0-9]{1}[0-9]{0,3}.[0-9]{2}/)){
+    if(!$_[0] || !($_[0] =~ m/^[0-9]{1}[0-9]{0,3}\.[0-9]{2}/)){
          $ret=$ret."<li>Il campo prezzo deve contenere un numero seguito dal punto e 2 cifre decimali.</li>";
     }
     return $ret;
