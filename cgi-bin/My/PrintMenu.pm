@@ -173,7 +173,7 @@ sub printMenuCibi {
          My::Base::printStartForm('add-piatto', $pathR->{add_piatto}, 'GET');
             print "
             <fieldset>
-                  <input class='pulsante' type='submit' name='aggiungi' value='Aggiungi' />
+                  <input class='pulsante' type='submit' name='add' value='Aggiungi' />
                   <input type='hidden' name='idLista' value='$idPortata' />
                   <input type='hidden' name='nomeLista' value='$nomePortata' />
             </fieldset>
