@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.4)  4 FEB 2016 11:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.4)  4 FEB 2016 12:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -678,7 +678,7 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 50--50
 Package hyperref Warning: Option `colorlinks' has already been used,
 (hyperref)                setting the option has no effect on input line 59.
 
-<images/logo.png, id=52, 697.60625pt x 284.56313pt>
+<images/logo.png, id=64, 697.60625pt x 284.56313pt>
 File: images/logo.png Graphic file (type png)
  <use images/logo.png>
 Package pdftex.def Info: images/logo.png used on input line 62.
@@ -758,51 +758,56 @@ Overfull \hbox (4.39304pt too wide) in paragraph at lines 10--11
 al-Mo-no-chro-ma-cy, pro-
  []
 
-<images/colorblindness/protanopia.png, id=134, 1244.65pt x 681.54625pt>
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 22.
+
+[6] <images/colorblindness/protanopia.png, id=156, 1244.65pt x 681.54625pt>
 File: images/colorblindness/protanopia.png Graphic file (type png)
 
 <use images/colorblindness/protanopia.png>
 Package pdftex.def Info: images/colorblindness/protanopia.png used on input lin
-e 24.
+e 27.
 (pdftex.def)             Requested size: 345.0pt x 188.91812pt.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 25.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 28.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-<images/colorblindness/deuteranopia.png, id=135, 1244.65pt x 681.54625pt>
+<images/colorblindness/deuteranopia.png, id=157, 1244.65pt x 681.54625pt>
 File: images/colorblindness/deuteranopia.png Graphic file (type png)
 
 <use images/colorblindness/deuteranopia.png>
 Package pdftex.def Info: images/colorblindness/deuteranopia.png used on input l
-ine 30.
+ine 33.
 (pdftex.def)             Requested size: 345.0pt x 188.91812pt.
 
-
-Package hyperref Warning: Option `colorlinks' has already been used,
-(hyperref)                setting the option has no effect on input line 33.
-
-[6] <images/colorblindness/tritanopia.png, id=141, 1244.65pt x 681.54625pt>
+<images/colorblindness/tritanopia.png, id=158, 1244.65pt x 681.54625pt>
 File: images/colorblindness/tritanopia.png Graphic file (type png)
 
 <use images/colorblindness/tritanopia.png>
 Package pdftex.def Info: images/colorblindness/tritanopia.png used on input lin
-e 36.
-(pdftex.def)             Requested size: 345.0pt x 188.91812pt.
-
-<images/colorblindness/monochromacy.png, id=142, 1244.65pt x 681.54625pt>
-File: images/colorblindness/monochromacy.png Graphic file (type png)
-
-<use images/colorblindness/monochromacy.png>
-Package pdftex.def Info: images/colorblindness/monochromacy.png used on input l
-ine 42.
+e 39.
 (pdftex.def)             Requested size: 345.0pt x 188.91812pt.
 
 
 Package hyperref Warning: Option `colorlinks' has already been used,
-(hyperref)                setting the option has no effect on input line 45.
+(hyperref)                setting the option has no effect on input line 42.
 
-[7 <./images/colorblindness/protanopia.png> <./images/colorblindness/deuteranop
+[7 <./images/colorblindness/protanopia.png>]
+<images/colorblindness/monochromacy.png, id=167, 1244.65pt x 681.54625pt>
+File: images/colorblindness/monochromacy.png Graphic file (type png)
+
+<use images/colorblindness/monochromacy.png>
+Package pdftex.def Info: images/colorblindness/monochromacy.png used on input l
+ine 45.
+(pdftex.def)             Requested size: 345.0pt x 188.91812pt.
+
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 49.
+
+[8 <./images/colorblindness/deuteranopia.png> <./images/colorblindness/tritanop
 ia.png>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 99.
 
@@ -810,20 +815,19 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 99.
 Package hyperref Warning: Option `colorlinks' has already been used,
 (hyperref)                setting the option has no effect on input line 99.
 
-[8 <./images/colorblindness/tritanopia.png> <./images/colorblindness/monochroma
-cy.png>]
+[9 <./images/colorblindness/monochromacy.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
  (./relazione.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 99.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 99.
 Package rerunfilecheck Info: File `relazione.out' has not changed.
-(rerunfilecheck)             Checksum: 482D07D72D6C9BC93090128AC12D26A5;612.
+(rerunfilecheck)             Checksum: D7EC2B05A8C3C594186DAACDC172BCEB;801.
  ) 
 Here is how much of TeX's memory you used:
- 9250 strings out of 493089
- 135705 string characters out of 6134843
+ 9257 strings out of 493089
+ 135801 string characters out of 6134843
  243953 words of memory out of 5000000
- 12536 multiletter control sequences out of 15000+600000
+ 12539 multiletter control sequences out of 15000+600000
  18275 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,11n,45p,846b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -841,10 +845,10 @@ ve/2015/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on relazione.pdf (11 pages, 4537757 bytes).
+Output written on relazione.pdf (12 pages, 4548645 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 122 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 194 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
