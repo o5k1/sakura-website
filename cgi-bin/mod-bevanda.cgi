@@ -63,61 +63,58 @@ if ($q->param('mod-bevanda-in')) {
    else {
       my $doc = My::Base::initLibXML();
       my $parser = XML::LibXML->new();
-      #print "$newNome | menu/bevande/listaBevande/bevanda[\@id = '$oldId']/nome/text()";
+      #my ($nome) = $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/nome/text()");
+         #$nome->setData($newNome);
 
       my ($nome) = $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/nome");
          $nome->unbindNode;
-      my $nome = "<nome>$newNome</nome>
-            ";
+      #my $nome = "<nome>$newNome</nome>
+       #     ";
+      my ($prezzo) = $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/prezzo");
+         $prezzo->unbindNode;
 
-      if (eval{$nome=$parser->parse_balanced_chunk($nome);}) {
+      my $nodo = "
+               <nome>$newNome</nome>
+               <prezzo>$newPrezzo</prezzo>
+               ";
+
+
+      if (eval{$nodo=$parser->parse_balanced_chunk($nodo);}) {
                my $padre = $doc->findnodes("menu/bevande//bevanda[\@id = '$oldId']");
                if($padre){
-                  $padre->get_node(1)->appendChild($nome) || die('Non riesco a trovare il padre');
+                  $padre->get_node(1)->appendChild($nodo) || die('Non riesco a trovare il padre');
                }
       } else {
-         $error.="<li>Il campo nome deve contenere tag o entità html validi.</li>";
+         $error.="<li>Il campi devono contenere tag o entità html validi.</li>";
       }
 
+
+
+
       
-      if ($doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/descrizione") ne '') {
+      if ($doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/descrizione") ne '') { # C'è descrizione
             # Distruggo nodo <descrizione>
             my ($description) = $doc->findnodes("menu/bevande//bevanda[\@id = '$oldId']/descrizione");
                   $description->unbindNode;
-         
-         if ($newDesc ne '') { # aggiorno nodo <descrizione> (ricostruendolo)
-         
-            my $description = "<descrizione>$newDesc</descrizione>";
-            
-            if (eval{$description=$parser->parse_balanced_chunk($description);}) {
-               my $padre = $doc->findnodes("menu/bevande//bevanda[\@id = '$oldId']");
-               if($padre){
-               $padre->get_node(1)->appendChild($description) || die('Non riesco a trovare il padre');
-               }
-            } else {
-               $error.="<li>I campi dati devono contenere tag html validi.</li>";
-            }
-         }
       }
-      else { # non esiste nodo <descrizione>
-         
-         if ($newDesc ne '') { # costruisco nodo <descrizione>
+
+      if ($newDesc ne '') { # aggiorno nodo <descrizione> (ricostruendolo)
 
             my $description = "<descrizione>$newDesc</descrizione>";
             
             if (eval{$description=$parser->parse_balanced_chunk($description);}) {
                my $padre = $doc->findnodes("menu/bevande//bevanda[\@id = '$oldId']");
                if($padre){
-               $padre->get_node(1)->appendChild($description) || die('Non riesco a trovare il padre');
+                  $padre->get_node(1)->appendChild($description) || die('Non riesco a trovare il padre');
                }
             } else {
                $error.="<li>I campi dati devono contenere tag html validi.</li>";
             }
-         }
       }
 
       if ($error eq '') {
-         $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/prezzo/text()")->get_node(1)->setData($newPrezzo);
+
+         #$doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/prezzo/text()")->get_node(1)->setData($newPrezzo);
 
       My::Base::writeFile($doc);
       

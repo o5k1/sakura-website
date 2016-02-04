@@ -66,21 +66,22 @@ if ($q->param('mod-piatto-in')) {
    else {
       my $doc = initLibXML();
       my $parser = XML::LibXML->new();
-      #$doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/nome/text()")->get_node(1)->setData($newNome);
+      my ($nome) = $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/nome/text()");
+         $nome->setData($newNome);
 
-      my ($nome) = $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/nome");
-         $nome->unbindNode;
-      my $nome = "<nome>$newNome</nome>
-            ";
+      #my ($nome) = $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/nome");
+       #  $nome->unbindNode;
+      #my $nome = "<nome>$newNome</nome>
+       #     ";
 
-      if (eval{$nome=$parser->parse_balanced_chunk($nome);}) {
-               my $padre = $doc->findnodes("menu/cibo//piatto[\@id = '$oldId']");
-               if($padre){
-                  $padre->get_node(1)->appendChild($nome) || die('Non riesco a trovare il padre');
-               }
-      } else {
-         $error.="<li>Il campo nome deve contenere tag o entità html validi.</li>";
-      }
+      #if (eval{$nome=$parser->parse_balanced_chunk($nome);}) {
+       #        my $padre = $doc->findnodes("menu/cibo//piatto[\@id = '$oldId']");
+        #       if($padre){
+         #         $padre->get_node(1)->appendChild($nome) || die('Non riesco a trovare il padre');
+          #     }
+      #} else {
+       #  $error.="<li>Il campo nome deve contenere tag o entità html validi.</li>";
+      #}
       
       if ($doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/descrizione") ne '') {
             # Distruggo nodo <descrizione>
