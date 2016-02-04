@@ -551,68 +551,68 @@
             <nome>Vini</nome>
             <bevanda id="MöetEtChandonRéserveImpériale">
 				<nome><span xml:lang="fr">Möet et Chandon Réserve Impériale</span></nome>
-				<descrizione><span xml:lang="fr">champagne</span></descrizione>
 				<prezzo>55.00</prezzo>
+				<descrizione><span xml:lang="fr">champagne</span></descrizione>
 			</bevanda>
             <bevanda id="G.H.Mumm">
                 <nome><span xml:lang="de">G.H. Mumm</span></nome>
-                <descrizione><span xml:lang="fr">champagne</span></descrizione>
                 <prezzo>45.00</prezzo>
+                <descrizione><span xml:lang="fr">champagne</span></descrizione>
             </bevanda>
             <bevanda id="ContadiCastaldiSatèn">
                 <nome>Contadi Castaldi <span xml:lang="fr">Satèn</span></nome>
-                <descrizione>franciacorta</descrizione>
                 <prezzo>35.00</prezzo>
+                <descrizione>franciacorta</descrizione>
             </bevanda>
             <bevanda id="LeCultureCruner">
                 <nome><span xml:lang="fr">Le Culture Cruner</span></nome>
-                <descrizione>prosecco <span xml:lang="en">dry</span> millesimato</descrizione>
                 <prezzo>18.00</prezzo>
+                <descrizione>prosecco <span xml:lang="en">dry</span> millesimato</descrizione>
             </bevanda>
             <bevanda id="BepinDeEto">
                 <nome>Bepin de Eto</nome>
-                <descrizione>prosecco <span xml:lang="en">extra dry</span> millesimato</descrizione>
                 <prezzo>15.00</prezzo>
+                <descrizione>prosecco <span xml:lang="en">extra dry</span> millesimato</descrizione>
             </bevanda>
             <bevanda id="SakèBlackAndGold">
                 <nome><span xml:lang="ja">Sakè</span> <span xml:lang="en">Black and Gold</span></nome>
-                <descrizione>750ml</descrizione>
                 <prezzo>25.00</prezzo>
+                <descrizione>750ml</descrizione>
             </bevanda>
             <bevanda id="LuganaSantaCristina">
                 <nome>Lugana Santa Cristina</nome>
-                <descrizione>vino fermo</descrizione>
                 <prezzo>22.00</prezzo>
+                <descrizione>vino fermo</descrizione>
             </bevanda>
             <bevanda id="Gewürztraminer">
                 <nome><span xml:lang="de">Gewürztraminer</span> (Süd Tirol)</nome>
-                <descrizione>vino fermo</descrizione>
                 <prezzo>18.00</prezzo>
+                <descrizione>vino fermo</descrizione>
             </bevanda>
             <bevanda id="MüllerThurgau">
                 <nome><span xml:lang="de">Müller Thurgau</span> (Süd Tirol)</nome>
-                <descrizione>vino fermo</descrizione>
                 <prezzo>15.00</prezzo>
+                <descrizione>vino fermo</descrizione>
             </bevanda>
             <bevanda id="PinotBianco">
                 <nome><span xml:lang="fr">Pinot</span> Bianco (Süd Tirol)</nome>
-                <descrizione>vino fermo</descrizione>
                 <prezzo>15.00</prezzo>
+                <descrizione>vino fermo</descrizione>
             </bevanda>
             <bevanda id="OroyaSushiWine">
                 <nome><span xml:lang="es">Oroya</span> <span xml:lang="ja">Sushi</span> <span xml:lang="en">Wine</span></nome>
-                <descrizione>vino fermo</descrizione>
                 <prezzo>16.00</prezzo>
+                <descrizione>vino fermo</descrizione>
             </bevanda>
             <bevanda id="VersusWhite">
                 <nome><span xml:lang="en">Versus White</span></nome>
-                <descrizione>500ml vino fermo</descrizione>
                 <prezzo>11.00</prezzo>
+                <descrizione>500ml vino fermo</descrizione>
             </bevanda>
             <bevanda id="VersusRed">
                 <nome><span xml:lang="en">Versus Red</span></nome>
-                <descrizione>500ml vino fermo rosso</descrizione>
                 <prezzo>11.00</prezzo>
+                <descrizione>500ml vino fermo rosso</descrizione>
             </bevanda>
       	</listaBevande>
 
@@ -620,33 +620,33 @@
             <nome>Birre</nome>
             <bevanda id="AsahiInLatta">
 				<nome><span xml:lang="ja">Asahi</span> in latta</nome>
-				<descrizione>2l</descrizione>
 				<prezzo>18.00</prezzo>
+				<descrizione>2l</descrizione>
 			</bevanda>
             <bevanda id="Asahi">
                 <nome><span xml:lang="ja">Asahi</span></nome>
-                <descrizione>500ml</descrizione>
                 <prezzo>4.00</prezzo>
+                <descrizione>500ml</descrizione>
             </bevanda>
             <bevanda id="Kirin">
                 <nome><span xml:lang="ja">Kirin</span></nome>
-                <descrizione>500ml</descrizione>
                 <prezzo>4.00</prezzo>
+                <descrizione>500ml</descrizione>
             </bevanda>
             <bevanda id="Sapporo">
                 <nome><span xml:lang="ja">Sapporo</span></nome>
-                <descrizione>500ml</descrizione>
                 <prezzo>4.00</prezzo>
+                <descrizione>500ml</descrizione>
             </bevanda>
             <bevanda id="SapporoSilver">
                 <nome><span xml:lang="ja">Sapporo</span> <span xml:lang="en">Silver</span></nome>
-                <descrizione>650ml</descrizione>
                 <prezzo>6.00</prezzo>
+                <descrizione>650ml</descrizione>
             </bevanda>
             <bevanda id="NastroAzzurro">
                 <nome>Nastro Azzurro</nome>
-                <descrizione>650ml</descrizione>
                 <prezzo>3.50</prezzo>
+                <descrizione>650ml</descrizione>
             </bevanda>
 		</listaBevande>
 	
@@ -654,48 +654,48 @@
             <nome>Bevande</nome>
 			<bevanda id="CocaCola">
 				<nome>Coca Cola</nome>
-				<descrizione>in lattina</descrizione>
 				<prezzo>2.00</prezzo>
+				<descrizione>in lattina</descrizione>
 			</bevanda>
             <bevanda id="Fanta">
                 <nome>Fanta</nome>
-                <descrizione>in lattina</descrizione>
                 <prezzo>2.00</prezzo>
+                <descrizione>in lattina</descrizione>
             </bevanda>
             <bevanda id="Sprite">
                 <nome>Sprite</nome>
-                <descrizione>in lattina</descrizione>
                 <prezzo>2.00</prezzo>
+                <descrizione>in lattina</descrizione>
             </bevanda>
             <bevanda id="TèAlLimone">
                 <nome>Tè al limone</nome>
-                <descrizione>in lattina</descrizione>
                 <prezzo>2.00</prezzo>
+                <descrizione>in lattina</descrizione>
             </bevanda>
             <bevanda id="TèAllaPesca">
                 <nome>Tè alla pesca</nome>
-                <descrizione>in lattina</descrizione>
                 <prezzo>2.00</prezzo>
+                <descrizione>in lattina</descrizione>
             </bevanda>
             <bevanda id="TèVerdeGiapponese">
                 <nome>Tè verde giapponese</nome>
-                <descrizione>in lattina</descrizione>
                 <prezzo>2.50</prezzo>
+                <descrizione>in lattina</descrizione>
             </bevanda>
             <bevanda id="TèVerdeGiapponeseAlGelsomino">
                 <nome>Tè verde giapponese al gelsomino</nome>
-                <descrizione>in lattina</descrizione>
                 <prezzo>2.50</prezzo>
+                <descrizione>in lattina</descrizione>
             </bevanda>
 			<bevanda id="AcquaNaturaleFillette">
 				<nome>Acqua naturale Fillette</nome>
-				<descrizione>750ml</descrizione>
 				<prezzo>3.00</prezzo>
+				<descrizione>750ml</descrizione>
 			</bevanda>
 			<bevanda id="AcquaDecisamenteFrizzanteFillette">
                 <nome>Acqua decisamente frizzante Fillette</nome>
-                <descrizione>750ml</descrizione>
                 <prezzo>3.00</prezzo>
+                <descrizione>750ml</descrizione>
             </bevanda>
             <bevanda id="CaliceDiProsecco">
                 <nome>Calice di prosecco</nome>
@@ -711,13 +711,13 @@
             </bevanda>
             <bevanda id="Sakè">
                 <nome><span xml:lang="ja">Sakè</span></nome>
-                <descrizione>200ml</descrizione>
                 <prezzo>5.00</prezzo>
+                <descrizione>200ml</descrizione>
             </bevanda>
             <bevanda id="SakèBlackAndGoldCalice">
                 <nome><span xml:lang="ja">Sakè</span> <span xml:lang="en">Black and Gold</span></nome>
-                <descrizione>200ml</descrizione>
                 <prezzo>8.00</prezzo>
+                <descrizione>200ml</descrizione>
             </bevanda>
             <bevanda id="TèVerdeGiapponese">
                 <nome>Tè verde giapponese</nome>
