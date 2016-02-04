@@ -63,18 +63,13 @@ if ($q->param('mod-bevanda-in')) {
    else {
       my $doc = My::Base::initLibXML();
       my $parser = XML::LibXML->new();
-      #my ($nome) = $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/nome/text()");
-         #$nome->setData($newNome);
 
       my ($nome) = $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/nome");
          $nome->unbindNode;
-      #my $nome = "<nome>$newNome</nome>
-       #     ";
       my ($prezzo) = $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/prezzo");
          $prezzo->unbindNode;
 
-      my $nodo = "
-               <nome>$newNome</nome>
+      my $nodo = "<nome>$newNome</nome>
                <prezzo>$newPrezzo</prezzo>
                ";
 
@@ -85,11 +80,8 @@ if ($q->param('mod-bevanda-in')) {
                   $padre->get_node(1)->appendChild($nodo) || die('Non riesco a trovare il padre');
                }
       } else {
-         $error.="<li>Il campi devono contenere tag o entità html validi.</li>";
+         $error.="<li>Il campo nome deve contenere tag o entità html validi.</li>";
       }
-
-
-
 
       
       if ($doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/descrizione") ne '') { # C'è descrizione
@@ -100,7 +92,8 @@ if ($q->param('mod-bevanda-in')) {
 
       if ($newDesc ne '') { # aggiorno nodo <descrizione> (ricostruendolo)
 
-            my $description = "<descrizione>$newDesc</descrizione>";
+            my $description = "<descrizione>$newDesc</descrizione>
+                  ";
             
             if (eval{$description=$parser->parse_balanced_chunk($description);}) {
                my $padre = $doc->findnodes("menu/bevande//bevanda[\@id = '$oldId']");
