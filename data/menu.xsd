@@ -62,8 +62,8 @@
 <xsd:complexType name="TbevandaGenerica">
 	<xsd:sequence>
 		<xsd:element name="nome" type="stringWithSpan" />
-		<xsd:element name="descrizione" type="stringWithSpan" minOccurs="0" />
 		<xsd:element name="prezzo" type="Tprezzo" />
+		<xsd:element name="descrizione" type="stringWithSpan" minOccurs="0" />
 	</xsd:sequence>
 	<xsd:attribute name="id" type="xsd:string" use="required" />
 </xsd:complexType>
