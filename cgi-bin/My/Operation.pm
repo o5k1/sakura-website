@@ -272,16 +272,16 @@ sub checkDesc{
 sub checkIdBevanda{
    my $ret="";
    my $id = $_[0];
-   if(!$_[0]){
+   if($_[0] eq ""){
       $ret=$ret."<li>Il campo id non deve essere vuoto.</li>";
    }
    if(My::Base::existElement("//bevanda[\@id = '$id']")) {
          
          $ret=$ret."<li>L'id inserito esiste già.</li>";
    }
-   #if($id =~ m/[A-Za-z0-9]{1,}/i) {
-   #      $ret=$ret."<li>L'id deve essere una parola composta da lettere maiuscole e/o minuscole, numeri senza spazi.</li>"
-   #}
+   if(!($id =~ m/^[A-Za-z]{1,}$/m)) {
+         $ret=$ret."<li>L'id deve essere una parola composta da lettere maiuscole e/o minuscole, numeri senza spazi.</li>"
+   }
    return $ret;
 }
 
@@ -289,16 +289,16 @@ sub checkIdBevanda{
 sub checkIdPiatto{
    my $ret="";
    my $id = $_[0];
-   if(!$_[0]){
+   if($_[0] eq ""){
       $ret=$ret."<li>Il campo id non deve essere vuoto.</li>";
    }
    if(My::Base::existElement("//piatto[\@id = '$id']")) {
          
          $ret=$ret."<li>L'id inserito esiste già.</li>";
    }
-   #if($id =~ m/[A-Za-z0-9]{1,}/i) {
-   #      $ret=$ret."<li>L'id $id deve essere una parola composta da numeri, lettere maiuscole e/o minuscole e nessuno spazio.</li>"
-   #}
+   if(!($id =~ m/^[A-Za-z]{1,}$/m)) {
+         $ret=$ret."<li>L'id deve essere una parola composta da lettere maiuscole e/o minuscole e nessuno spazio.</li>"
+   }
    return $ret;    
 }
 
