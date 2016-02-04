@@ -66,29 +66,39 @@ if ($q->param('mod-piatto-in')) {
    else {
       my $doc = initLibXML();
       my $parser = XML::LibXML->new();
-      #$doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/nome/text()")->get_node(1)->setData($newNome);
 
       my ($nome) = $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/nome");
          $nome->unbindNode;
-      my $nome = "<nome>$newNome</nome>
-            ";
+      my ($numero) = $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/numero");
+         $numero->unbindNode;
+      my ($prezzo) = $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/prezzo");
+         $prezzo->unbindNode;
 
-      if (eval{$nome=$parser->parse_balanced_chunk($nome);}) {
+      my $nodo = "<nome>$newNome</nome>
+               <numero>$newNumero</numero>
+               <prezzo>$newPrezzo</prezzo>
+               ";
+
+      if (eval{$nodo=$parser->parse_balanced_chunk($nodo);}) {
                my $padre = $doc->findnodes("menu/cibo//piatto[\@id = '$oldId']");
                if($padre){
-                  $padre->get_node(1)->appendChild($nome) || die('Non riesco a trovare il padre');
+                  $padre->get_node(1)->appendChild($nodo) || die('Non riesco a trovare il padre');
                }
       } else {
          $error.="<li>Il campo nome deve contenere tag o entità html validi.</li>";
       }
+
+
       
-      if ($doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/descrizione") ne '') {
+
+      if ($doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/descrizione") ne '') { # C'è descrizione
             # Distruggo nodo <descrizione>
             my ($description) = $doc->findnodes("menu/cibo//piatto[\@id = '$oldId']/descrizione");
                   $description->unbindNode;
-         
-         if ($newDesc ne '') { # aggiorno nodo <descrizione> (ricostruendolo)
-         
+      }
+
+      if ($newDesc ne '') { # aggiorno nodo <descrizione> (ricostruendolo)
+
             my $description = "<descrizione>$newDesc</descrizione>
                   ";
             
@@ -100,34 +110,10 @@ if ($q->param('mod-piatto-in')) {
             } else {
                $error.="<li>Il campo descrizione deve contenere tag o entità html validi.</li>";
             }
-         }
-      }
-      else { # non esiste nodo <descrizione>
-         
-         if ($newDesc ne '') { # costruisco nodo <descrizione>
-
-            my $description = "<descrizione>$newDesc</descrizione>
-                  ";
-            
-            if (eval{$description=$parser->parse_balanced_chunk($description);}) {
-               my $padre = $doc->findnodes("menu/cibo//piatto[\@id = '$oldId']");
-               if($padre){
-               $padre->get_node(1)->appendChild($description) || die('Non riesco a trovare il padre');
-               }
-            } else {
-               $error.="<li>Il campo descrizione deve contenere tag o entità html validi.</li>";
-            }
-         }
       }
       
       if ($error eq '') { # tag non ben formati
-      
-         $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/numero/text()")->get_node(1)->setData($newNumero);
-         $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/prezzo/text()")->get_node(1)->setData($newPrezzo);
-         # Aggiorno per ultimo l'id
-         #my ($node) = $doc->findnodes("menu/cibo//piatto/\@id[.='$oldId']");
-         #$node->setValue($newId);
-      
+
          writeFile($doc);
       
          my %textForm = (htitle => 'Modifica piatto: ',

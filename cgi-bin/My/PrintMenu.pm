@@ -91,6 +91,10 @@ sub printMenuBevande {
                   ($descrizione) = ( $descrizione =~ /<descrizione>(.*)<\/descrizione>/);
                
                print "<dt>- <strong>$nome</strong> <span class='prezzo'>$valuta $prezzo</span></dt>";
+
+               if($descrizione ne ''){
+                  print "<dd>$descrizione</dd>";
+               }
          
                if($admin) {
                   My::Base::printStartForm('mod-bevanda',$pathR->{mod_bevanda}, 'GET');
@@ -110,10 +114,6 @@ sub printMenuBevande {
                            <input type='hidden' name='idElemento' value='$idBevanda' />
                         ";
                   My::Base::printEndForm();
-               }
-
-               if($descrizione ne ''){
-                  print "<dd>$descrizione</dd>";
                }
          }
       print "</dl>
