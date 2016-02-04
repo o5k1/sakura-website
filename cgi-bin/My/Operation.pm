@@ -243,6 +243,12 @@ sub checkNome{
     if(length $_[0]>200) {
       $ret=$ret."<li>Il campo nome non deve superare i 200 caratteri.</li>";
     }
+    if ($_[0] =~ m/<\//) { # Se trova tracce di tag
+      if(!($_[0] =~ m/.{0,}<abbr title=".{1,}"(\s)?(xml\:lang="..")?>.{1,}<\/abbr>.{0,}/) &&
+            !($_[0] =~ m/.{0,}<span xml:lang="..">.{1,}<\/span>.{0,}/)) {
+         $ret=$ret."<li>Il nome deve contenere tag abbr e span ben formati (attenzione agli spazi superflui)</li>";
+      }
+    }
     return $ret;
 }
 
@@ -272,6 +278,12 @@ sub checkDesc{
     if(length $_[0]>600){
         $ret=$ret."<li>La descrizione deve avere al massimo 600 caratteri.</li>";
     }
+    if ($_[0] =~ m/<\//) {
+      if(!($_[0] =~ m/.{0,}<abbr title=".{1,}"(\s)?(xml\:lang="..")?>.{1,}<\/abbr>.{0,}/) &&
+            !($_[0] =~ m/.{0,}<span xml:lang="..">.{1,}<\/span>.{0,}/)) {
+         $ret=$ret."<li>Il campo descrizione deve contenere tag abbr e span ben formati (attenzione agli spazi superflui)</li>";
+      }
+    }
     return $ret;
 }
 
@@ -288,6 +300,9 @@ sub checkIdBevanda{
    }
    if(!($id =~ m/^[A-Za-z]{1,}$/m)) {
          $ret=$ret."<li>L'id deve essere una parola composta da lettere maiuscole e/o minuscole, numeri senza spazi.</li>"
+   }
+   if(length $_[0]>50){
+        $ret=$ret."<li>L'id non deve superare i 50 caratteri</li>";
    }
    return $ret;
 }
