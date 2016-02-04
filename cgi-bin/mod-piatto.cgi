@@ -145,8 +145,7 @@ if ($q->param('mod-piatto-in')) {
                      descrizione => $newDesc
                      );
       
-         my $bug = $q->param('identifier');
-         printFormCibo($q, 'Modifiche effettuate con successo!'.$bug, $error, \%textForm, 0, \%oldData);
+         printFormCibo($q, 'Modifiche effettuate con successo!', $error, \%textForm, 0, \%oldData);
       }
 
       else {
