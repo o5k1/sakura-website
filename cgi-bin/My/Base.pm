@@ -30,6 +30,7 @@ sub printHeadHtml {
     <meta name=\"keywords\" content=\"Sakura, ristorante, giapponese, giappone, sushi, asporto, bassano, bassano del grappa, vicenza\" />
     <meta name=\"author\" content=\"Andrea Tombolato, Eduard Bicego, Davide Castello\" />
     <meta name=\"language\" content=\"italian it\" />
+    <meta http-equiv=\"Content-Script-Type\" content=\"text/javascript\" />
     <link rel=\"shortcut icon\" type=\"image/png\" href=\"../public-html/images/favicon.png\"/>
     <script type=\"text/javascript\" src=\"../public-html/js/scripts.js\"></script>
 </head>
