@@ -22,6 +22,12 @@ my $toggetto = "bevanda";
          $toggetto = "birra";
       }
 
+my %reset = (identifier => "",
+                     name => "",
+                     prezzo => "",
+                     descrizione => ""
+                     );
+
 my %textForm = (htitle => 'Aggiungi ',
                 toggetto => $toggetto,
                 hfile => 'add-bevanda.cgi',
@@ -50,11 +56,19 @@ if ($q->param('add-bevanda-in')) {
       $error .= checkDesc($descrizione);
    my $id = $q->param('identifier');
       $error .= checkIdBevanda($id);
+
    my $idLista = $q->param('idLista');
    my $nomeLista = $q->param('nomeLista');
    
    if ($error ne '') {
-      printFormBevanda($q, 'Ops! Ci sono degli errori nei dati inseriti:', $error, \%textForm);
+
+       %reset = (identifier => $id,
+                     name => $nome,
+                     prezzo => $prezzo,
+                     descrizione => $descrizione
+                     );
+
+      printFormBevanda($q, 'Ops! Ci sono degli errori nei dati inseriti:', $error, \%textForm, 1, \%reset);
    }
    else {
       my $doc = My::Base::initLibXML();
@@ -87,17 +101,24 @@ if ($q->param('add-bevanda-in')) {
       
       my $info = '';
 
-      if ($error eq '') {
+      if ($error eq '') { # nessun errore sui tag
         $info = 'Inserimento effettuato con successo!';
+      }
+      else { # errori sui tag
+         %reset = (identifier => $id,
+                     name => $nome,
+                     prezzo => $prezzo,
+                     descrizione => $descrizione
+                     );
       }
 
 
-      printFormBevanda($q, $info, $error, \%textForm);
+      printFormBevanda($q, $info, $error, \%textForm, 1, \%reset);
    } 
 }
 elsif($q->param('idLista')) {
 
-   printFormBevanda($q, '', '', \%textForm);
+   printFormBevanda($q, '', '', \%textForm, 1, \%reset);
    
 } else {
    print "<div class='panel'>

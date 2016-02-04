@@ -17,6 +17,13 @@ my $q = new CGI; # Sarà il parametro $_[0] di ogni funzione
 
 my $nomePortata = $q->param('nomeLista');
 
+my %reset = (identifier => "",
+                     name => "",
+                     numero => "",
+                     prezzo => "",
+                     descrizione => ""
+                     );
+
 my %textForm = (htitle => 'Aggiungi ',
                 toggetto => $nomePortata,
                 hfile => 'add-piatto.cgi',
@@ -24,7 +31,7 @@ my %textForm = (htitle => 'Aggiungi ',
                 svalue => 'Aggiungi',
                 sname => 'add-piatto'
                );
-my $path = "Aggiungi Piatto";
+#my $path = "Aggiungi Piatto";
 
 my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt; Aggiungi piatto";
 
@@ -51,7 +58,15 @@ if ($q->param('add-piatto-in')) {
    my $nomePortata = $q->param('nomeLista');
 
    if ($error ne '') {
-      printFormCibo($q, 'Ops! Ci sono degli errori nei dati inseriti:', $error, \%textForm);
+
+      %reset = (identifier => $id,
+                     name => $nome,
+                     numero => $numero,
+                     prezzo => $prezzo,
+                     descrizione => $descrizione
+                     );
+
+      printFormCibo($q, 'Ops! Ci sono degli errori nei dati inseriti:', $error, \%textForm, 1, \%reset);
    }
    else {
       my $doc = initLibXML();
@@ -85,17 +100,25 @@ if ($q->param('add-piatto-in')) {
       
       my $info = '';
 
-      if ($error eq '') {
+      if ($error eq '') { # niente errori
         $info = 'Inserimento effettuato con successo!';
+      }
+      else { # errori sui tag
+         %reset = (identifier => $id,
+                     name => $nome,
+                     numero => $numero,
+                     prezzo => $prezzo,
+                     descrizione => $descrizione
+                     );
       }
 
 
-      printFormCibo($q, $info, $error, \%textForm);
+      printFormCibo($q, $info, $error, \%textForm, 1, \%reset);
    }     
 }
 elsif($q->param('idLista')) {
 
-    printFormCibo($q, '', '', \%textForm);
+    printFormCibo($q, '', '', \%textForm, 1, \%reset);
     
 } else {
    print "<div class='panel'>

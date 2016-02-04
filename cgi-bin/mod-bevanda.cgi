@@ -22,7 +22,7 @@ printStartHtml('Modifica bevanda - Area Amministratore', $breadcrump);
 # Verifica parametri
 if ($q->param('mod-bevanda-in')) {
 
-   print "<p>Parametri da inserire: ".$q->param('identifier')."-".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
+   #print "<p>Parametri da inserire: ".$q->param('identifier')."-".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
 
    my $error = '';
    
@@ -39,11 +39,6 @@ if ($q->param('mod-bevanda-in')) {
       $error .= checkPrezzo($newPrezzo);
    my $newDesc = $q->param('descrizione');
       $error .= checkDesc($newDesc);
-      
-   my $newId = toCamelCase($newNome);
-      if ($newId ne $oldId) { # Il controllo sull'id è fatto solo se questo risulta diverso dal vecchio
-         $error .= checkIdBevanda($newId);
-      }
    
    
    if ($error ne '') { # Se ci sono degli errori
@@ -56,12 +51,13 @@ if ($q->param('mod-bevanda-in')) {
                       sname => 'mod-bevanda'
                      );
    
-      my %oldData = (name => $newNome,
+      my %oldData = (id => $oldId,
+                     name => $newNome,
                      prezzo => $newPrezzo,
                      descrizione => $newDesc
                      );
    
-      printFormBevanda($q, 'Ops! Ci sono degli errori nei dati inseriti:', $error, \%textForm, \%oldData);
+      printFormBevanda($q, 'Ops! Ci sono degli errori nei dati inseriti:', $error, \%textForm, 0, \%oldData);
    }
    
    else {
@@ -107,12 +103,7 @@ if ($q->param('mod-bevanda-in')) {
             }
          }
       }
-      
-      
-      # Aggiorno per ultimo l'id
-      my ($node) = $doc->findnodes("menu/bevande//bevanda/\@id[.='$oldId']");
-      $node->setValue($newId);
-      
+
       My::Base::writeFile($doc);
       
       #print "modifiche effettuate";
@@ -125,12 +116,13 @@ if ($q->param('mod-bevanda-in')) {
                       sname => 'mod-bevanda'
                      );
    
-      my %oldData = (name => $newNome,
+      my %oldData = (id => $oldId,
+                     name => $newNome,
                      prezzo => $newPrezzo,
                      descrizione => $newDesc
                      );
       
-      printFormBevanda($q, 'Modifiche effettuate con successo!', $error, \%textForm, \%oldData);
+      printFormBevanda($q, 'Modifiche effettuate con successo!', $error, \%textForm, 0, \%oldData);
    } 
 }
 
@@ -150,12 +142,13 @@ elsif ($q->param('mod')) {
                       sname => 'mod-bevanda'
                      );
                
-      my %oldData = (name => $oldNome,
+      my %oldData = (id => $oldId,
+                     name => $oldNome,
                      prezzo => $oldPrezzo,
                      descrizione => $oldDesc
                      );
 
-      printFormBevanda($q, 'Attenzione! Una volta confermate le modifiche non sarà possibile tornare indietro.', '', \%textForm, \%oldData);
+      printFormBevanda($q, 'Attenzione! Una volta confermate le modifiche non sarà possibile tornare indietro.', '', \%textForm, 0, \%oldData);
 }
 
 else { 

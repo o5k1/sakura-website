@@ -15,7 +15,7 @@ our @EXPORT = qw(printFormCibo printFormBevanda checkDelete checkNome checkNumer
 #
 sub printFormCibo { # stampo la form
 
-   my ($q, $info, $error, $textForm, $oldData, $bug) = @_;
+   my ($q, $info, $error, $textForm, $add, $oldData) = @_;
    my $nomeLista = $q->param('nomeLista');  # nome portata
    my $idLista = $q->param('idLista');      # id portata
    my $idElemento = $q->param('identifier');
@@ -54,11 +54,12 @@ sub printFormCibo { # stampo la form
       print "<fieldset>";
                #<legend>$hlegend</legend>";
 
+   if ($add) {
       print "<p>";
          print "<label id='identifier'>Id $hoggetto <span class='errorjs'></span></label>";
          print "<input type='text' name='identifier' value='".($oldData->{identifier})."' />";
       print "</p>";
-
+   }
       print "<p>";
          print "<label id='nome'>Nome $hoggetto <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'nome', -value => $oldData->{name});
@@ -79,16 +80,9 @@ sub printFormCibo { # stampo la form
          print "<label id='descrizione'>Descrizione <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'descrizione', -value => $oldData->{descrizione});
       print "</p>";
-      
-      print $bug;
-      if ($bug eq '') {
+
       print $q->hidden(-name => 'idElemento',
                         -value => $idElemento);
-      }
-      else {
-         print $q->hidden(-name => 'idElemento',
-                        -value => $bug);
-      }
       
       print $q->hidden(-name => 'nomeLista',
                         -value => $nomeLista);
@@ -115,7 +109,7 @@ sub printFormCibo { # stampo la form
 #
 sub printFormBevanda {
 
-   my ($q, $info, $error, $textForm, $oldData) = @_;
+   my ($q, $info, $error, $textForm, $add, $oldData) = @_;
    my $nomeLista = $q->param('nomeLista');
    my $idLista = $q->param('idLista');
    my $idBevanda = $q->param('identifier');
@@ -161,11 +155,12 @@ sub printFormBevanda {
       print "<fieldset>";
                #<legend>$hlegend</legend>";
 
+   if ($add) {
       print "<p>";
          print "<label id='identifier'>Id $hoggetto <span class='errorjs'></span></label>";
          print "<input type='text' name='identifier' value='".($oldData->{identifier})."' />";
       print "</p>";
-
+   }
       print "<p>";
          print "<label id='nome'>Nome $hoggetto <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'nome', -value => $oldData->{name});
@@ -247,10 +242,10 @@ sub checkNome{
 #
 sub checkNumero {
    my $ret="";
-   if(!$_[0]){
+   if($_[0] eq ""){
       $ret=$ret."<li>Il campo numero piatto non deve essere vuoto.</li>";
    }
-   if(!($_[0] =~ m/^[0-9]{1}[0-9]{0,2}[a-z]{0,1}$/)){
+   if(!($_[0] =~ m/^[1-9]{1}[0-9]{0,2}[a-z]{0,1}$/)){
       $ret=$ret."<li>Il campo numero piatto deve essere costituito da un numero (obbligatorio) e una lettera (opzionale).</li>";
    }
 }

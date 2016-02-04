@@ -23,7 +23,7 @@ printStartHtml('Modifica piatto - Area Amministratore', $breadcrump);
 # Verifica parametri
 if ($q->param('mod-piatto-in')) {
 
-   print "<p>Parametri da inserire: ".$q->param('identifier')."-".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
+   #print "<p>Parametri da inserire: ".$q->param('identifier')."-".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
 
    my $error = '';
    
@@ -33,10 +33,6 @@ if ($q->param('mod-piatto-in')) {
    my $oldId = $q->param('idElemento'); # Campo hidden vecchio
    
    # Dati nuovi
-   my $newId = $q->param('identifier');
-      if ($newId ne $oldId) {
-         $error .= checkIdPiatto($newId);
-      }
    my $newNome = $q->param('nome');
       $error .= checkNome($newNome);
    my $newNumero = $q->param('numero');
@@ -56,7 +52,7 @@ if ($q->param('mod-piatto-in')) {
                       sname => 'mod-piatto'
                      );
                
-      my %oldData = (identifier => $newId,
+      my %oldData = (identifier => $oldId,
                      name => $newNome,
                      numero => $newNumero,
                      prezzo => $newPrezzo,
@@ -64,7 +60,7 @@ if ($q->param('mod-piatto-in')) {
                      );
 
    
-      printFormCibo($q, 'Ops! Ci sono degli errori nei dati inseriti:', $error, \%textForm, \%oldData);
+      printFormCibo($q, 'Ops! Ci sono degli errori nei dati inseriti:', $error, \%textForm, 0, \%oldData);
    }
    
    else {
@@ -129,8 +125,8 @@ if ($q->param('mod-piatto-in')) {
          $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/numero/text()")->get_node(1)->setData($newNumero);
          $doc->findnodes("menu/cibo/portata/piatto[\@id = '$oldId']/prezzo/text()")->get_node(1)->setData($newPrezzo);
          # Aggiorno per ultimo l'id
-         my ($node) = $doc->findnodes("menu/cibo//piatto/\@id[.='$oldId']");
-         $node->setValue($newId);
+         #my ($node) = $doc->findnodes("menu/cibo//piatto/\@id[.='$oldId']");
+         #$node->setValue($newId);
       
          writeFile($doc);
       
@@ -142,7 +138,7 @@ if ($q->param('mod-piatto-in')) {
                       sname => 'mod-piatto'
                      );
                
-         my %oldData = (identifier => $newId,
+         my %oldData = (identifier => $oldId,
                      name => $newNome,
                      numero => $newNumero,
                      prezzo => $newPrezzo,
@@ -150,7 +146,7 @@ if ($q->param('mod-piatto-in')) {
                      );
       
          my $bug = $q->param('identifier');
-         printFormCibo($q, 'Modifiche effettuate con successo!'.$bug, $error, \%textForm, \%oldData, $bug);
+         printFormCibo($q, 'Modifiche effettuate con successo!'.$bug, $error, \%textForm, 0, \%oldData);
       }
 
       else {
@@ -162,7 +158,7 @@ if ($q->param('mod-piatto-in')) {
                       sname => 'mod-piatto'
                      );
 
-      my %oldData = (identifier => $newId,
+      my %oldData = (identifier => $oldId,
                      name => $newNome,
                      numero => $newNumero,
                      prezzo => $newPrezzo,
@@ -170,7 +166,7 @@ if ($q->param('mod-piatto-in')) {
                      );
 
 
-      printFormCibo($q, 'Ops! Ci sono degli errori nei dati inseriti: ', $error, \%textForm, \%oldData);
+      printFormCibo($q, 'Ops! Ci sono degli errori nei dati inseriti: ', $error, \%textForm, 0, \%oldData);
       }
    } 
 }
@@ -199,7 +195,7 @@ elsif ($q->param('mod')) {
                      descrizione => $oldDesc
                      );
 
-      printFormCibo($q, 'Attenzione! Una volta confermate le modifiche non sarà possibile tornare indietro.', '', \%textForm, \%oldData);
+      printFormCibo($q, 'Attenzione! Una volta confermate le modifiche non sarà possibile tornare indietro.', '', \%textForm, 0, \%oldData);
 }
 
 else {
