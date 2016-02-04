@@ -96,9 +96,9 @@ sub printMenuBevande {
          
                if($admin) {
                   if ($descrizione ne '') {
-                     print "<dd>$descrizione";
+                     print "\n<dd>$descrizione";
                   } else {
-                     print "<dd>";
+                     print "\n<dd>";
                   }
 
                   My::Base::printStartForm('mod-bevanda',$pathR->{mod_bevanda}, 'GET');
@@ -122,7 +122,7 @@ sub printMenuBevande {
                      </fieldset>
                      ";
                   My::Base::printEndForm();
-                  print "</dd>";
+                  print "\n</dd>\n";
                }
                elsif ($descrizione ne '') {
                   print "<dd>$descrizione</dd>";
@@ -203,9 +203,9 @@ sub printMenuCibi {
                
                if($admin) {
                   if ($descrizione ne '') {
-                     print "<dd>$descrizione";
+                     print "\n<dd>$descrizione";
                   } else {
-                     print "<dd>";
+                     print "\n<dd>";
                   }
 
                   My::Base::printStartForm('mod-piatto', $pathR->{mod_piatto}, 'GET');
@@ -255,7 +255,7 @@ sub printLinkListe {
 
    my ($doc, $query) = @_;
 
-   print "<div id='fast-search' class='panel'>
+   print "\n<div id='fast-search' class='panel'>
             <h3>Ricerca Veloce</h3>
             <ul>";
    foreach my $lista ($doc->findnodes($query)) {
@@ -266,14 +266,14 @@ sub printLinkListe {
       print "<li><a href='#$idLista'>$nomeLista</a></li>";
    }
    print "</ul>
-         </div>";
+         </div>\n";
 }
 
 sub printLinkListeUnit {
 
    my ($doc, $query1, $query2) = @_;
 
-   print "<div id='fast-search' class='panel'>
+   print "\n<div id='fast-search' class='panel'>
             <h3>Ricerca Veloce</h3>
             <ul>";
 
@@ -294,7 +294,7 @@ sub printLinkListeUnit {
    }
 
    print "</ul>
-         </div>";
+         </div>\n";
 }
 
    

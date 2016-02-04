@@ -269,8 +269,8 @@ sub checkPrezzo{
 #
 sub checkDesc{
     my $ret="";
-    if(length $_[0]>800){
-        $ret=$ret."<li>La descrizione deve avere al massimo 800 caratteri.</li>";
+    if(length $_[0]>600){
+        $ret=$ret."<li>La descrizione deve avere al massimo 600 caratteri.</li>";
     }
     return $ret;
 }
@@ -306,6 +306,9 @@ sub checkIdPiatto{
    if(!($id =~ m/^[A-Za-z]{1,}$/m)) {
          $ret=$ret."<li>L'id deve essere una parola composta da lettere maiuscole e/o minuscole e nessuno spazio.</li>"
    }
+   if(length $_[0]>50){
+        $ret=$ret."<li>L'id non deve superare i 50 caratteri</li>";
+    }
    return $ret;    
 }
 

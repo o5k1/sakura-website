@@ -179,7 +179,7 @@ else {
    # Se si ha la sessione aperta e si ha il link diretto alla pagina
    print "<div class='panel'>
             <h3>Ops!</h3>
-            <p>Per accedere a questa pagina è necessario passare per la pagina <a href='private-menu-bevanda.cgi'>Menù bevanda</a></p>
+            <p>Per accedere a questa pagina è necessario passare per la pagina <a href='private-menu-bevande.cgi'>Menù bevande</a></p>
          <div>
          ";
 }
