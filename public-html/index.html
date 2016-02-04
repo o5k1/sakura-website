@@ -13,14 +13,11 @@
     <meta name="language" content="italian it" />
     <script type="text/javascript" src="js/scripts.js"></script>
 </head>
-<!--Nav inizialmente visibile, così se non c'è JS ho degradazione elegante. Se JS funziona, allora viene nascosto e rimane accessibile dall'apposito bottone-->
 <body onload="manageNav()">
 	<div id="header">
 		<div id="fixed-info">
 			<p><a id="city" href="dove-siamo.html">Bassano del Grappa</a> | <a class="tel" href="tel:0424 382286">0424 382286</a></p>
 		</div> 
-		<!--Logo come background tramite IMAGE REPLACEMENT cosicchè possa costituire informazione per il motore di ricerca (Best practice) -->
-		
 			<div id="top-bar">
 				<div id="logo">
 					<h1><span xml:lang="ja">Sakura</span> - Ristorante Giapponese</h1>
@@ -29,10 +26,6 @@
 					<a onclick="manageNav()" title="Menu"> &#9776; </a>
 				</div>
 			</div>
-		
-		<!--Sostituita immagine del bottone di navigazione con il carattere come su w3school.com-->
-		<!--il valore di onClick dovrà essere la funzione JS che apre il menu a scomparsa nel layout mobile.-->
-		
 		<div id="nav-menu">
 			<ul>
 				<li xml:lang="en">Home</li>
@@ -44,7 +37,6 @@
 		</div>
 	</div>
 	<div id="main">
-		<!--il path svolge sia funzione di breadcrumb che di titolo della pagina, per siti che hanno un solo livello profondità non serve breadcrumb [Orietta docet] -->
 		<div id="path">
 			<h2 xml:lang="en">Home</h2>
 		</div>

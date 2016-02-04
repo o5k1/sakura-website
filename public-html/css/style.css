@@ -1,8 +1,3 @@
-/*
-- cercato di usare meno colori possibili e tali che siano "antagonisti"
-in modo da evitare problemi con color blindness ed ottenere maggiore contrasto-->aumento accessibilità
-*/
-
 @font-face {
     font-family: sakuraFont;
     src: url(fonts/GlacialIndifference-Regular.otf);
