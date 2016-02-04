@@ -6,59 +6,59 @@
 			<piatto id="InvoltiniGiapponesi">
 				<nome>Involtini Giapponesi</nome>
 				<numero>1</numero>
-				<prezzo>2,50</prezzo>
+				<prezzo>2.50</prezzo>
 			</piatto>
 			<piatto id="Edamame">
 				<nome><span xml:lang="ja">Edamame</span></nome>
 				<numero>1a</numero>
-				<prezzo>3,00</prezzo>
+				<prezzo>3.00</prezzo>
 				<descrizione>Fagioli di soia lessi</descrizione>
 			</piatto>
 			<piatto id="Daikon">
 				<nome><span xml:lang="ja">Daikon</span></nome>
 				<numero>1b</numero>
-				<prezzo>3,00</prezzo>
+				<prezzo>3.00</prezzo>
 				<descrizione>Rapa gialla marinata</descrizione>
 			</piatto>
 			<piatto id="Sunonomo">
 				<nome><span xml:lang="ja">Sunonomo</span></nome>
 				<numero>2</numero>
-				<prezzo>5,00</prezzo>
+				<prezzo>5.00</prezzo>
 				<descrizione>Pesce marinato con aceto di riso, servito con alghe e cetrioli</descrizione>
 			</piatto>
 			<piatto id="Kaiser">
 				<nome><span xml:lang="ja">Kaiser</span></nome>
 				<numero>3</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Insalata con alghe <span xml:lang="ja">kombu</span> e <span xml:lang="ja">sashimi</span></descrizione>
 			</piatto>
 			<piatto id="InsalataDiAlghe">
 				<nome>Insalata di alghe</nome>
 				<numero>4</numero>
-				<prezzo>6,00</prezzo>
+				<prezzo>6.00</prezzo>
 			</piatto>
 			<piatto id="AgedashiToufu">
 				<nome><span xml:lang="ja">Agedashi Toufu</span></nome>
 				<numero>5</numero>
-				<prezzo>4,00</prezzo>
+				<prezzo>4.00</prezzo>
 				<descrizione>Formaggio di soia fritto</descrizione>
 			</piatto>
 			<piatto id="TatakiToufu">
 				<nome><span xml:lang="ja">Tataki Toufu</span></nome>
 				<numero>6</numero>
-				<prezzo>6,00</prezzo>
+				<prezzo>6.00</prezzo>
 				<descrizione>Insalata di formaggio giapponese con tonno</descrizione>
 			</piatto>
 			<piatto id="GyozaKingyo">
 				<nome><span xml:lang="ja">Gyoza Kingyo</span></nome>
 				<numero>6a</numero>
-				<prezzo>6,00</prezzo>
+				<prezzo>6.00</prezzo>
 				<descrizione>Ravioli giapponesi di pesce</descrizione>
 			</piatto>
 			<piatto id="Misoshiru">
 				<nome><span xml:lang="ja">Misoshiru</span></nome>
 				<numero>10</numero>
-				<prezzo>3,00</prezzo>
+				<prezzo>3.00</prezzo>
 				<descrizione>Zuppa con pasta di soia, alghe, <span xml:lang="ja">toufu</span> e cipollotti</descrizione>
            </piatto>
       </portata>
@@ -68,27 +68,27 @@
 			<piatto id="CarpaccioMisto">
 				<nome>Carpaccio misto</nome>
 				<numero>7</numero>
-				<prezzo>13,00</prezzo>
+				<prezzo>13.00</prezzo>
 			</piatto>
 			<piatto id="CarpaccioDiTonno">
 				<nome>Carpaccio di tonno</nome>
 				<numero>8a</numero>
-				<prezzo>12,00</prezzo>
+				<prezzo>12.00</prezzo>
 			</piatto>
 			<piatto id="CarpaccioDiSalmone">
 				<nome>Carpaccio di salmone</nome>
 				<numero>8b</numero>
-				<prezzo>11,00</prezzo>
+				<prezzo>11.00</prezzo>
 			</piatto>
 			<piatto id="CarpaccioDiBranzino">
 				<nome>Carpaccio di branzino</nome>
 				<numero>8c</numero>
-				<prezzo>11,00</prezzo>
+				<prezzo>11.00</prezzo>
 			</piatto>
 			<piatto id="CarpaccioDiGamberiCrudi">
 				<nome>Carpaccio di gamberi crudi</nome>
 				<numero>9</numero>
-				<prezzo>11,00</prezzo>
+				<prezzo>11.00</prezzo>
 			</piatto>
 		</portata>
 	
@@ -97,49 +97,49 @@
 			<piatto id="TempuraUdon">
 				<nome><span xml:lang="ja">Tempura udon</span></nome>
 				<numero>11</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Spaghetti giapponesi con <span xml:lang="ja">tempura</span> in brodo</descrizione>
 			</piatto>
 			<piatto id="YakiUdon">
 				<nome><span xml:lang="ja">Yaki udon</span></nome>
 				<numero>12</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Spaghetti giapponesi con frutti di mare</descrizione>
 			</piatto>
 			<piatto id="YakiMeshi">
 				<nome><span xml:lang="ja">Yaki meshi</span></nome>
 				<numero>13</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Riso con frutti di mare</descrizione>
 			</piatto>
 			<piatto id="RamenDiPesce">
 				<nome><span xml:lang="ja">Ramen</span> di pesce</nome>
 				<numero>14</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Spaghetti giapponesi in brodo con pesce</descrizione>
 			</piatto>
 			<piatto id="RamenDiCarne">
 				<nome><span xml:lang="ja">Ramen</span> di carne</nome>
 				<numero>15</numero>
-				<prezzo>7,00</prezzo>
+				<prezzo>7.00</prezzo>
 				<descrizione>Spaghetti giapponesi in brodo con carne</descrizione>
 			</piatto>
 			<piatto id="KatsuDon">
 				<nome><span xml:lang="ja">Katsu don</span></nome>
 				<numero>16</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Riso con cotolette di maiale</descrizione>
 			</piatto>
 			<piatto id="Unagidon">
 				<nome><span xml:lang="ja">Unagidon</span></nome>
 				<numero>17</numero>
-				<prezzo>13,00</prezzo>
+				<prezzo>13.00</prezzo>
 				<descrizione>Riso con anguilla affumicata</descrizione>
 			</piatto>
 			<piatto id="Chirashi">
 				<nome><span xml:lang="ja">Chirashi</span></nome>
 				<numero>18</numero>
-				<prezzo>13,00</prezzo>
+				<prezzo>13.00</prezzo>
 				<descrizione>Ciotola di riso aromatizzato con fette di <span xml:lang="ja">sashimi</span></descrizione>
 			</piatto>
 		</portata>
@@ -149,77 +149,77 @@
 			<piatto id="EbiTempura">
 				<nome><span xml:lang="ja">Ebi tempura</span></nome>
 				<numero>19</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Frittura di gamberi</descrizione>
 			</piatto>
 			<piatto id="YasaiTempura">
 				<nome><span xml:lang="ja">Yasai tempura</span></nome>
 				<numero>20</numero>
-				<prezzo>6,00</prezzo>
+				<prezzo>6.00</prezzo>
 				<descrizione>Frittura di verdure</descrizione>
 			</piatto>
 			<piatto id="MoriawaseTempura">
 				<nome><span xml:lang="ja">Moriawase tempura</span></nome>
 				<numero>21</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Frittura di gamberi e verdura</descrizione>
 			</piatto>
 			<piatto id="Tonkazu">
 				<nome><span xml:lang="ja">Tonkazu</span></nome>
 				<numero>22</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Cotoletta di maiale</descrizione>
 			</piatto>
 			<piatto id="Karaaghe">
 				<nome><span xml:lang="ja">Karaaghe</span></nome>
 				<numero>23</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Frittura di pollo con sesamo e zenzero</descrizione>
 			</piatto>
 			<piatto id="YakiTori">
 				<nome><span xml:lang="ja">Yaki tori</span></nome>
 				<numero>24</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Spiedini di pollo con salsa di soia e miele</descrizione>
 			</piatto>
 			<piatto id="ToriTeriyaki">
 				<nome><span xml:lang="ja">Tori teriyaki</span></nome>
 				<numero>25</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Pezzi di pollo con salsa <span xml:lang="ja">teriyaki</span></descrizione>
 			</piatto>
 			<piatto id="Ikafurai">
 				<nome><span xml:lang="ja">Ikafurai</span></nome>
 				<numero>26</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Calamari fritti con briciole di pane</descrizione>
 			</piatto>
 			<piatto id="TatakiDiTonno">
 				<nome><span xml:lang="ja">Tataki</span> di tonno</nome>
 				<numero>27</numero>
-				<prezzo>13,00</prezzo>
+				<prezzo>13.00</prezzo>
 				<descrizione>Filetto di tonno scottato in crosta di sesamo</descrizione>
 			</piatto>
 			<piatto id="TatakiDiSalmone">
 				<nome><span xml:lang="ja">Tataki</span> di salmone</nome>
 				<numero>27a</numero>
-				<prezzo>11,00</prezzo>
+				<prezzo>11.00</prezzo>
 			</piatto>
 			<piatto id="TatakiDiBranzino">
 				<nome><span xml:lang="ja">Tataki</span> di branzino</nome>
 				<numero>27b</numero>
-				<prezzo>11,00</prezzo>
+				<prezzo>11.00</prezzo>
 			</piatto>
             <piatto id="YakiNuki">
                 <nome><span xml:lang="ja">Yaki nuki</span></nome>
                 <numero>28</numero>
-                <prezzo>11,00</prezzo>
+                <prezzo>11.00</prezzo>
                 <descrizione>Pezzi di manzo alla griglia</descrizione>
             </piatto>
             <piatto id="UnagiKabayaki">
                 <nome><span xml:lang="ja">Unagi kabayaki</span></nome>
                 <numero>29</numero>
-                <prezzo>16,00</prezzo>
+                <prezzo>16.00</prezzo>
                 <descrizione>Anguilla</descrizione>
             </piatto>
 		</portata>
@@ -229,73 +229,73 @@
 			<piatto id="MaguroSushi">
 				<nome><span xml:lang="ja">Maguro sushi</span></nome>
                 <numero>30</numero>
-				<prezzo>4,00</prezzo>
+				<prezzo>4.00</prezzo>
 				<descrizione>Tonno</descrizione>
 			</piatto>
             <piatto id="SakeSushi">
                 <nome><span xml:lang="ja">Sake sushi</span></nome>
                 <numero>31</numero>
-                <prezzo>3,50</prezzo>
+                <prezzo>3.50</prezzo>
                 <descrizione>Salmone</descrizione>
             </piatto>
             <piatto id="TaiSushi">
                 <nome><span xml:lang="ja">Tai sushi</span></nome>
                 <numero>32</numero>
-                <prezzo>3,50</prezzo>
+                <prezzo>3.50</prezzo>
                 <descrizione>Orata</descrizione>
             </piatto>
             <piatto id="SuzukiSushi">
                 <nome><span xml:lang="ja">Suzuki sushi</span></nome>
                 <numero>33</numero>
-                <prezzo>3,50</prezzo>
+                <prezzo>3.50</prezzo>
                 <descrizione>Branzino</descrizione>
             </piatto>
             <piatto id="AmaebiSushi">
                 <nome><span xml:lang="ja">Amaebi sushi</span></nome>
                 <numero>34</numero>
-                <prezzo>3,50</prezzo>
+                <prezzo>3.50</prezzo>
                 <descrizione>Gamberi crudi</descrizione>
             </piatto>
             <piatto id="EbiSushi">
                 <nome><span xml:lang="ja">Ebi sushi</span></nome>
                 <numero>35</numero>
-                <prezzo>3,50</prezzo>
+                <prezzo>3.50</prezzo>
                 <descrizione>Gamberi cotti</descrizione>
             </piatto>
             <piatto id="TobigoGunkan">
                 <nome><span xml:lang="ja">Tobigo gunkan</span></nome>
                 <numero>36</numero>
-                <prezzo>4,00</prezzo>
+                <prezzo>4.00</prezzo>
                 <descrizione>Uova di pesce rondine</descrizione>
             </piatto>
             <piatto id="IkuraGunkan">
                 <nome><span xml:lang="ja">Ikura gunkan</span></nome>
                 <numero>36a</numero>
-                <prezzo>5,00</prezzo>
+                <prezzo>5.00</prezzo>
                 <descrizione>Uova di salmone</descrizione>
             </piatto>
             <piatto id="TakoSushi">
                 <nome><span xml:lang="ja">Tako sushi</span></nome>
                 <numero>37</numero>
-                <prezzo>3,50</prezzo>
+                <prezzo>3.50</prezzo>
                 <descrizione>Polipo</descrizione>
             </piatto>
             <piatto id="UnagiSushi">
                 <nome><span xml:lang="ja">Unagi sushi</span></nome>
                 <numero>38</numero>
-                <prezzo>5,00</prezzo>
+                <prezzo>5.00</prezzo>
                 <descrizione>Anguilla</descrizione>
             </piatto>
             <piatto id="UniGunkan">
                 <nome><span xml:lang="ja">Uni gunkan</span></nome>
                 <numero>38a</numero>
-                <prezzo>6,00</prezzo>
+                <prezzo>6.00</prezzo>
                 <descrizione>Ricci di mare</descrizione>
             </piatto>
             <piatto id="HokkygaiSushi">
                 <nome><span xml:lang="ja">Hokkygai sushi</span></nome>
                 <numero>38b</numero>
-                <prezzo>5,00</prezzo>
+                <prezzo>5.00</prezzo>
                 <descrizione>Vongole artiche</descrizione>
             </piatto>
 		</portata>
@@ -305,25 +305,25 @@
 			<piatto id="CaliforniaTemaki">
                 <nome><span xml:lang="en">California</span> <span xml:lang="ja">temaki</span></nome>
                 <numero>39</numero>
-				<prezzo>3,50</prezzo>
+				<prezzo>3.50</prezzo>
 				<descrizione>Granchio, avocado, cetriolo e maionese (1 pz.)</descrizione>
 			</piatto>
             <piatto id="SakeTemaki">
                 <nome><span xml:lang="ja">Sake temaki</span></nome>
                 <numero>40</numero>
-                <prezzo>3,50</prezzo>
+                <prezzo>3.50</prezzo>
                 <descrizione>Salmone e avocado (1 pz.)</descrizione>
             </piatto>
             <piatto id="TekkaTemaki">
                 <nome><span xml:lang="ja">Tekka temaki</span></nome>
                 <numero>41</numero>
-                <prezzo>4,00</prezzo>
+                <prezzo>4.00</prezzo>
                 <descrizione>Tonno e avocado (1 pz.)</descrizione>
             </piatto>
             <piatto id="EbitenTemaki">
                 <nome><span xml:lang="ja">Ebiten temaki</span></nome>
                 <numero>42</numero>
-                <prezzo>3,50</prezzo>
+                <prezzo>3.50</prezzo>
                 <descrizione>Gamberi fritti (1 pz.)</descrizione>
             </piatto>
 		</portata>
@@ -333,49 +333,49 @@
 			<piatto id="UramakiCalifornia">
                 <nome><span xml:lang="ja">Uramaki</span> <span xml:lang="en">california</span></nome>
                 <numero>43</numero>
-				<prezzo>8,00</prezzo>
+				<prezzo>8.00</prezzo>
 				<descrizione>Granchi, avocado, maionese e cetrioli (8 pz.)</descrizione>
 			</piatto>
             <piatto id="UramakiSpecialCalifornia">
                 <nome><span xml:lang="ja">Uramaki</span> <span xml:lang="en">special california</span></nome>
                 <numero>43a</numero>
-                <prezzo>11,00</prezzo>
+                <prezzo>11.00</prezzo>
                 <descrizione>Granchio, avocado, cetrioli, maionese, gamberi crudi e <span xml:lang="ja">tobigo</span> (8 pz.)</descrizione>
             </piatto>
             <piatto id="UramakiTekka">
                 <nome><span xml:lang="ja">Uramaki tekka</span></nome>
                 <numero>44</numero>
-                <prezzo>9,00</prezzo>
+                <prezzo>9.00</prezzo>
                 <descrizione>Tonno e avocado (8 pz.)</descrizione>
             </piatto>
             <piatto id="UramakiSpicytuna">
                 <nome><span xml:lang="ja">Uramaki</span> <span xml:lang="en">spicytuna</span></nome>
                 <numero>44a</numero>
-                <prezzo>11,00</prezzo>
+                <prezzo>11.00</prezzo>
                 <descrizione>Pezzetti di tonno, erba cipollina, salsa piccante e maionese (8 pz.)</descrizione>
             </piatto>
             <piatto id="UramakiSake">
                 <nome><span xml:lang="ja">Uramaki sake</span></nome>
                 <numero>45</numero>
-                <prezzo>8,00</prezzo>
+                <prezzo>8.00</prezzo>
                 <descrizione>Salmone e avocado (8 pz.)</descrizione>
             </piatto>
             <piatto id="UramakiPhiladelphia">
                 <nome><span xml:lang="ja">Uramaki</span> <span xml:lang="en">philadelphia</span></nome>
                 <numero>45a</numero>
-                <prezzo>8,00</prezzo>
+                <prezzo>8.00</prezzo>
                 <descrizione>Salmone, avocado e <span xml:lang="en">philadelphia</span> (8 pz.)</descrizione>
             </piatto>
             <piatto id="UramakiEbiten">
                 <nome><span xml:lang="ja">Uramaki ebiten</span></nome>
                 <numero>46</numero>
-                <prezzo>8,00</prezzo>
+                <prezzo>8.00</prezzo>
                 <descrizione>Gamberoni alla <span xml:lang="ja">tempura</span> (8 pz.)</descrizione>
             </piatto>
             <piatto id="SpecialRainbow">
                 <nome><span xml:lang="en">Special rainbow</span></nome>
                 <numero>46a</numero>
-                <prezzo>13,00</prezzo>
+                <prezzo>13.00</prezzo>
                 <descrizione>(8 pz.)</descrizione>
             </piatto>
 		</portata>
@@ -385,19 +385,19 @@
 			<piatto id="TekkaFutomaki">
                 <nome><span xml:lang="ja">Tekka futomaki</span></nome>
                 <numero>47</numero>
-				<prezzo>12,00</prezzo>
+				<prezzo>12.00</prezzo>
 				<descrizione>Tonno, granchio, avocado, cetrioli e <span xml:lang="ja">tomago</span> (10 pz.)</descrizione>
 			</piatto>
             <piatto id="SakeFutomaki">
                 <nome><span xml:lang="ja">Sake futomaki</span></nome>
                 <numero>48</numero>
-                <prezzo>11,00</prezzo>
+                <prezzo>11.00</prezzo>
                 <descrizione>Salmone, granchio, avocado, cetrioli e <span xml:lang="ja">tomago</span> (10 pz.)</descrizione>
             </piatto>
             <piatto id="FutomakiEbiten">
                 <nome><span xml:lang="ja">Futomaki ebiten</span></nome>
                 <numero>48a</numero>
-                <prezzo>12,00</prezzo>
+                <prezzo>12.00</prezzo>
                 <descrizione>Gamberone fritto, granchio, avocado, cetrioli, <span xml:lang="ja">tomago</span> e salsa <span xml:lang="ja">teriyaki</span> (10 pz.)</descrizione>
             </piatto>
 		</portata>
@@ -407,25 +407,25 @@
 			<piatto id="KappaHossomaki">
                 <nome><span xml:lang="ja">Kappa hossomaki</span></nome>
                 <numero>49</numero>
-				<prezzo>4,00</prezzo>
+				<prezzo>4.00</prezzo>
 				<descrizione>Cetrioli (6 pz.)</descrizione>
 			</piatto>
             <piatto id="TekkaHossomaki">
                 <nome><span xml:lang="ja">Tekka hossomaki</span></nome>
                 <numero>50</numero>
-                <prezzo>4,00</prezzo>
+                <prezzo>4.00</prezzo>
                 <descrizione>Tonno (6 pz.)</descrizione>
             </piatto>
             <piatto id="SakeHossomaki">
                 <nome><span xml:lang="ja">Sake hossomaki</span></nome>
                 <numero>51</numero>
-                <prezzo>4,00</prezzo>
+                <prezzo>4.00</prezzo>
                 <descrizione>Salmone (6 pz.)</descrizione>
             </piatto>
             <piatto id="HossomakiMisto">
                 <nome><span xml:lang="ja">Hossomaki misto</span></nome>
                 <numero>52</numero>
-                <prezzo>10,00</prezzo>
+                <prezzo>10.00</prezzo>
                 <descrizione>(15 pz.)</descrizione>
             </piatto>
 		</portata>
@@ -435,31 +435,31 @@
 			<piatto id="SushiMistoPiccolo">
                 <nome><span xml:lang="ja">Sushi</span> misto piccolo</nome>
                 <numero>53</numero>
-				<prezzo>9,00</prezzo>
+				<prezzo>9.00</prezzo>
                 <descrizione>5 pezzi di <span xml:lang="ja">sushi</span> e 3 pezzi di <span xml:lang="ja">hossomaki</span> (8 pz.)</descrizione>
 			</piatto>
             <piatto id="SushiMistoGrande">
                 <nome><span xml:lang="ja">Sushi</span> misto grande</nome>
                 <numero>53a</numero>
-                <prezzo>12,00</prezzo>
+                <prezzo>12.00</prezzo>
                 <descrizione>8 pezzi di <span xml:lang="ja">sushi</span> e 3 pezzi di <span xml:lang="ja">hossomaki</span> (11 pz.)</descrizione>
             </piatto>
             <piatto id="SashimiMistoPiccolo">
                 <nome><span xml:lang="ja">Sashimi</span> misto piccolo</nome>
                 <numero>54</numero>
-                <prezzo>13,00</prezzo>
+                <prezzo>13.00</prezzo>
                 <descrizione>Tonno, salmone e branzino (10 pz.)</descrizione>
             </piatto>
             <piatto id="SashimiMistoGrande">
                 <nome><span xml:lang="ja">Sashimi</span> misto grande</nome>
                 <numero>54a</numero>
-                <prezzo>18,00</prezzo>
+                <prezzo>18.00</prezzo>
                 <descrizione>Tonno, salmone e branzino (18 pz.)</descrizione>
             </piatto>
             <piatto id="SushiESashimi">
                 <nome><span xml:lang="ja">Sushi</span> e <span xml:lang="ja">Sashimi</span></nome>
                 <numero>55</numero>
-                <prezzo>25,00</prezzo>
+                <prezzo>25.00</prezzo>
                 <descrizione>10 pz di <span xml:lang="ja">sashimi</span>, 8 pz di <span xml:lang="ja">sushi</span>, 6 pz di <span xml:lang="ja">hossomaki</span> e 1 <span xml:lang="ja">tobigo</span> (25 pz.)</descrizione>
             </piatto>
 		</portata>
@@ -469,19 +469,19 @@
 			<piatto id="BarcaPiccola">
                 <nome>Barca piccola</nome>
                 <numero>56</numero>
-				<prezzo>20,00</prezzo>
+				<prezzo>20.00</prezzo>
 				<descrizione>10 pezzi di <span xml:lang="ja">sashimi</span>, 6 pezzi di <span xml:lang="ja">sushi</span> e 6 pezzi di <span xml:lang="ja">hossomaki</span> (22 pz.)</descrizione>
 			</piatto>
             <piatto id="BarcaMedia">
                 <nome>Barca media</nome>
                 <numero>57</numero>
-                <prezzo>38,00</prezzo>
+                <prezzo>38.00</prezzo>
                 <descrizione>18 pezzi di <span xml:lang="ja">sashimi</span>, 12 pezzi di <span xml:lang="ja">sushi</span>, 6 pezzi di <span xml:lang="ja">hossomaki</span>, 6 pezzi di <span xml:lang="ja">uramaki</span> e 2 <span xml:lang="ja">tobigo</span> (44 pz.)</descrizione>
             </piatto>
             <piatto id="BarcaGrande">
                 <nome>Barca grande</nome>
                 <numero>58</numero>
-                <prezzo>55,00</prezzo>
+                <prezzo>55.00</prezzo>
                 <descrizione>27 pezzi di <span xml:lang="ja">sashimi</span>, 18 pezzi di <span xml:lang="ja">sushi</span>, 12 pezzi di <span xml:lang="ja">hossomaki</span>, 8 pezzi di <span xml:lang="ja">uramaki</span> e 3 pezzi di <span xml:lang="ja">tobigo</span> (68 pz.)</descrizione>
             </piatto>
 		</portata>
@@ -490,58 +490,58 @@
             <nome>Dessert</nome>
 			<piatto id="SorbettoAlLimone">
                 <nome>Sorbetto al limone</nome>
-				<prezzo>3,00</prezzo>
+				<prezzo>3.00</prezzo>
 			</piatto>
             <piatto id="Mochi">
                 <nome>Mochi</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
                 <descrizione>riso glutinoso disponibile ai gusti: Arachidi, Tè verde e Crema di sesamo nero</descrizione>
             </piatto>
             <piatto id="DolceDiRisoBianco">
                 <nome>Dolce di riso bianco</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
                 <descrizione>riso glutinoso e fagioli rossi</descrizione>
             </piatto>
             <piatto id="DolceDiRisoNero">
                 <nome>Dolce di riso nero</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
                 <descrizione>riso glutinoso, fagioli rossi e sesamo</descrizione>
             </piatto>
             <piatto id="TortaDiRiso">
                 <nome>Torta di riso</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </piatto>
             <piatto id="TortaAlCioccolato">
                 <nome>Torta al cioccolato</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </piatto>
             <piatto id="TortaDiTèVerde">
                 <nome>Torta di tè verde</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </piatto>
             <piatto id="TartufoBianco">
                 <nome>Tartufo bianco</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </piatto>
             <piatto id="TartufoNero">
                 <nome>Tartufo nero</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </piatto>
             <piatto id="GelatoDiTèVerde">
                 <nome>Gelato di tè verde</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </piatto>
             <piatto id="GelatoDiRiso">
                 <nome>Gelato di riso</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </piatto>
             <piatto id="GelatoDiSoia">
                 <nome>Gelato di soia</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </piatto>
             <piatto id="GelatoAlSesamoNero">
                 <nome>Gelato al sesamo nero</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </piatto>
 		</portata>
 	</cibo>
@@ -552,67 +552,67 @@
             <bevanda id="MöetEtChandonRéserveImpériale">
 				<nome><span xml:lang="fr">Möet et Chandon Réserve Impériale</span></nome>
 				<descrizione><span xml:lang="fr">champagne</span></descrizione>
-				<prezzo>55,00</prezzo>
+				<prezzo>55.00</prezzo>
 			</bevanda>
             <bevanda id="G.H.Mumm">
                 <nome><span xml:lang="de">G.H. Mumm</span></nome>
                 <descrizione><span xml:lang="fr">champagne</span></descrizione>
-                <prezzo>45,00</prezzo>
+                <prezzo>45.00</prezzo>
             </bevanda>
             <bevanda id="ContadiCastaldiSatèn">
                 <nome>Contadi Castaldi <span xml:lang="fr">Satèn</span></nome>
                 <descrizione>franciacorta</descrizione>
-                <prezzo>35,00</prezzo>
+                <prezzo>35.00</prezzo>
             </bevanda>
             <bevanda id="LeCultureCruner">
                 <nome><span xml:lang="fr">Le Culture Cruner</span></nome>
                 <descrizione>prosecco <span xml:lang="en">dry</span> millesimato</descrizione>
-                <prezzo>18,00</prezzo>
+                <prezzo>18.00</prezzo>
             </bevanda>
             <bevanda id="BepinDeEto">
                 <nome>Bepin de Eto</nome>
                 <descrizione>prosecco <span xml:lang="en">extra dry</span> millesimato</descrizione>
-                <prezzo>15,00</prezzo>
+                <prezzo>15.00</prezzo>
             </bevanda>
             <bevanda id="SakèBlackAndGold">
                 <nome><span xml:lang="ja">Sakè</span> <span xml:lang="en">Black and Gold</span></nome>
                 <descrizione>750ml</descrizione>
-                <prezzo>25,00</prezzo>
+                <prezzo>25.00</prezzo>
             </bevanda>
             <bevanda id="LuganaSantaCristina">
                 <nome>Lugana Santa Cristina</nome>
                 <descrizione>vino fermo</descrizione>
-                <prezzo>22,00</prezzo>
+                <prezzo>22.00</prezzo>
             </bevanda>
             <bevanda id="Gewürztraminer">
                 <nome><span xml:lang="de">Gewürztraminer</span> (Süd Tirol)</nome>
                 <descrizione>vino fermo</descrizione>
-                <prezzo>18,00</prezzo>
+                <prezzo>18.00</prezzo>
             </bevanda>
             <bevanda id="MüllerThurgau">
                 <nome><span xml:lang="de">Müller Thurgau</span> (Süd Tirol)</nome>
                 <descrizione>vino fermo</descrizione>
-                <prezzo>15,00</prezzo>
+                <prezzo>15.00</prezzo>
             </bevanda>
             <bevanda id="PinotBianco">
                 <nome><span xml:lang="fr">Pinot</span> Bianco (Süd Tirol)</nome>
                 <descrizione>vino fermo</descrizione>
-                <prezzo>15,00</prezzo>
+                <prezzo>15.00</prezzo>
             </bevanda>
             <bevanda id="OroyaSushiWine">
                 <nome><span xml:lang="es">Oroya</span> <span xml:lang="ja">Sushi</span> <span xml:lang="en">Wine</span></nome>
                 <descrizione>vino fermo</descrizione>
-                <prezzo>16,00</prezzo>
+                <prezzo>16.00</prezzo>
             </bevanda>
             <bevanda id="VersusWhite">
                 <nome><span xml:lang="en">Versus White</span></nome>
                 <descrizione>500ml vino fermo</descrizione>
-                <prezzo>11,00</prezzo>
+                <prezzo>11.00</prezzo>
             </bevanda>
             <bevanda id="VersusRed">
                 <nome><span xml:lang="en">Versus Red</span></nome>
                 <descrizione>500ml vino fermo rosso</descrizione>
-                <prezzo>11,00</prezzo>
+                <prezzo>11.00</prezzo>
             </bevanda>
       	</listaBevande>
 
@@ -621,32 +621,32 @@
             <bevanda id="AsahiInLatta">
 				<nome><span xml:lang="ja">Asahi</span> in latta</nome>
 				<descrizione>2l</descrizione>
-				<prezzo>18,00</prezzo>
+				<prezzo>18.00</prezzo>
 			</bevanda>
             <bevanda id="Asahi">
                 <nome><span xml:lang="ja">Asahi</span></nome>
                 <descrizione>500ml</descrizione>
-                <prezzo>4,00</prezzo>
+                <prezzo>4.00</prezzo>
             </bevanda>
             <bevanda id="Kirin">
                 <nome><span xml:lang="ja">Kirin</span></nome>
                 <descrizione>500ml</descrizione>
-                <prezzo>4,00</prezzo>
+                <prezzo>4.00</prezzo>
             </bevanda>
             <bevanda id="Sapporo">
                 <nome><span xml:lang="ja">Sapporo</span></nome>
                 <descrizione>500ml</descrizione>
-                <prezzo>4,00</prezzo>
+                <prezzo>4.00</prezzo>
             </bevanda>
             <bevanda id="SapporoSilver">
                 <nome><span xml:lang="ja">Sapporo</span> <span xml:lang="en">Silver</span></nome>
                 <descrizione>650ml</descrizione>
-                <prezzo>6,00</prezzo>
+                <prezzo>6.00</prezzo>
             </bevanda>
             <bevanda id="NastroAzzurro">
                 <nome>Nastro Azzurro</nome>
                 <descrizione>650ml</descrizione>
-                <prezzo>3,50</prezzo>
+                <prezzo>3.50</prezzo>
             </bevanda>
 		</listaBevande>
 	
@@ -655,81 +655,81 @@
 			<bevanda id="CocaCola">
 				<nome>Coca Cola</nome>
 				<descrizione>in lattina</descrizione>
-				<prezzo>2,00</prezzo>
+				<prezzo>2.00</prezzo>
 			</bevanda>
             <bevanda id="Fanta">
                 <nome>Fanta</nome>
                 <descrizione>in lattina</descrizione>
-                <prezzo>2,00</prezzo>
+                <prezzo>2.00</prezzo>
             </bevanda>
             <bevanda id="Sprite">
                 <nome>Sprite</nome>
                 <descrizione>in lattina</descrizione>
-                <prezzo>2,00</prezzo>
+                <prezzo>2.00</prezzo>
             </bevanda>
             <bevanda id="TèAlLimone">
                 <nome>Tè al limone</nome>
                 <descrizione>in lattina</descrizione>
-                <prezzo>2,00</prezzo>
+                <prezzo>2.00</prezzo>
             </bevanda>
             <bevanda id="TèAllaPesca">
                 <nome>Tè alla pesca</nome>
                 <descrizione>in lattina</descrizione>
-                <prezzo>2,00</prezzo>
+                <prezzo>2.00</prezzo>
             </bevanda>
             <bevanda id="TèVerdeGiapponese">
                 <nome>Tè verde giapponese</nome>
                 <descrizione>in lattina</descrizione>
-                <prezzo>2,50</prezzo>
+                <prezzo>2.50</prezzo>
             </bevanda>
             <bevanda id="TèVerdeGiapponeseAlGelsomino">
                 <nome>Tè verde giapponese al gelsomino</nome>
                 <descrizione>in lattina</descrizione>
-                <prezzo>2,50</prezzo>
+                <prezzo>2.50</prezzo>
             </bevanda>
 			<bevanda id="AcquaNaturaleFillette">
 				<nome>Acqua naturale Fillette</nome>
 				<descrizione>750ml</descrizione>
-				<prezzo>3,00</prezzo>
+				<prezzo>3.00</prezzo>
 			</bevanda>
 			<bevanda id="AcquaDecisamenteFrizzanteFillette">
                 <nome>Acqua decisamente frizzante Fillette</nome>
                 <descrizione>750ml</descrizione>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </bevanda>
             <bevanda id="CaliceDiProsecco">
                 <nome>Calice di prosecco</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </bevanda>
             <bevanda id="CaliceDiGewürztraminer">
                 <nome>Calice di <span xml:lang="de">Gewürztraminer</span> (Süd Tirol)</nome>
-                <prezzo>3,50</prezzo>
+                <prezzo>3.50</prezzo>
             </bevanda>
             <bevanda id="CaliceDiMüllerThurgau">
                 <nome>Calice di <span xml:lang="de">Müller Thurgau</span> (Süd Tirol)</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </bevanda>
             <bevanda id="Sakè">
                 <nome><span xml:lang="ja">Sakè</span></nome>
                 <descrizione>200ml</descrizione>
-                <prezzo>5,00</prezzo>
+                <prezzo>5.00</prezzo>
             </bevanda>
             <bevanda id="SakèBlackAndGoldCalice">
                 <nome><span xml:lang="ja">Sakè</span> <span xml:lang="en">Black and Gold</span></nome>
                 <descrizione>200ml</descrizione>
-                <prezzo>8,00</prezzo>
+                <prezzo>8.00</prezzo>
             </bevanda>
             <bevanda id="TèVerdeGiapponese">
                 <nome>Tè verde giapponese</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </bevanda>
             <bevanda id="Amaro">
                 <nome>Amaro</nome>
-                <prezzo>3,00</prezzo>
+                <prezzo>3.00</prezzo>
             </bevanda>
             <bevanda id="Caffè">
                 <nome>Caffè</nome>
-                <prezzo>1,20</prezzo>
+                <prezzo>1.20</prezzo>
             </bevanda>
 		</listaBevande>
 	</bevande>
