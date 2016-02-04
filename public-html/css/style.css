@@ -173,11 +173,6 @@ img {
 	font-size: 2.5em;
 }
 
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
 .list-title h4 {
 	display: inline;
 	margin-bottom: 0.3em;
@@ -189,6 +184,10 @@ img {
 	margin-right: 1em; 
 	float: right;
 	height: 0px;
+}
+
+div.list-title {
+	background: #FFF6F6;
 }
 
 input[name='aggiungi'] {
@@ -214,8 +213,13 @@ input[name='mod'].pulsante, input[name='del'].pulsante {
 	display: inline;
 	font-size: 0.7em;
 	padding: 0.01em 0.3em;
-	float: right;
-	clear: left;
+	/*float: right;
+	clear: left;*/
+	margin-right: 0.5em;
+}
+
+input[name='mod'].pulsante {
+	margin-left: 5em;
 }
 
 dd {
@@ -306,6 +310,14 @@ input {
 	background: #FFF6F6;
 	font-size: 0.9em;
 	padding: 0.2em;
+}
+
+input[name='username'], input[name='password'] {
+	margin-top: 0.2em;
+	border: hidden;
+	border-bottom: solid;
+	border-width: 2px;
+	background: #FFF6F6;
 }
 
 #login fieldset {
@@ -500,19 +512,19 @@ fieldset input, fieldset textarea {
 
 	.panel h4 {
 		text-align: left;
+		margin-top: 0.3em;
 		margin-bottom: 0.2em;
 		font-size: 1.3em;
 	}
 
-	#fast-search ul {
-	text-align: center;
+#fast-search ul {
+	text-align: left;
 }
 
 #fast-search li {
 	margin-bottom: 0.5em;
 	margin-right: 0.5em;
-	display: inline;
-
+	margin-left: 1em;
 }
 
 .panel p.end-list {
