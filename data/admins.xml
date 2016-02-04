@@ -2,7 +2,7 @@
 
 <admins
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:noNamespaceSchemaLocation="../data/amministatori.xsd">
+		xsi:noNamespaceSchemaLocation="admins.xsd">
 	<admin>
 		<username>admin</username>
 		<password>admin</password>
