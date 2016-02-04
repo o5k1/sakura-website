@@ -179,6 +179,9 @@ sub printMenuCibi {
                   ($descrizione) = ( $descrizione =~ /<descrizione>(.*)<\/descrizione>/);
                
                print "<dt>$numero - <strong>$nome</strong> <span class='prezzo'>$valuta $prezzo</span></dt>";
+               if($descrizione ne ""){
+                  print "<dd>$descrizione</dd>";
+               }
                
                if($admin) {
                   My::Base::printStartForm('mod-piatto', $pathR->{mod_piatto}, 'GET');
@@ -200,10 +203,6 @@ sub printMenuCibi {
                         ";
                   My::Base::printEndForm();
                }
-
-               if($descrizione ne ""){
-                  print "<dd>$descrizione</dd>";
-               }      
       }
       
       print "</dl>

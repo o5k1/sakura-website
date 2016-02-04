@@ -7,8 +7,11 @@
 \contentsline {subsection}{\numberline {3.2}B}{3}{subsection.3.2}
 \contentsline {section}{\numberline {4}Suddivisione dei ruoli}{4}{section.4}
 \contentsline {section}{\numberline {5}Progettazione}{5}{section.5}
-\contentsline {subsection}{\numberline {5.1}A}{5}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}B}{5}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.1}XHTML}{5}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}CSS}{5}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Perl/CGI}{5}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Javascript}{5}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}XML e XMLSchema}{5}{subsection.5.5}
 \contentsline {section}{\numberline {6}Accessibilit\IeC {\`a}}{6}{section.6}
 \contentsline {subsection}{\numberline {6.1}A}{6}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}B}{8}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.2}B}{9}{subsection.6.2}
