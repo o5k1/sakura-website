@@ -29,7 +29,7 @@ my %textForm = (htitle => 'Aggiungi ',
                 svalue => 'Aggiungi',
                 sname => 'add-bevanda'
                );
-my $path = "Aggiungi Bevanda";
+#my $path = "Aggiungi Bevanda";
 
 my $breadcrump = "<a href='private-menu-bevande.cgi'>Menù bevande</a> &gt; Aggiungi bevanda";
 
@@ -38,7 +38,7 @@ printStartHtml('Aggiungi bevanda - Area Amministratore', $breadcrump);
 # Verifica parametri
 if ($q->param('add-bevanda-in')) {
 
-    #print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
+    #print "<p>Parametri da inserire: ".$q->param('identifier')."-".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
 
    my $error = '';
    
@@ -48,7 +48,7 @@ if ($q->param('add-bevanda-in')) {
       $error .= checkPrezzo($prezzo);
    my $descrizione = $q->param('descrizione');
       $error .= checkDesc($descrizione);
-   my $id = toCamelCase($nome);
+   my $id = $q->param('identifier');
       $error .= checkIdBevanda($id);
    my $idLista = $q->param('idLista');
    my $nomeLista = $q->param('nomeLista');

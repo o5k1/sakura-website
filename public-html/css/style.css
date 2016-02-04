@@ -5,7 +5,7 @@ in modo da evitare problemi con color blindness ed ottenere maggiore contrasto--
 
 @font-face {
     font-family: sakuraFont;
-    src: url(GlacialIndifference-Regular.otf);
+    src: url(fonts/GlacialIndifference-Regular.otf);
 }
 
 * {
@@ -17,27 +17,23 @@ in modo da evitare problemi con color blindness ed ottenere maggiore contrasto--
 }
 
 body {
-	background-image: url(tileable_wood_texture_@2X.png);
+	background-image: url(../images/tileable_wood_texture_@2X.png);
 	background-size: 10%;
 	background-position: center;
 	background-repeat: repeat;
 }
 
 a {
-	color: #ff9999;
+	color: #FF9999;
 	text-decoration: none;
 	font-weight: bold;
 }
-
-/*a:visited {
-	color: #C0967D;
-}*/
 
 #fixed-info {
 	padding-top: 1em;
 	padding-bottom: 1em;
 	font-size: 0.9em;
-	color: white;
+	color: #FFF6F6;
 	background-color: #333333;
 	margin-bottom: 1em;
 }
@@ -56,10 +52,10 @@ a {
 
 #logo {
 	float: left;
-	background-image: url(sakura.svg);
+	background-image: url(../images/sakura.svg);
 	background-repeat: no-repeat;
 	background-position: center;
-	height: 20em;
+	height: 22em;
 	width: 80%;
 	text-indent: -999em;
 	background-size: 95%;
@@ -81,11 +77,18 @@ a {
 }
 
 #nav-button a:active{
-	color: #ff9999;
+	color: #FF9999;
 }
 
 .hidden {
-	display: none;
+	/*display: none;*/
+	/*visibility: hidden;*/
+	position:absolute; 
+	left:-10000px; 
+	top:auto; 
+	width:1px; 
+	height:1px; 
+	overflow:hidden;
 }
 
 #nav-menu li {
@@ -139,47 +142,68 @@ img {
 	text-align: center;
 	margin-bottom: 0.3em;
 	font-size: 4em;
-	/*color: white;*/
 	padding-bottom: 0.1em;
 	border-bottom: solid;
-	border-width: 10px;
+	border-width: 13px;
+}
+
+.panel div {
+	margin-bottom: 1em;
+}
+
+.panel h4 {
+	text-align: center;
+	margin-bottom: 0.2em;
+	font-size: 2.5em;
+}
+
+dl {
+	border-top: solid;
+	border-width: 8px;
+}
+
+dt {
+	margin-left: 0.5em;
+	margin-top: 1.3em;
+}
+
+dd {
+	text-align: left;
+	margin-top: 0.3em;
+	margin-left: 3em;
+}
+
+.panel p {
+	margin-bottom: 1.5em;
+	text-align: center;
+	font-size: 1em;
 }
 
 .panel p.h {
 	margin-bottom: 0.2em;
 }
 
-.panel p {
+.thumb {
+	height: 20em;
+	width: 20em;
+	margin: auto;
 	margin-bottom: 2em;
-	text-align: center;
-	font-size: 1.1em;
-	/*color: white;*/
 }
 
-.thumb {
-		background-color: red;
-		height: 20em;
-		width: 20em;
-		margin: auto;
-		margin-bottom: 2em;
-
-
-	}
-
 #ebicego {
-	background: url(eduard_who_rounded.png);
+	background: url(../images/eduard_who_rounded.png);
 	background-size: 20em;
 	background-repeat: no-repeat;
 }
 
 #dcastello {
-	background: url(davide_who_rounded.png);
+	background: url(../images/davide_who_rounded.png);
 	background-size: 20em;
 	background-repeat: no-repeat;
 }
 
 #atombola {
-	background: url(andrea_who_rounded.png);
+	background: url(../images/andrea_who_rounded.png);
 	background-size: 20em;
 	background-repeat: no-repeat;
 }
@@ -198,19 +222,25 @@ img {
 
 
 #access-denied {
-	background: url(denied.png);
+	background: url(../images/denied.png);
 	background-size: 25%;
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 10em;
 }
 
+
+/*SOLO DESKTOP >= 1024 */
 @media screen and (min-width: 1024px) {
-    /* For desktop: */
 	* {
 		max-width: 1000px;
 		margin: auto;
 	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
 	#fixed-info {
 		padding-top: 0.3em;
 		padding-bottom: 0.3em;
@@ -228,7 +258,6 @@ img {
 		width: 30%;
 		text-indent: -999em;
 		background-size: 100%;
-		/*background-color: red;*/
 	}
 
 	#nav-button {
@@ -247,7 +276,6 @@ img {
 	}
 
 	#nav-menu, #private-navmenu {
-		/*background: navy;*/
 		padding-top: 7em;
 
 	}
@@ -258,7 +286,6 @@ img {
 		margin-left: 0.5em;
 		text-align: left;
 		color: #333333;
-		/*background-color: red;*/
 	}
 
 	#private-navmenu li {
@@ -268,10 +295,10 @@ img {
 	}
 
 	#private-navmenu li a {
-			color: #333333;
-			font-weight: bolder;
-			font-style: normal;
-		}
+		color: #333333;
+		font-weight: bolder;
+		font-style: normal;
+	}
 
 
 	#nav-menu li a:hover, #private-navmenu li a:hover{
@@ -310,23 +337,41 @@ img {
 		font-size: 2em;
 		padding-bottom: 0.1em;
 		border-bottom: solid;
-		border-width: 7px;
+		border-width: 4px;
+	}
+
+	.panel div {
+		margin-bottom: 0em;
 	}
 
 	.panel h4 {
 		text-align: left;
-		margin-bottom: 0.3em;
+		margin-bottom: 0.2em;
 		font-size: 1.3em;
-		padding-bottom: 0.1em;
-		border-bottom: solid;
+		/*border-bottom: solid;
+		border-width: 3px;*/
+	}
+
+	dl {
+		border-top: solid;
 		border-width: 3px;
+	}
+
+	dt {
+		margin-left: 1em;
+		margin-top: 1.5em;
+
+	}
+
+	dd {
+		margin-top: 0.5em;
+		margin-left: 3.5em;
 	}
 
 	.panel p {
 		margin-bottom: 0.5em;
 		text-align: justify;
 		font-size: 0.9em;
-		/*color: white;*/
 	}
 
 	.thumb {
@@ -334,8 +379,6 @@ img {
 		width: 9em;
 		margin: auto;
 		margin-bottom: 1em;
-
-
 	}
 
 	#ebicego {
@@ -425,21 +468,7 @@ img {
 	li {
 		list-style-type: none;
 	}
-
-	dt {
-		margin-left: 1em;
-	}
-
-	dd {
-		margin-left: 3em;
-		margin-bottom: 1em;
-	}
 	/*----------------------------------*/
-
-	h4 form {
-		float: right;
-		margin: 0em;
-	}
 
 	.pulsante {
 		color: #FFF6F6;
@@ -474,8 +503,8 @@ img {
 	}
 
 	input.pulsante {
-    margin-right: 1em;
-}
+    	margin-right: 1em;
+	}
 
    div.form {
       border-bottom: solid;

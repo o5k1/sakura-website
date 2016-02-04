@@ -15,10 +15,10 @@ our @EXPORT = qw(printFormCibo printFormBevanda checkDelete checkNome checkNumer
 #
 sub printFormCibo { # stampo la form
 
-   my ($q, $info, $error, $textForm, $oldData) = @_;
+   my ($q, $info, $error, $textForm, $oldData, $bug) = @_;
    my $nomeLista = $q->param('nomeLista');  # nome portata
    my $idLista = $q->param('idLista');      # id portata
-   my $idElemento = $q->param('idElemento');
+   my $idElemento = $q->param('identifier');
    
    my $href = "private-menu-cibi.cgi"; # Fisso
    my $hfile = $textForm->{hfile};
@@ -35,17 +35,19 @@ sub printFormCibo { # stampo la form
    if ($info ne '') {
       print "<p class='allright'>$info</p>";
             if($info eq 'Inserimento effettuato con successo!') {
-               print "<a href='private-menu-cibi.cgi'>Torna indietro</a>";
+               print "<p><a href='private-menu-cibi.cgi'>Torna indietro</a></p>";
             }
             elsif ($info eq 'Modifiche effettuate con successo!') {
-               print "<a href='private-menu-cibi.cgi'>Torna indietro</a>";
+               print "<p><a href='private-menu-cibi.cgi'>Torna indietro</a></p>";
             }
    }
    
    if ($error ne '') {
-      print "<ul class='errorList'>
+      print "
+            <ul class='errorList'>
                $error
-             </ul>";
+             </ul>
+             ";
    }
    
    My::Base::printStartFormJS($textForm->{sname}."-in", $hfile, 'post');
@@ -53,27 +55,23 @@ sub printFormCibo { # stampo la form
                #<legend>$hlegend</legend>";
 
       print "<p>";
-         #print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
          print "<label id='identifier'>Id $hoggetto <span class='errorjs'></span></label>";
-         print "<input type='text' name='id' value='".$oldData->{identifier}."' />";
+         print "<input type='text' name='identifier' value='".($oldData->{identifier})."' />";
       print "</p>";
 
       print "<p>";
-         #print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
          print "<label id='nome'>Nome $hoggetto <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'nome', -value => $oldData->{name});
       print "</p>";
       
       print "<p>";
-         #print $q->label({-id => 'numero'}, 'Numero piatto');
          print "<label id='numero'>Numero <span class='errorjs'></span></label>";
-         print "<input type='text' name='numero' value='".$oldData->{numero}."' />";
+         print "<input type='text' name='numero' value='".($oldData->{numero})."' />";
       print "</p>";
       
       print "<p>";
-         #print $q->label({-id => 'prezzo'}, 'Prezzo (&euro;)');
          print "<label id='prezzo'>Prezzo (&euro;) <span class='errorjs'></span></label>";
-         print "<input type='text' name='prezzo' value='".$oldData->{prezzo}."' />";
+         print "<input type='text' name='prezzo' value='".($oldData->{prezzo})."' />";
       print "</p>";
       
       print "<p>";
@@ -82,8 +80,15 @@ sub printFormCibo { # stampo la form
          print $q->textarea(-name => 'descrizione', -value => $oldData->{descrizione});
       print "</p>";
       
+      print $bug;
+      if ($bug eq '') {
       print $q->hidden(-name => 'idElemento',
                         -value => $idElemento);
+      }
+      else {
+         print $q->hidden(-name => 'idElemento',
+                        -value => $bug);
+      }
       
       print $q->hidden(-name => 'nomeLista',
                         -value => $nomeLista);
@@ -113,7 +118,7 @@ sub printFormBevanda {
    my ($q, $info, $error, $textForm, $oldData) = @_;
    my $nomeLista = $q->param('nomeLista');
    my $idLista = $q->param('idLista');
-   my $idBevanda = $q->param('idElemento');
+   my $idBevanda = $q->param('identifier');
    
    my $href = "private-menu-bevande.cgi"; # Fisso
    my $hfile = $textForm->{hfile};
@@ -136,18 +141,20 @@ sub printFormBevanda {
    
    if ($info ne '') {
       print "<p class='allright'>$info</p>";
-      if($info eq 'Inserimento effettuato con successo!') {
-         print "<a href='private-menu-bevande.cgi'>Torna indietro</a>";
-      }
-      elsif ($info eq 'Modifiche effettuate con successo!') {
-               print "<a href='private-menu-bevande.cgi'>Torna indietro</a>";
-            }
+         if($info eq 'Inserimento effettuato con successo!') {
+            print "<p><a href='private-menu-bevande.cgi'>Torna indietro</a></p>";
+         }
+         elsif ($info eq 'Modifiche effettuate con successo!') {
+            print "<p><a href='private-menu-bevande.cgi'>Torna indietro</a></p>";
+         }
    }
    
    if ($error ne '') {
-      print "<ul id='errorList'>
+      print "
+            <ul id='errorList'>
                $error
-             </ul>";
+             </ul>
+             ";
    }
    
    My::Base::printStartFormJS($textForm->{sname}."-in", $hfile, 'post');
@@ -155,25 +162,21 @@ sub printFormBevanda {
                #<legend>$hlegend</legend>";
 
       print "<p>";
-         #print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
          print "<label id='identifier'>Id $hoggetto <span class='errorjs'></span></label>";
-         print "<input type='text' name='id' value='".$oldData->{identifier}."' />";
+         print "<input type='text' name='identifier' value='".($oldData->{identifier})."' />";
       print "</p>";
 
       print "<p>";
-         #print $q->label({-id => 'nome'}, 'Nome '.$hoggetto);
          print "<label id='nome'>Nome $hoggetto <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'nome', -value => $oldData->{name});
       print "</p>";
       
       print "<p>";
-         #print $q->label({-id => 'prezzo'}, 'Prezzo (&euro;)');
          print "<label id='prezzo'>Prezzo (&euro;) <span class='errorjs'></span></label>";
-         print "<input type='text' name='prezzo' value='".$oldData->{prezzo}."' />";
+         print "<input type='text' name='prezzo' value='".($oldData->{prezzo})."' />";
       print "</p>";
       
       print "<p>";
-         #print $q->label({-id => 'descrizione'}, 'Descrizione');
          print "<label id='descrizione'>Descrizione <span class='errorjs'></span></label>";
          print $q->textarea(-name => 'descrizione', -value => $oldData->{descrizione});
       print "</p>";
@@ -224,7 +227,7 @@ sub checkDelete{
       }
       else {
       
-         return "<p class='error'>Nessuna corrispondenza di '$nome' nel database, nessuna rimozione effettuata. ($query)</p>" # Debug
+         return "<p class='error'>Nessuna corrispondenza di '$nome' nel database, nessuna rimozione effettuata. ($query - $idElemento)</p>" # Debug
       }
    }
 }
@@ -241,6 +244,7 @@ sub checkNome{
     return $ret;
 }
 
+#
 sub checkNumero {
    my $ret="";
    if(!$_[0]){
@@ -251,6 +255,7 @@ sub checkNumero {
    }
 }
 
+#
 sub checkPrezzo{
     my $ret="";
     if(!$_[0] || !($_[0] =~ m/^[0-9]{1}[0-9]{0,3},[0-9]{2}/)){
@@ -259,6 +264,7 @@ sub checkPrezzo{
     return $ret;
 }
 
+#
 sub checkDesc{
     my $ret="";
     if(length $_[0]>800){
@@ -271,12 +277,16 @@ sub checkDesc{
 sub checkIdBevanda{
    my $ret="";
    my $id = $_[0];
-   if(My::Base::existElement("//vino[\@id = '$id']") || 
-         My::Base::existElement("//birra[\@id = '$id']") ||
-            My::Base::existElement("//bevanda[\@id = '$id']") ) {
-         
-         $ret=$ret."<li>Il nome inserito esiste già.</li>";
+   if(!$_[0]){
+      $ret=$ret."<li>Il campo id non deve essere vuoto.</li>";
    }
+   if(My::Base::existElement("//bevanda[\@id = '$id']")) {
+         
+         $ret=$ret."<li>L'id inserito esiste già.</li>";
+   }
+   #if($id =~ m/[A-Za-z0-9]{1,}/i) {
+   #      $ret=$ret."<li>L'id deve essere una parola composta da lettere maiuscole e/o minuscole, numeri senza spazi.</li>"
+   #}
    return $ret;
 }
 
@@ -284,10 +294,16 @@ sub checkIdBevanda{
 sub checkIdPiatto{
    my $ret="";
    my $id = $_[0];
+   if(!$_[0]){
+      $ret=$ret."<li>Il campo id non deve essere vuoto.</li>";
+   }
    if(My::Base::existElement("//piatto[\@id = '$id']")) {
          
-         $ret=$ret."<li>Il nome inserito esiste già.</li>";
+         $ret=$ret."<li>L'id inserito esiste già.</li>";
    }
+   #if($id =~ m/[A-Za-z0-9]{1,}/i) {
+   #      $ret=$ret."<li>L'id $id deve essere una parola composta da numeri, lettere maiuscole e/o minuscole e nessuno spazio.</li>"
+   #}
    return $ret;    
 }
 

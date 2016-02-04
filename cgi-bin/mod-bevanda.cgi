@@ -14,7 +14,7 @@ my $session = CGI::Session->load() or die $!;
 checkSession($session);
 
 my $q = new CGI;
-my $path = "Modifica bevanda";
+#my $path = "Modifica bevanda";
 my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt; Modifica bevanda";
 
 printStartHtml('Modifica bevanda - Area Amministratore', $breadcrump);
@@ -22,7 +22,7 @@ printStartHtml('Modifica bevanda - Area Amministratore', $breadcrump);
 # Verifica parametri
 if ($q->param('mod-bevanda-in')) {
 
-   #print "<p>Parametri da inserire: ".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
+   print "<p>Parametri da inserire: ".$q->param('identifier')."-".$q->param('nome')."-".$q->param('prezzo')."-".$q->param('descrizione')."</p>";
 
    my $error = '';
    
@@ -137,6 +137,7 @@ if ($q->param('mod-bevanda-in')) {
 elsif ($q->param('mod')) {
 
       # Raccolgo parametri:
+      my $oldId = $q->param('idElemento');
       my $oldNome = $q->param('nome');
       my $oldPrezzo = $q->param('prezzo');
       my $oldDesc = $q->param('descrizione');
