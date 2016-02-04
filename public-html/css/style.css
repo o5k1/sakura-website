@@ -29,6 +29,10 @@ a {
 	font-weight: bold;
 }
 
+li {
+	list-style-type: none;
+}
+
 #fixed-info {
 	padding-top: 1em;
 	padding-bottom: 1em;
@@ -89,6 +93,18 @@ a {
 	width:1px; 
 	height:1px; 
 	overflow:hidden;
+}
+
+#fast-search ul {
+	text-align: center;
+}
+
+#fast-search li {
+	margin-bottom: 0.5em;
+}
+
+p.end-list {
+	margin-top: 2em;
 }
 
 #nav-menu li {
@@ -156,6 +172,8 @@ img {
 	margin-bottom: 0.2em;
 	font-size: 2.5em;
 }
+
+
 
 .list-title h4 {
 	display: inline;
@@ -483,6 +501,22 @@ fieldset input, fieldset textarea {
 		font-size: 1.3em;
 	}
 
+	#fast-search ul {
+	text-align: center;
+}
+
+#fast-search li {
+	margin-bottom: 0.5em;
+	margin-right: 0.5em;
+	display: inline;
+
+}
+
+.panel p.end-list {
+	text-align: center;
+}
+
+
 	dl {
 		border-top: solid;
 		border-width: 3px;
@@ -555,10 +589,6 @@ fieldset input, fieldset textarea {
 
 	#private-navmenu ul {
 		margin-left: 77%;
-	}
-
-	li {
-		list-style-type: none;
 	}
 	/*----------------------------------*/
 
