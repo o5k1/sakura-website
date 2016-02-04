@@ -181,10 +181,13 @@ img {
 	height: 0px;
 }
 
+<<<<<<< Updated upstream
 div.list-title {
 	background: #FFF6F6;
 }
 
+=======
+>>>>>>> Stashed changes
 input[name='aggiungi'] {
 	display: inline;
 	font-size: 0.7em;
@@ -208,6 +211,7 @@ input[name='mod'].pulsante, input[name='del'].pulsante {
 	display: inline;
 	font-size: 0.7em;
 	padding: 0.01em 0.3em;
+<<<<<<< Updated upstream
 	/*float: right;
 	clear: left;*/
 	margin-right: 0.5em;
@@ -215,6 +219,10 @@ input[name='mod'].pulsante, input[name='del'].pulsante {
 
 input[name='mod'].pulsante {
 	margin-left: 5em;
+=======
+	float: right;
+	clear: left;
+>>>>>>> Stashed changes
 }
 
 dd {
