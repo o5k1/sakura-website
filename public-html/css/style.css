@@ -200,7 +200,7 @@ dt {
 	margin-top: 1.3em;
 }
 
-#mod-piatto, #del-piatto{
+#mod-piatto, #del-piatto, #del-bevanda, #mod-bevanda{
 	display: inline;
 }
 
@@ -215,6 +215,10 @@ input[name='mod'].pulsante, input[name='del'].pulsante {
 
 input[name='mod'].pulsante {
 	margin-left: 5em;
+=======
+	float: right;
+	clear: left;
+>>>>>>> Stashed changes
 }
 
 dd {
@@ -359,7 +363,7 @@ input.pulsante {
     margin-right: 1em;
 }
 
-div.form #add-piatto-in, div.form #mod-piatto-in {
+div.form #add-piatto-in, div.form #mod-piatto-in, div.form #add-bevanda-in, div.form #mod-bevanda-in {
    	width: 80%;
    	border-bottom: solid;
    	border-top: solid;
@@ -368,14 +372,14 @@ div.form #add-piatto-in, div.form #mod-piatto-in {
     margin-top: 0.5em;
 }
 
-#add-piatto-in fieldset, #mod-piatto-in fieldset {
+#add-piatto-in fieldset, #mod-piatto-in fieldset, #add-bevanda-in fieldset, #mod-bevanda-in fieldset {
 	width: 60%;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
 }
 
-#add-piatto-in label, #mod-piatto-in label {
+#add-piatto-in label, #mod-piatto-in label, #add-bevanda-in label, #mod-bevanda-in label {
 	margin-bottom: 0.2em;
 }
 
@@ -387,7 +391,7 @@ fieldset input, fieldset textarea {
 	width: 80%;
 }
 
-#add-piatto-in #submit, #mod-piatto-in #submit{
+#add-piatto-in #submit, #mod-piatto-in #submit, #add-bevanda-in #submit, #mod-bevanda-in #submit{
 	width: 25%;
 }
 
@@ -618,6 +622,9 @@ fieldset input, fieldset textarea {
    fieldset textarea {
       width: 100%;
    */
+	p.info {
+		margin-left: 2em;
+	}
 
    ul.errorList li {
       list-style-type: disc;
