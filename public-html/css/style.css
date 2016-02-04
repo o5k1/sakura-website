@@ -390,6 +390,10 @@ fieldset input[name='mod'], fieldset input[name='del']{
 	width: 10%;
 }
 
+fieldset input[name='add'] {
+	width: 100%;
+}
+
 #add-piatto-in label, #mod-piatto-in label, #add-bevanda-in label, #mod-bevanda-in label {
 	margin-bottom: 0.2em;
 }
