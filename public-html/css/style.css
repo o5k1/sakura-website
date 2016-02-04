@@ -163,7 +163,7 @@ img {
 }
 
 .panel div {
-	margin-bottom: 1em;
+	margin-bottom: 0em;
 }
 
 .panel h4 {
@@ -186,8 +186,11 @@ img {
 }
 
 div.list-title {
+	text-align: center;
 	background: #FFF6F6;
 }
+
+.panme
 
 input[name='aggiungi'] {
 	display: inline;
@@ -197,6 +200,8 @@ input[name='aggiungi'] {
 dl {
 	border-top: solid;
 	border-width: 8px;
+	margin-top: 1em;
+	margin-bottom: 2em;
 }
 
 dt {
@@ -226,7 +231,7 @@ input[name='mod'].pulsante {
 dd {
 	text-align: left;
 	margin-top: 0.3em;
-	margin-left: 3em;
+	margin-left: 4em;
 }
 
 .panel p {
@@ -239,11 +244,12 @@ dd {
 	margin-bottom: 0.2em;
 }
 
-.thumb {
+div.thumb {
 	height: 20em;
 	width: 20em;
 	margin: auto;
-	margin-bottom: 2em;
+	margin-bottom: 3em;
+	margin-top: 2em;
 }
 
 #ebicego {
@@ -396,6 +402,12 @@ fieldset input, fieldset textarea {
 
 #add-piatto-in #submit, #mod-piatto-in #submit, #add-bevanda-in #submit, #mod-bevanda-in #submit{
 	width: 25%;
+}
+
+p.info {
+	margin-bottom: 0.7em;
+	text-align: center;
+	font-size: 1em;
 }
 
 /*SOLO DESKTOP >= 1024 */
@@ -556,7 +568,7 @@ fieldset input, fieldset textarea {
 		font-size: 0.9em;
 	}
 
-	.thumb {
+	div.thumb {
 		height: 9em;
 		width: 9em;
 		margin: auto;
@@ -593,7 +605,9 @@ fieldset input, fieldset textarea {
 	}
 
 	p.info {
-		margin-left: 2em;
+		font-size: 100%;
+		text-align: left;
+		padding: 0em 1.2em 0em 1.2em;
 	}
 
 	ul.errorList li {
@@ -605,5 +619,26 @@ fieldset input, fieldset textarea {
 	.error {
 	    font-size: 0.8em;
 	    color: red;
-		}
+	}
+
+	div.list-title {
+		text-align: left;
+		background: #FFF6F6;
+	}
+
+	dl {
+		border-top: solid;
+		border-width: 3px;	
+	}
+
+	dt {
+		margin-left: 0.5em;
+		margin-top: 1em;
+	}
+
+	dd {
+		text-align: left;
+		margin-top: 0.3em;
+		margin-left: 3em;
+	}
 }
