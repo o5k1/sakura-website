@@ -15,7 +15,7 @@ checkSession($session);
 
 my $q = new CGI;
 #my $path = "Modifica bevanda";
-my $breadcrump = "<a href='private-menu-cibi.cgi'>Menù cibi</a> &gt; Modifica bevanda";
+my $breadcrump = "<a href='private-menu-bevande.cgi'>Menù bevande</a> &gt; Modifica bevanda";
 
 printStartHtml('Modifica bevanda - Area Amministratore', $breadcrump);
 
@@ -62,9 +62,23 @@ if ($q->param('mod-bevanda-in')) {
    
    else {
       my $doc = My::Base::initLibXML();
-      print "$newNome | menu/bevande/listaBevande/bevanda[\@id = '$oldId']/nome/text()";
-      $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/nome/text()")->get_node(1)->setData($newNome);
-      $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/prezzo/text()")->get_node(1)->setData($newPrezzo);
+      my $parser = XML::LibXML->new();
+      #print "$newNome | menu/bevande/listaBevande/bevanda[\@id = '$oldId']/nome/text()";
+
+      my ($nome) = $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/nome");
+         $nome->unbindNode;
+      my $nome = "<nome>$newNome</nome>
+            ";
+
+      if (eval{$nome=$parser->parse_balanced_chunk($nome);}) {
+               my $padre = $doc->findnodes("menu/bevande//bevanda[\@id = '$oldId']");
+               if($padre){
+                  $padre->get_node(1)->appendChild($nome) || die('Non riesco a trovare il padre');
+               }
+      } else {
+         $error.="<li>Il campo nome deve contenere tag o entità html validi.</li>";
+      }
+
       
       if ($doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/descrizione") ne '') {
             # Distruggo nodo <descrizione>
@@ -74,7 +88,6 @@ if ($q->param('mod-bevanda-in')) {
          if ($newDesc ne '') { # aggiorno nodo <descrizione> (ricostruendolo)
          
             my $description = "<descrizione>$newDesc</descrizione>";
-            my $parser = XML::LibXML->new(); 
             
             if (eval{$description=$parser->parse_balanced_chunk($description);}) {
                my $padre = $doc->findnodes("menu/bevande//bevanda[\@id = '$oldId']");
@@ -91,7 +104,6 @@ if ($q->param('mod-bevanda-in')) {
          if ($newDesc ne '') { # costruisco nodo <descrizione>
 
             my $description = "<descrizione>$newDesc</descrizione>";
-            my $parser = XML::LibXML->new(); 
             
             if (eval{$description=$parser->parse_balanced_chunk($description);}) {
                my $padre = $doc->findnodes("menu/bevande//bevanda[\@id = '$oldId']");
@@ -103,6 +115,9 @@ if ($q->param('mod-bevanda-in')) {
             }
          }
       }
+
+      if ($error eq '') {
+         $doc->findnodes("menu/bevande/listaBevande/bevanda[\@id = '$oldId']/prezzo/text()")->get_node(1)->setData($newPrezzo);
 
       My::Base::writeFile($doc);
       
@@ -123,7 +138,26 @@ if ($q->param('mod-bevanda-in')) {
                      );
       
       printFormBevanda($q, 'Modifiche effettuate con successo!', $error, \%textForm, 0, \%oldData);
-   } 
+      }
+      else {
+         my %textForm = (htitle => 'Modifica bevanda: ',
+                      toggetto => $newNome,
+                      hfile => 'mod-bevanda.cgi',
+                      hlegend => 'Modifica bevanda',
+                      svalue => 'Modifica',
+                      sname => 'mod-bevanda'
+                     );
+
+      my %oldData = (identifier => $oldId,
+                     name => $newNome,
+                     prezzo => $newPrezzo,
+                     descrizione => $newDesc
+                     );
+
+
+      printFormCibo($q, 'Ops! Ci sono degli errori nei dati inseriti: ', $error, \%textForm, 0, \%oldData);
+      }
+   }
 }
 
 elsif ($q->param('mod')) {

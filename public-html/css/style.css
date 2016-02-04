@@ -157,6 +157,24 @@ img {
 	font-size: 2.5em;
 }
 
+.list-title h4 {
+	display: inline;
+	margin-bottom: 0.3em;
+}
+
+.list-title form{
+	width: 8%;
+	margin: 0em;
+	margin-right: 1em; 
+	float: right;
+	height: 0px;
+}
+
+input[name='aggiungi'] {
+	display: inline;
+	font-size: 0.7em;
+}
+
 dl {
 	border-top: solid;
 	border-width: 8px;
@@ -165,6 +183,18 @@ dl {
 dt {
 	margin-left: 0.5em;
 	margin-top: 1.3em;
+}
+
+#mod-piatto, #del-piatto{
+	display: inline;
+}
+
+input[name='mod'].pulsante, input[name='del'].pulsante {
+	display: inline;
+	font-size: 0.7em;
+	padding: 0.01em 0.3em;
+	float: right;
+	clear: left;
 }
 
 dd {
@@ -220,7 +250,6 @@ dd {
 	display: none;
 }
 
-
 #access-denied {
 	background: url(../images/denied.png);
 	background-size: 25%;
@@ -265,7 +294,7 @@ input {
 	text-align: center;
 }
 
-#login #submit {
+/*#login*/ #submit {
     width: 50%;
 	color: #FFF6F6;
 	background: #333333;
@@ -277,12 +306,9 @@ input {
     margin-bottom: 1em;
 }
 
-#login #submit:hover {
+/*#login*/ #submit:hover {
 	color: #FF9999;
 	border-color: #FF9999;
-}
-
-#add-piatto {
 }
 
 .pulsante {
@@ -303,6 +329,38 @@ input {
 
 input.pulsante {
     margin-right: 1em;
+}
+
+div.form #add-piatto-in, div.form #mod-piatto-in {
+   	width: 80%;
+   	border-bottom: solid;
+   	border-top: solid;
+    border-width: 5px;
+    padding-top: 1em;
+    margin-top: 0.5em;
+}
+
+#add-piatto-in fieldset, #mod-piatto-in fieldset {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#add-piatto-in label, #mod-piatto-in label {
+	margin-bottom: 0.2em;
+}
+
+fieldset input, fieldset textarea {
+	border: solid;
+	border-width: 1px;
+	border-color: #E6E6E6;
+	background: white;
+	width: 80%;
+}
+
+#add-piatto-in #submit, #mod-piatto-in #submit{
+	width: 25%;
 }
 
 /*SOLO DESKTOP >= 1024 */
@@ -428,12 +486,12 @@ input.pulsante {
 	dl {
 		border-top: solid;
 		border-width: 3px;
+		margin-top: 0.3em;
 	}
 
 	dt {
 		margin-left: 1em;
 		margin-top: 1.5em;
-
 	}
 
 	dd {
@@ -504,20 +562,7 @@ input.pulsante {
 	}
 	/*----------------------------------*/
 
-	input[name='mod'], input[name='del'] {
-		display: inline;
-		float: right;
-		font-size: 0.7em;
-		padding: 0.01em 0.3em;
-	}
 
-	form[name='del-piatto'] {
-		margin-left: 1em;
-	}
-
-	form[name='mod-piatto'], form[name='del-piatto']{
-		display: inline;
-	}
 
    /*div.form {
       border-bottom: solid;
