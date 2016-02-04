@@ -15,7 +15,12 @@ our @EXPORT = qw(printMenuBevande printMenuCibi printMenuPublic);
 #
 sub printMenuPublic {
 
+
    my $doc = My::Base::initLibXML();
+
+   print "
+          <p class='info'>Seleziona una categoria per accedere ai nostri piatti.</p>
+          ";
 
    printLinkListeUnit($doc, "/menu/cibo/portata", "menu/bevande/listaBevande");
 

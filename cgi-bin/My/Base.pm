@@ -126,7 +126,7 @@ EOF
 # Stampa l'html iniziale per le pagine cgi pubbliche
 sub printStartHtmlPublic {
 
-   my ($title, $path) = @_;
+   my ($title, $path, $login) = @_;
 
    print "Content-type: text/html\n\n"; # Dico a Perl che sto stampando html
 
@@ -141,6 +141,23 @@ print "
 
    printTopBarHtml();
 
+   if ($login) {
+      print<<EOF
+		<div id="nav-menu">
+			   <ul>
+				<li xml:lang="en"><a href="../public-html/index.html">Home</a></li>
+				<li><a href="menu.cgi">Menù</a></li>
+				<li><a href="../public-html/chi-siamo.html">Chi siamo</a></li>
+				<li><a href="../public-html/dove-siamo.html">Dove siamo</a></li>
+				<li><a href="../public-html/curiosita.html">Curiosità</a></li>
+			   </ul>
+		    </div>
+	</div>
+	<div id="main">
+EOF
+;
+   }
+   else {
    print<<EOF
 		<div id="nav-menu">
 			   <ul>
@@ -155,6 +172,7 @@ print "
 	<div id="main">
 EOF
 ;
+}
    printPathHtml($path);
 }
 

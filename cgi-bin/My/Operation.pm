@@ -253,8 +253,8 @@ sub checkNumero {
 #
 sub checkPrezzo{
     my $ret="";
-    if(!$_[0] || !($_[0] =~ m/^[0-9]{1}[0-9]{0,3},[0-9]{2}/)){
-         $ret=$ret."<li>Il campo prezzo deve contenere un numero seguito dalla virgola e 2 cifre decimali.</li>";
+    if(!$_[0] || !($_[0] =~ m/^[0-9]{1}[0-9]{0,3}.[0-9]{2}/)){
+         $ret=$ret."<li>Il campo prezzo deve contenere un numero seguito dal punto e 2 cifre decimali.</li>";
     }
     return $ret;
 }

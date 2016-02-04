@@ -12,7 +12,7 @@ use My::PrintMenu;
 #Inizializzazione variabili base
 my $q = new CGI;
 
-printStartHtmlPublic('Menù', "Menù");
+printStartHtmlPublic('Menù', "Menù", 0);
 
    printMenuPublic();
 

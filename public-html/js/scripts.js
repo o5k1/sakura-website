@@ -123,9 +123,9 @@ function checkFormBevanda() {
       nomeLabel.lastChild.innerHTML = "";
    }
 
-   if (prezzo.value === "" || prezzo.value.search(/^[0-9]{1}[0-9]{0,3},[0-9]{2}/) != 0) {
+   if (prezzo.value === "" || prezzo.value.search(/^[0-9]{1}[0-9]{0,3}.[0-9]{2}/) != 0) {
       error = 1;
-      prezzoLabel.lastChild.innerHTML = "- <span class='error'>Prezzo non valido (sono ammessi solo numeri seguiti da virgola e 2 cifre decimali)</span>";
+      prezzoLabel.lastChild.innerHTML = "- <span class='error'>Prezzo non valido (sono ammessi solo numeri seguiti da punto e 2 cifre decimali)</span>";
    }
    else {
       prezzoLabel.lastChild.innerHTML = "";
@@ -184,9 +184,9 @@ function checkFormPiatto() {
       numeroLabel.lastChild.innerHTML = "";
    }
 
-   if (prezzo.value === "" || prezzo.value.search(/^[0-9]{1}[0-9]{0,3},[0-9]{2}/) != 0) {
+   if (prezzo.value === "" || prezzo.value.search(/^[0-9]{1}[0-9]{0,3}.[0-9]{2}/) != 0) {
       error = 1;
-      prezzoLabel.lastChild.innerHTML = "- <span class='error'>Prezzo non valido (sono ammessi solo numeri seguiti da virgola e 2 cifre decimali)</span>";
+      prezzoLabel.lastChild.innerHTML = "- <span class='error'>Prezzo non valido (sono ammessi solo numeri seguiti da punto e 2 cifre decimali)</span>";
    }
    else {
       prezzoLabel.lastChild.innerHTML = "";
