@@ -47,7 +47,12 @@
 		Si deve tenere conto anche del fatto che questa pagina è accessibile unicamente all'amministratore, quindi il sacrificio in fatto di presentazione è accettabile in quanto non si toglie nulla all'utente che visita il sito.\\\\
 		Più in generale, in tutte le \texttt{form} del sito non è stata definita una \texttt{legend} perché il titolo della pagina, stampato con un \texttt{<h3>} proprio sopra la \texttt{form}, rende totalmente chiaro all'utente lo scopo della \texttt{form} ed il motivo per cui quei tag \texttt{input} sono raggruppati.\\\\
 		Gli errori trovati durante l'inserimento di dati nelle form sono stati segnalati in maniera elegante, sfruttando il \texttt{Perl} per il controllo lato server ma anche il \texttt{Javascript} per un controllo immediato (se attivo) lato client.\\\\
-		(\textbf{+ + + + + + + + aggiungere screenshot + + + + + + + +})
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{images/erroriForm}
+			\caption{Esempio di come vengono mostrati gli errori nelle form}
+			\label{fig:Esempio di come vengono mostrati gli errori nelle form}
+		\end{figure}
 	
 	\subsection{Accessibilità da tastiera}
 		Una condizione necessaria ad un sito per essere accessibile è quella di essere navigabile utilizzando solamente la tastiera.\\
@@ -56,6 +61,34 @@
 		Il gruppo ha deciso di non utilizzare gli attributi \texttt{tabindex} per i \texttt{link} del sito in quanto il flusso logico del sito è semplice e lineare.
 	
 	\subsection{Accessibilità tramite screen reader}
-		Riportare gli esiti dell'uso del sito con Lynx + \textbf{aggiungere screenshot}
+		Il sito è completamente navigabile attraverso il browser testuale Lynx, anche nell'area amministratore.\\
+		Sono stati presi alcuni accorgimenti che agevolavano di molto la fruizione del contenuto, come la funzionalità "Salta la navigazione", che permette di saltare la lettura del \texttt{nav}, e "Ricerca veloce", che permette di "saltare" direttamente ad una sezione del menù del ristorante.\\\\
+		L'unico problema riscontrato è la codifica dei caratteri accentati che vengono interpretati da Lynx in una codifica diversa da UTF-8. Si suppone sia soltanto un problema di impostazioni di Lynx.\\\\
+		Di seguito gli screenshot riportati riguardano la pagina \texttt{index.html}, in cui si può notare l'ancora per saltare la navigazione, e la pagina \texttt{menu.cgi} (ritenuta la più importante), in cui si può fruire facilmente di ogni piatto grazie alla funzionalità di "Ricerca veloce" e all'ancora "Torna all'inizio" posizionata alla fine di ogni portata.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{images/lynx1}
+			\caption{Esempio di come viene mostrata la pagina index.html da Lynx}
+			\label{fig:Esempio di come viene mostrata la pagina index.html da Lynx}
+		\end{figure}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{images/lynx2}
+			\caption{Esempio di come viene mostrata la pagina menu.cgi da Lynx}
+			\label{fig:Esempio di come viene mostrata la pagina menu.cgi da Lynx}
+		\end{figure}
+		
+	\subsection{Compatibilità con i browser}
+	Il sito è stato testato sui seguenti browser:
+	\begin{itemize}
+		\item Google Chrome versione 48.0.2564.103 m;
+		\item Mozilla Firefox versione 44.0;
+		\item Internet Explorer versione 11.63.10586.0;
+		\item Microsoft Edge versione 25.10586.0.0;
+		\item Safari (su Mac OS X) versione 9.0.2;
+		\item Google Chrome per mobile su dispositivo Android;
+		\item Safari per mobile su dispositivo iOS.
+	\end{itemize}
+
 		
 \end{document}
