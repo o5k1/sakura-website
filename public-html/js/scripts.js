@@ -1,10 +1,24 @@
 function manageNav() {
-	if (screen.width < 1024) {
+   if (document.body && document.body.offsetWidth) {
+      winW = document.body.offsetWidth;
+      winH = document.body.offsetHeight;
+   }
+   if (document.compatMode=='CSS1Compat' &&
+      document.documentElement &&
+      document.documentElement.offsetWidth ) {
+      winW = document.documentElement.offsetWidth;
+      winH = document.documentElement.offsetHeight;
+   }
+   if (window.innerWidth && window.innerHeight) {
+      winW = window.innerWidth;
+      winH = window.innerHeight;
+   }
+	if (winW< 1024) {
 	   var nav = document.getElementById("nav-menu");
-	    if (nav.className == "") {
-	    	nav.className = "hidden";
+	     if (nav.className == "") {
+	    	   nav.className = "hidden";
         }
-	    else {
+	     else {
            nav.className = "";
         }
 	}
