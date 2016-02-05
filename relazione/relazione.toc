@@ -9,6 +9,12 @@
 \contentsline {subsection}{\numberline {5.2}CSS}{6}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Perl/CGI}{6}{subsection.5.3}
 \contentsline {subsection}{\numberline {5.4}Javascript}{6}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}XML e XMLSchema}{6}{subsection.5.5}
-\contentsline {subsection}{\numberline {5.6}Mobile}{6}{subsection.5.6}
-\contentsline {section}{\numberline {6}Accessibilit\IeC {\`a}}{8}{section.6}
+\contentsline {subsection}{\numberline {5.5}XML e XMLSchema}{7}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Mobile}{7}{subsection.5.6}
+\contentsline {section}{\numberline {6}Accessibilit\IeC {\`a}}{9}{section.6}
+\contentsline {subsection}{\numberline {6.1}Chiarezza e semplicit\IeC {\`a}}{9}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Colore}{9}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Parole straniere}{11}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Form}{11}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Accessibilit\IeC {\`a} da tastiera}{12}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Accessibilit\IeC {\`a} tramite screen reader}{12}{subsection.6.6}
