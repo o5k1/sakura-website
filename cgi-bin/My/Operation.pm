@@ -50,7 +50,7 @@ sub printFormCibo { # stampo la form
              ";
    }
    
-   print $q->h3($htitle);
+   print "<h3>$htitle</h3>";
 
    My::Base::printStartFormJS($textForm->{sname}."-in", $hfile, 'post');
       print "<fieldset>";
@@ -58,29 +58,29 @@ sub printFormCibo { # stampo la form
 
    if ($add) {
       print "<p>";
-         print "<label id='identifier'>Id $hoggetto <span class='errorjs'></span></label>";
-         print "<input type='text' name='identifier' value='".($oldData->{identifier})."' />";
+         print "<label id='identifier' for='inputId'>Id $hoggetto <span class='errorjs'></span></label>";
+         print "<input id='inputId' type='text' name='identifier' value='".($oldData->{identifier})."' />";
       print "</p>";
    }
       print "<p>";
-         print "<label id='nome'>Nome $hoggetto <span class='errorjs'></span></label>";
-         print $q->textarea(-name => 'nome', -value => $oldData->{name});
+         print "<label id='nome' for='inputNome'>Nome $hoggetto <span class='errorjs'></span></label>";
+         print $q->textarea(-id => 'inputNome', -name => 'nome', -value => $oldData->{name}, -cols => 20, -rows => 2);
       print "</p>";
       
       print "<p>";
-         print "<label id='numero'>Numero <span class='errorjs'></span></label>";
-         print "<input type='text' name='numero' value='".($oldData->{numero})."' />";
+         print "<label id='numero' for='inputNumero'>Numero <span class='errorjs'></span></label>";
+         print "<input id='inputNumero' type='text' name='numero' value='".($oldData->{numero})."' />";
       print "</p>";
       
       print "<p>";
-         print "<label id='prezzo'>Prezzo (&euro;) <span class='errorjs'></span></label>";
-         print "<input type='text' name='prezzo' value='".($oldData->{prezzo})."' />";
+         print "<label id='prezzo' for='inputPrezzo'>Prezzo (&euro;) <span class='errorjs'></span></label>";
+         print "<input id='inputPrezzo' type='text' name='prezzo' value='".($oldData->{prezzo})."' />";
       print "</p>";
       
       print "<p>";
          #print $q->label({-id => 'descrizione'}, 'Descrizione');
-         print "<label id='descrizione'>Descrizione <span class='errorjs'></span></label>";
-         print $q->textarea(-name => 'descrizione', -value => $oldData->{descrizione});
+         print "<label id='descrizione' for='inputDesc'>Descrizione <span class='errorjs'></span></label>";
+         print $q->textarea(-id => 'inputDesc', -name => 'descrizione', -value => $oldData->{descrizione}, -cols => 20, -rows => 2);
       print "</p>";
 
       print $q->hidden(-name => 'idElemento',
@@ -97,10 +97,12 @@ sub printFormCibo { # stampo la form
          -value => $textForm->{svalue}
          );
 
-   print "</div>";
+      print "</fieldset>";
       
    My::Base::printEndForm();
    
+print "</div>";
+
 }
 
 
@@ -160,23 +162,23 @@ sub printFormBevanda {
 
    if ($add) {
       print "<p>";
-         print "<label id='identifier'>Id $hoggetto <span class='errorjs'></span></label>";
-         print "<input type='text' name='identifier' value='".($oldData->{identifier})."' />";
+         print "<label id='identifier' for='inputId'>Id $hoggetto <span class='errorjs'></span></label>";
+         print "<input id='inputId' type='text' name='identifier' value='".($oldData->{identifier})."' />";
       print "</p>";
    }
       print "<p>";
-         print "<label id='nome'>Nome $hoggetto <span class='errorjs'></span></label>";
-         print $q->textarea(-name => 'nome', -value => $oldData->{name});
+         print "<label id='nome' for='inputNome'>Nome $hoggetto <span class='errorjs'></span></label>";
+         print $q->textarea(-id => 'inputNome', -name => 'nome', -value => $oldData->{name}, -cols => 20, -rows => 2);
       print "</p>";
       
       print "<p>";
-         print "<label id='prezzo'>Prezzo (&euro;) <span class='errorjs'></span></label>";
-         print "<input type='text' name='prezzo' value='".($oldData->{prezzo})."' />";
+         print "<label id='prezzo' for='inputPrezzo'>Prezzo (&euro;) <span class='errorjs'></span></label>";
+         print "<input id='inputPrezzo' type='text' name='prezzo' value='".($oldData->{prezzo})."' />";
       print "</p>";
       
       print "<p>";
-         print "<label id='descrizione'>Descrizione <span class='errorjs'></span></label>";
-         print $q->textarea(-name => 'descrizione', -value => $oldData->{descrizione});
+         print "<label id='descrizione' for='inputDesc'>Descrizione <span class='errorjs'></span></label>";
+         print $q->textarea(-id => 'inputDesc', -name => 'descrizione', -value => $oldData->{descrizione}, -cols => 20, -rows => 2);
       print "</p>";
       
       print $q->hidden(-name => 'idElemento',
@@ -193,9 +195,11 @@ sub printFormBevanda {
          -value => $textForm->{svalue}
          );
 
-   print "</div>";
+      print "</fieldset>";
       
    My::Base::printEndForm();
+
+print "</div>";
 }
 
 
@@ -239,6 +243,12 @@ sub checkNome{
     if(length $_[0]>200) {
       $ret=$ret."<li>Il campo nome non deve superare i 200 caratteri.</li>";
     }
+    if ($_[0] =~ m/<\//) { # Se trova tracce di tag
+      if(!($_[0] =~ m/.{0,}<abbr title=".{1,}"(\s)?(xml\:lang="..")?>.{1,}<\/abbr>.{0,}/) &&
+            !($_[0] =~ m/.{0,}<span xml:lang="..">.{1,}<\/span>.{0,}/)) {
+         $ret=$ret."<li>Il nome deve contenere tag abbr e span ben formati (attenzione agli spazi superflui)</li>";
+      }
+    }
     return $ret;
 }
 
@@ -265,8 +275,14 @@ sub checkPrezzo{
 #
 sub checkDesc{
     my $ret="";
-    if(length $_[0]>800){
-        $ret=$ret."<li>La descrizione deve avere al massimo 800 caratteri.</li>";
+    if(length $_[0]>600){
+        $ret=$ret."<li>La descrizione deve avere al massimo 600 caratteri.</li>";
+    }
+    if ($_[0] =~ m/<\//) {
+      if(!($_[0] =~ m/.{0,}<abbr title=".{1,}"(\s)?(xml\:lang="..")?>.{1,}<\/abbr>.{0,}/) &&
+            !($_[0] =~ m/.{0,}<span xml:lang="..">.{1,}<\/span>.{0,}/)) {
+         $ret=$ret."<li>Il campo descrizione deve contenere tag abbr e span ben formati (attenzione agli spazi superflui)</li>";
+      }
     }
     return $ret;
 }
@@ -285,6 +301,9 @@ sub checkIdBevanda{
    if(!($id =~ m/^[A-Za-z]{1,}$/m)) {
          $ret=$ret."<li>L'id deve essere una parola composta da lettere maiuscole e/o minuscole, numeri senza spazi.</li>"
    }
+   if(length $_[0]>50){
+        $ret=$ret."<li>L'id non deve superare i 50 caratteri</li>";
+   }
    return $ret;
 }
 
@@ -302,6 +321,9 @@ sub checkIdPiatto{
    if(!($id =~ m/^[A-Za-z]{1,}$/m)) {
          $ret=$ret."<li>L'id deve essere una parola composta da lettere maiuscole e/o minuscole e nessuno spazio.</li>"
    }
+   if(length $_[0]>50){
+        $ret=$ret."<li>L'id non deve superare i 50 caratteri</li>";
+    }
    return $ret;    
 }
 

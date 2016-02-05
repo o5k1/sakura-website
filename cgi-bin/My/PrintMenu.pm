@@ -64,6 +64,7 @@ sub printMenuBevande {
       
          if($admin) {
             My::Base::printStartForm('add-bevanda', $pathR->{add_bevanda}, 'GET');
+            print "<fieldset>";
             print $q->submit(-class => 'pulsante',
                               -name => 'add',
                               -value => 'Aggiungi');
@@ -71,6 +72,7 @@ sub printMenuBevande {
                               -value => $idLista);
             print $q->hidden(-name => 'nomeLista',
                               -value => $nomeLista);
+            print "</fieldset>";
             My::Base::printEndForm();
          }
          print "
@@ -91,29 +93,39 @@ sub printMenuBevande {
                   ($descrizione) = ( $descrizione =~ /<descrizione>(.*)<\/descrizione>/);
                
                print "<dt>- <strong>$nome</strong> <span class='prezzo'>$valuta $prezzo</span></dt>";
-
-               if($descrizione ne ''){
-                  print "<dd>$descrizione</dd>";
-               }
          
                if($admin) {
+                  if ($descrizione ne '') {
+                     print "\n<dd>$descrizione";
+                  } else {
+                     print "\n<dd>";
+                  }
+
                   My::Base::printStartForm('mod-bevanda',$pathR->{mod_bevanda}, 'GET');
                      print "
+                     <fieldset>
                            <input class='pulsante' type='submit' name='mod' value='Modifica' />
                            <input type='hidden' name='idElemento' value='$idBevanda' />
                            <input type='hidden' name='nome' value='$nome' />
                            <input type='hidden' name='prezzo' value='$prezzo' />
                            <input type='hidden' name='descrizione' value='$descrizione' />
-                         ";
+                     </fieldset>
+                     ";
                   My::Base::printEndForm();
                 
                   My::Base::printStartForm('del-bevanda', $pathR->{del_bevanda}, 'GET');
                      print "
+                     <fieldset>
                            <input class='pulsante' type='submit' name='del' value='Rimuovi' />
                            <input type='hidden' name='nome' value='$nome' />
                            <input type='hidden' name='idElemento' value='$idBevanda' />
-                        ";
+                     </fieldset>
+                     ";
                   My::Base::printEndForm();
+                  print "\n</dd>\n";
+               }
+               elsif ($descrizione ne '') {
+                  print "<dd>$descrizione</dd>";
                }
          }
       print "</dl>
@@ -159,9 +171,13 @@ sub printMenuCibi {
       
       if($admin) {
          My::Base::printStartForm('add-piatto', $pathR->{add_piatto}, 'GET');
-            print "<input class='pulsante' type='submit' name='aggiungi' value='Aggiungi' />
-                <input type='hidden' name='idLista' value='$idPortata' />
-                 <input type='hidden' name='nomeLista' value='$nomePortata' />";
+            print "
+            <fieldset>
+                  <input class='pulsante' type='submit' name='add' value='Aggiungi' />
+                  <input type='hidden' name='idLista' value='$idPortata' />
+                  <input type='hidden' name='nomeLista' value='$nomePortata' />
+            </fieldset>
+            ";
          My::Base::printEndForm();
       }
       
@@ -184,29 +200,41 @@ sub printMenuCibi {
                   ($descrizione) = ( $descrizione =~ /<descrizione>(.*)<\/descrizione>/);
                
                print "<dt>$numero - <strong>$nome</strong> <span class='prezzo'>$valuta $prezzo</span></dt>";
-               if($descrizione ne ""){
-                  print "<dd>$descrizione</dd>";
-               }
                
                if($admin) {
+                  if ($descrizione ne '') {
+                     print "\n<dd>$descrizione";
+                  } else {
+                     print "\n<dd>";
+                  }
+
                   My::Base::printStartForm('mod-piatto', $pathR->{mod_piatto}, 'GET');
                   print "
+                  <fieldset>
                            <input class='pulsante' type='submit' name='mod' value='Modifica' />
                            <input type='hidden' name='idElemento' value='$idPiatto' />
                            <input type='hidden' name='nome' value='$nome' />
                            <input type='hidden' name='numero' value='$numero' />
                            <input type='hidden' name='descrizione' value='$descrizione' />
                            <input type='hidden' name='prezzo' value='$prezzo' />
-                           ";
+                  </fieldset>
+                  ";
                   My::Base::printEndForm();
                   
                   My::Base::printStartForm('del-piatto', $pathR->{del_piatto}, 'GET');
                   print "
+                  <fieldset>
                            <input class='pulsante' type='submit' name='del' value='Rimuovi' />
                            <input type='hidden' name='idElemento' value='$idPiatto' />
                            <input type='hidden' name='nome' value='$nome' />
-                        ";
+                  </fieldset>
+                  ";
                   My::Base::printEndForm();
+
+                  print "\n</dd>\n";
+               }
+               elsif ($descrizione ne '') {
+                  print "<dd>$descrizione</dd>";
                }
       }
       
@@ -227,7 +255,7 @@ sub printLinkListe {
 
    my ($doc, $query) = @_;
 
-   print "<div id='fast-search' class='panel'>
+   print "\n<div id='fast-search' class='panel'>
             <h3>Ricerca Veloce</h3>
             <ul>";
    foreach my $lista ($doc->findnodes($query)) {
@@ -238,14 +266,14 @@ sub printLinkListe {
       print "<li><a href='#$idLista'>$nomeLista</a></li>";
    }
    print "</ul>
-         </div>";
+         </div>\n";
 }
 
 sub printLinkListeUnit {
 
    my ($doc, $query1, $query2) = @_;
 
-   print "<div id='fast-search' class='panel'>
+   print "\n<div id='fast-search' class='panel'>
             <h3>Ricerca Veloce</h3>
             <ul>";
 
@@ -266,7 +294,7 @@ sub printLinkListeUnit {
    }
 
    print "</ul>
-         </div>";
+         </div>\n";
 }
 
    

@@ -76,7 +76,7 @@ print "
    <body onload=\"manageNav(); hideElement()\">
 	<div id=\"header\">
 		<div id=\"fixed-info\">
-            <p>Area Amministratore - <a id=\"exit\" href='logout.cgi'>Esci</a></p>
+            <p>Area Amministratore - <a class=\"exit\" href='logout.cgi'>Esci</a></p>
 		</div>";
 		
    printTopBarHtml();
@@ -184,7 +184,7 @@ sub printEndHtml {
       </div>
 	</div>
 	<div id="footer">
-		<p>Area Amministratore - <a id="exit" href='logout.cgi'>Esci</a></p>
+		<p>Area Amministratore - <a class="exit" href='logout.cgi'>Esci</a></p>
 	</div>
 </body>
 </html>
@@ -224,7 +224,7 @@ sub printStartForm {
    my $action = $_[1];
    my $method = $_[2];
 
-   print $q->start_form(-id => $name,
+   print $q->start_form(-class => $name,
                         -action => $action,
                         -method => $method,
                         enctype => &CGI::URL_ENCODED
