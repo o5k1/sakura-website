@@ -19,3 +19,4 @@
 \contentsline {subsection}{\numberline {6.5}Accessibilit\IeC {\`a} da tastiera}{15}{subsection.6.5}
 \contentsline {subsection}{\numberline {6.6}Accessibilit\IeC {\`a} tramite screen reader}{15}{subsection.6.6}
 \contentsline {subsection}{\numberline {6.7}Compatibilit\IeC {\`a} con i browser}{17}{subsection.6.7}
+\contentsline {section}{\numberline {7}Istruzioni per l'utilizzo su altri server}{18}{section.7}
