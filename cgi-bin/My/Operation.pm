@@ -148,7 +148,7 @@ sub printFormBevanda {
    
    if ($error ne '') {
       print "
-            <ul id='errorList'>
+            <ul class='errorList'>
                $error
              </ul>
              ";

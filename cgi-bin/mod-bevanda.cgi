@@ -145,7 +145,7 @@ if ($q->param('mod-bevanda-in')) {
                      );
 
 
-      printFormCibo($q, 'Ops! Ci sono degli errori nei dati inseriti: ', $error, \%textForm, 0, \%oldData);
+      printFormBevanda($q, 'Ops! Ci sono degli errori nei dati inseriti: ', $error, \%textForm, 0, \%oldData);
       }
    }
 }
